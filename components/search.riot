@@ -1,6 +1,6 @@
 <search>
     <label>
-	    <input oninput={searchF} type="input" placeholder= {state.formation}>
+	    <input onkeydown={searchF} type="input" placeholder= {state.formation}>
 		<div id="list-formations">
             <ul>
 	            <li each={item in this.state.items}>
@@ -25,21 +25,26 @@
                 // initial state
                     this.state = {
                         formation: props.formation,
-                        items: null
+                        items: null,
+                        allitems: null
                     }
                     formation().then((response) => {
 			            this.update({
-                            items: response
+                            items: response,
+                            allitems: response
 					    })
 		            })
-                    console.log(this.state.items)
                 },
-                searchF(){
-                    formation().then((response) => {
-			            this.update({
-                            items: response
-					    })
-		            })
+                searchF(e){
+                    let responseFiltered=[]
+			        this.state.allitems.forEach(formation => {
+                        if (formation.name.includes(e.target.value)) {
+                            responseFiltered.push(formation)
+                        }
+                    });
+                    this.update({
+                        items: responseFiltered
+				    })
                     console.log(this.state.items)
                 }
             }
