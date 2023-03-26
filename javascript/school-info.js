@@ -1,9 +1,11 @@
 var schoolInfo = {
   css: null,
   exports: {
-    onMounted() {}
+    onMounted() {
+      console.log("Test!");
+    }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"/><div><div></div></div>', []),
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div><div></div></div>', []),
   name: 'school-info'
 };
 

@@ -4,19 +4,13 @@
 		<title>Parcoursup</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="stylesheet" href="style/parcoursup.css">
-		<script src="search.riot" type="riot"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/7.1.0/riot+compiler.min.js" integrity="sha512-sSGKGR9MvL0bUx3CScaBb56crXwspwDkL/JnB0IrLFQfw3uvSUlITQtsTtDZctshhv5wdwIt+qZeN8zThRF4Dw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="riot.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+		<script src="loader.js" type="module"></script>
 	</head>
 
 	<body>
 		<search></search>
-		<script src="javascript/school-info.js" type="javascript"></script>
-		<script>
-			riot.compile().then(() => {
-				riot.mount('search', {
-					formation:'Formation'
-				})
-			})
-		</script>
+		<school-info></school-info>
 	</body>
 </html>
