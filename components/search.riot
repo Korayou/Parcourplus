@@ -1,32 +1,50 @@
 <search>
     <label>
-	    <input oninput={search} type="input" placeholder= {state.formation}>
-        <p class="error"></p>
+	    <input oninput={searchF} type="input" placeholder= {state.formation}>
 		<div id="list-formations">
+            <ul>
+	            <li each={item in this.state.items}>
+		           <a href={item.path} target="_blank">{item.name}</a>
+                   <span>{item.count}</span>
+	            </li>
+            </ul>
 		</div>
     </label>
-
     <script>
-        import model from '../javascript/modelSearch.js';
-    	import Controller from '../javascript/controllerSearch.js';
-    	import View from '../javascript/viewSearch.js';
+
+        async function formation(){
+            let result = await fetch("https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&q=&sort=tri&facet=fili&timezone=Europe%2FBerlin")
+            let resultats = await result.json()
+            let table = resultats["facet_groups"][0]["facets"]
+            return table
+        }
+
         export default function search(){
-			return {
-				onBeforeMount(props, state) {
-					// initial state
-					this.state = {
-						formation: props.formation
-					}
-				},
-                search(){
-                    
-                    console.log("test1")
-                    const view = new View()
-                    const app = new Controller(view,model)
+            return {
+                onBeforeMount(props, state) {
+                // initial state
+                    this.state = {
+                        formation: props.formation,
+                        items: null
+                    }
+                    formation().then((response) => {
+			            this.update({
+                            items: response
+					    })
+		            })
+                    console.log(this.state.items)
+                },
+                searchF(){
+                    formation().then((response) => {
+			            this.update({
+                            items: response
+					    })
+		            })
+                    console.log(this.state.items)
                 }
-                
             }
         }
+
         
     </script>
 </search>
