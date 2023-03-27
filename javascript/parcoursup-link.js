@@ -17,7 +17,7 @@ class PAPI {
     }
 
     static async fetchFiliere(filiere) {
-        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=lib_for_voe_ins&refine.fili=${filiere}`)
+        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`)
         let result  = await request.json()
 
         return result["facet_groups"][0]["facets"]
