@@ -4,7 +4,7 @@
 		<div id="list-formations">
             <ul>
 	            <li each={item in this.state.items}>
-		           <a href={item.path} target="_blank">{item.name}</a>
+		           <span onclick={()=>filter(item.name)}>{item.name}</span>
                    <span>{item.count}</span>
 	            </li>
             </ul>
@@ -12,8 +12,8 @@
     </label>
     <script>
 
-        async function formation(){
-            let result = await fetch("https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&q=&sort=tri&facet=fili&timezone=Europe%2FBerlin")
+        async function formation(whatToSearch){
+            let result = await fetch("https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&q=&sort=tri&facet="+whatToSearch+"&timezone=Europe%2FBerlin")
             let resultats = await result.json()
             let table = resultats["facet_groups"][0]["facets"]
             return table
@@ -26,9 +26,10 @@
                     this.state = {
                         formation: props.formation,
                         items: null,
-                        allitems: null
+                        allitems: null,
+                        whatToSearch: "fili"
                     }
-                    formation().then((response) => {
+                    formation(this.state.whatToSearch).then((response) => {
 			            this.update({
                             items: response,
                             allitems: response
@@ -38,14 +39,44 @@
                 searchF(e){
                     let responseFiltered=[]
 			        this.state.allitems.forEach(formation => {
-                        if (formation.name.includes(e.target.value)) {
+                        if (formation.name.toUpperCase().includes(e.target.value.toUpperCase())) {
                             responseFiltered.push(formation)
                         }
                     });
                     this.update({
                         items: responseFiltered
 				    })
-                    console.log(this.state.items)
+                },
+                filter(fili){
+                    console.log("filter! "+fili)
+                    if (this.state.whatToSearch==="form_lib_voe_acc"){
+                        this.update({
+                                formation: "Filière de formation détaillée",
+                                whatToSearch: "lib_for_voe_ins"
+                            })
+                    } else {
+                        this.update({
+                                formation: "Filière de formation",
+                                whatToSearch: "form_lib_voe_acc"
+                            })
+                    }
+                    formation(this.state.whatToSearch).then((response) => {
+                        this.update({
+                            allitems: response,
+                            item: response
+                        })
+                        console.log(this.state.items)
+                    })
+                    let responseFiltered=[]
+			        this.state.allitems.forEach(formation => {
+                        if (formation.name.includes(fili)) {
+                            responseFiltered.push(formation)
+                        }
+                    });
+                    this.update({
+                        allitems: responseFiltered,
+                        items: responseFiltered
+				    })
                 }
             }
         }
