@@ -1,6 +1,6 @@
 <search>
     <label>
-	    <input onkeydown={searchF} type="input" placeholder= {state.formation}>
+	    <input onkeydown={searchF} type="input" placeholder= {state.placeholder}>
 		<div id="list-formations">
             <ul>
 	            <li each={item in this.state.items}>
@@ -12,10 +12,10 @@
     </label>
     <script>
 
-        async function formation(whatToSearch){
+        async function apiLink(whatToSearch, whereToSearch){
             let result = await fetch("https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&q=&sort=tri&facet="+whatToSearch+"&timezone=Europe%2FBerlin")
             let resultats = await result.json()
-            let table = resultats["facet_groups"][0]["facets"]
+            let table = resultats["facet_groups"][whereToSearch]["facets"]
             return table
         }
 
@@ -24,12 +24,14 @@
                 onBeforeMount(props, state) {
                 // initial state
                     this.state = {
-                        formation: props.formation,
+                        placeholder: "Formation",
                         items: null,
                         allitems: null,
-                        whatToSearch: "fili"
+                        whatToSearch: "fili",
+                        fili: null,
+                        sousfili: null
                     }
-                    formation(this.state.whatToSearch).then((response) => {
+                    apiLink(this.state.whatToSearch,0).then((response) => {
 			            this.update({
                             items: response,
                             allitems: response
@@ -49,34 +51,27 @@
                 },
                 filter(fili){
                     console.log("filter! "+fili)
-                    if (this.state.whatToSearch==="form_lib_voe_acc"){
+                    let step=0;
+                    if (this.state.placeholder==="Filière de formation"){
                         this.update({
-                                formation: "Filière de formation détaillée",
-                                whatToSearch: "lib_for_voe_ins"
-                            })
+                            placeholder: "Filière de formation détaillée",
+                            sousfili: fili,
+                            whatToSearch: "fili&facet=form_lib_voe_acc&facet=fil_lib_voe_acc&refine.form_lib_voe_acc="+this.state.sousfili+"&refine.fili="this.state.fili
+                        })
                     } else {
                         this.update({
-                                formation: "Filière de formation",
-                                whatToSearch: "form_lib_voe_acc"
-                            })
+                            placeholder: "Filière de formation",
+                            fili: fili,
+                            whatToSearch: "fili&facet=form_lib_voe_acc&refine.fili="+this.state.fili
+                        })
                     }
-                    formation(this.state.whatToSearch).then((response) => {
+                    apiLink(this.state.whatToSearch).then((response) => {
                         this.update({
                             allitems: response,
                             item: response
                         })
                         console.log(this.state.items)
                     })
-                    let responseFiltered=[]
-			        this.state.allitems.forEach(formation => {
-                        if (formation.name.includes(fili)) {
-                            responseFiltered.push(formation)
-                        }
-                    });
-                    this.update({
-                        allitems: responseFiltered,
-                        items: responseFiltered
-				    })
                 }
             }
         }
