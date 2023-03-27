@@ -15,24 +15,15 @@
 
         const searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&timezone=Europe%2FBerlin`
 
-        async function fetchFiliere0() {
-            let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fili`)
+        async function fetchFiliere(state) {
+            if (state.sousfili){
+                var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${state.sousfili}`)
+            } else if (state.fili&&!state.sousfili){
+                var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${state.fili}`)
+            } else if (!state.fili&&!state.sousfili){
+                var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fili`)
+            }
             let result  = await request.json()
-
-            return result["facet_groups"][0]["facets"]
-        }
-
-        async function fetchFiliere1(filiere) {
-            let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`)
-            let result  = await request.json()
-
-            return result["facet_groups"][0]["facets"]
-        }
-
-        async function fetchFiliere2(sousfiliere) {
-            let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${sousfiliere}`)
-            let result  = await request.json()
-
             return result["facet_groups"][0]["facets"]
         }
 
@@ -47,7 +38,7 @@
                         fili: null,
                         sousfili: null
                     }
-                    fetchFiliere0().then((response) => {
+                    fetchFiliere(this.state).then((response) => {
 			            this.update({
                             items: response,
                             allitems: response
@@ -72,26 +63,19 @@
                             placeholder: "Filière de formation détaillée",
                             sousfili: fili,
                         })
-                        fetchFiliere2(this.state.sousfili).then((response) => {
-                            this.update({
-                                allitems: response,
-                                items: response
-                            })
-                        })
-                        console.log(this.state.items)
                     } else if (this.state.placeholder="Formation"){
                         this.update({
                             placeholder: "Filière de formation",
                             fili: fili
                         })
-                        fetchFiliere1(this.state.fili).then((response) => {
-                            this.update({
-                                allitems: response,
-                                items: response
-                            })
-                            console.log(this.state.items)
-                        })
                     }
+                    fetchFiliere(this.state).then((response) => {
+                        this.update({
+                            allitems: response,
+                            items: response
+                        })
+                        console.log(this.state.items)
+                    })
                 },
                 back(){
                     console.log("back")
@@ -100,26 +84,18 @@
                             placeholder: "Formation",
                             fili: null,
                         })
-                        fetchFiliere0().then((response) => {
-                            this.update({
-                                allitems: response,
-                                items: response
-                            })
-                        })
-                        console.log(this.state.items)
                     } else if (this.state.placeholder="Filière de formation détaillée"){
                         this.update({
                             placeholder: "Filière de formation",
                             sousfili: null
                         })
-                        fetchFiliere1(this.state.fili).then((response) => {
-                            this.update({
-                                allitems: response,
-                                items: response
-                            })
-                            console.log(this.state.items)
-                        })
                     }
+                    fetchFiliere(this.state).then((response) => {
+                        this.update({
+                            allitems: response,
+                            items: response
+                        })
+                    })
                 }
             }
         }
