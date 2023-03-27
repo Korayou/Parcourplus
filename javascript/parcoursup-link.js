@@ -22,6 +22,13 @@ class PAPI {
 
         return result["facet_groups"][0]["facets"]
     }
+
+    static async fetchSpecialites(specialite) {
+        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}`)
+        let result  = await request.json()
+
+        return result["facet_groups"][0]["facets"]
+    }
 }
 
 export default PAPI
