@@ -1,16 +1,14 @@
 const searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&timezone=Europe%2FBerlin`;
-async function fetchFiliere0() {
-  let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fili`);
-  let result = await request.json();
-  return result["facet_groups"][0]["facets"];
-}
-async function fetchFiliere1(filiere) {
-  let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`);
-  let result = await request.json();
-  return result["facet_groups"][0]["facets"];
-}
-async function fetchFiliere2(sousfiliere) {
-  let request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${sousfiliere}`);
+async function fetchFiliere(state) {
+  if (state.sousfili) {
+    await fetch(`${searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${sousfiliere}`);
+  } else if (state.fili & !state.sousfili) {
+    await fetch(`${searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`);
+  } else if (!state.fili & !state.sousfili) {
+    await fetch(`${searchURL}&rows=0&sort=tri&facet=fili`);
+  } else {
+    console.log("ta verif elle pue");
+  }
   let result = await request.json();
   return result["facet_groups"][0]["facets"];
 }
@@ -24,9 +22,10 @@ var search = {
           placeholder: "Formation",
           items: null,
           allitems: null,
-          fili: null
+          fili: null,
+          sousfili: null
         };
-        fetchFiliere0().then(response => {
+        fetchFiliere(this.state).then(response => {
           this.update({
             items: response,
             allitems: response
@@ -49,9 +48,9 @@ var search = {
         if (this.state.placeholder === "Filière de formation") {
           this.update({
             placeholder: "Filière de formation détaillée",
-            fili: fili
+            sousfili: fili
           });
-          fetchFiliere2(this.state.fili).then(response => {
+          fetchFiliere(this.state).then(response => {
             this.update({
               allitems: response,
               items: response
@@ -63,7 +62,35 @@ var search = {
             placeholder: "Filière de formation",
             fili: fili
           });
-          fetchFiliere1(this.state.fili).then(response => {
+          fetchFiliere(this.state).then(response => {
+            this.update({
+              allitems: response,
+              items: response
+            });
+            console.log(this.state.items);
+          });
+        }
+      },
+      back() {
+        console.log("back");
+        if (this.state.placeholder === "Filière de formation") {
+          this.update({
+            placeholder: "Formation",
+            fili: null
+          });
+          fetchFiliere(state).then(response => {
+            this.update({
+              allitems: response,
+              items: response
+            });
+          });
+          console.log(this.state.items);
+        } else if (this.state.placeholder = "Filière de formation détaillée") {
+          this.update({
+            placeholder: "Filière de formation",
+            sousfili: null
+          });
+          fetchFiliere(this.state).then(response => {
             this.update({
               allitems: response,
               items: response
@@ -74,9 +101,9 @@ var search = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<label><input expr36="expr36" type="input"/><div id="list-formations"><ul><li expr37="expr37"></li></ul></div></label>', [{
-    redundantAttribute: 'expr36',
-    selector: '[expr36]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<label><input expr0="expr0" type="input"/><button expr1="expr1"><</button><div id="list-formations"><ul><li expr2="expr2"></li></ul></div></label>', [{
+    redundantAttribute: 'expr0',
+    selector: '[expr0]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeydown',
@@ -87,12 +114,20 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
+    redundantAttribute: 'expr1',
+    selector: '[expr1]',
+    expressions: [{
+      type: expressionTypes.EVENT,
+      name: 'onclick',
+      evaluate: _scope => _scope.back
+    }]
+  }, {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<span expr38="expr38"> </span><span expr39="expr39"> </span>', [{
-      redundantAttribute: 'expr38',
-      selector: '[expr38]',
+    template: template('<span expr3="expr3"> </span><span expr4="expr4"> </span>', [{
+      redundantAttribute: 'expr3',
+      selector: '[expr3]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
@@ -103,16 +138,16 @@ var search = {
         evaluate: _scope => () => _scope.filter(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr39',
-      selector: '[expr39]',
+      redundantAttribute: 'expr4',
+      selector: '[expr4]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr37',
-    selector: '[expr37]',
+    redundantAttribute: 'expr2',
+    selector: '[expr2]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
