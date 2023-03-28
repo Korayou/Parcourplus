@@ -1,0 +1,638 @@
+{
+    "nhits": 5303,
+    "parameters": {
+        "dataset": "fr-esr-parcoursup",
+        "rows": 0,
+        "start": 0,
+        "sort": [
+            "tri"
+        ],
+        "facet": [
+            "lib_for_voe_ins"
+        ],
+        "refine": {
+            "fili": "BTS"
+        },
+        "format": "json",
+        "timezone": "Europe/Berlin"
+    },
+    "records": [],
+    "facet_groups": [
+        {
+            "name": "lib_for_voe_ins",
+            "facets": [
+                {
+                    "name": "BTS - Services - Comptabilit\u00e9 et gestion",
+                    "count": 337,
+                    "state": "displayed",
+                    "path": "BTS - Services - Comptabilit\u00e9 et gestion"
+                },
+                {
+                    "name": "BTS - Services - Management Commercial Op\u00e9rationnel",
+                    "count": 336,
+                    "state": "displayed",
+                    "path": "BTS - Services - Management Commercial Op\u00e9rationnel"
+                },
+                {
+                    "name": "BTS - Services - Gestion de la PME",
+                    "count": 260,
+                    "state": "displayed",
+                    "path": "BTS - Services - Gestion de la PME"
+                },
+                {
+                    "name": "BTS - Services - Support \u00e0 l'action manag\u00e9riale",
+                    "count": 244,
+                    "state": "displayed",
+                    "path": "BTS - Services - Support \u00e0 l'action manag\u00e9riale"
+                },
+                {
+                    "name": "BTS - Services - N\u00e9gociation et digitalisation de la Relation Client",
+                    "count": 239,
+                    "state": "displayed",
+                    "path": "BTS - Services - N\u00e9gociation et digitalisation de la Relation Client"
+                },
+                {
+                    "name": "BTS - Production - Electrotechnique",
+                    "count": 163,
+                    "state": "displayed",
+                    "path": "BTS - Production - Electrotechnique"
+                },
+                {
+                    "name": "BTS - Services - Services informatiques aux organisations",
+                    "count": 161,
+                    "state": "displayed",
+                    "path": "BTS - Services - Services informatiques aux organisations"
+                },
+                {
+                    "name": "BTS - Services - Commerce International",
+                    "count": 158,
+                    "state": "displayed",
+                    "path": "BTS - Services - Commerce International"
+                },
+                {
+                    "name": "BTS - Production - Syst\u00e8mes num\u00e9riques - Option informatique et r\u00e9seaux",
+                    "count": 138,
+                    "state": "displayed",
+                    "path": "BTS - Production - Syst\u00e8mes num\u00e9riques - Option informatique et r\u00e9seaux"
+                },
+                {
+                    "name": "BTS - Services - Economie sociale familiale",
+                    "count": 124,
+                    "state": "displayed",
+                    "path": "BTS - Services - Economie sociale familiale"
+                },
+                {
+                    "name": "BTS - Services - Service et prestation des secteurs sanitaire et social",
+                    "count": 122,
+                    "state": "displayed",
+                    "path": "BTS - Services - Service et prestation des secteurs sanitaire et social"
+                },
+                {
+                    "name": "BTS - Services - Tourisme",
+                    "count": 107,
+                    "state": "displayed",
+                    "path": "BTS - Services - Tourisme"
+                },
+                {
+                    "name": "BTS - Services - Conseil et commercialisation de solutions techniques",
+                    "count": 106,
+                    "state": "displayed",
+                    "path": "BTS - Services - Conseil et commercialisation de solutions techniques"
+                },
+                {
+                    "name": "BTS - Production - Syst\u00e8mes num\u00e9riques - Option \u00e9lectronique et communication",
+                    "count": 102,
+                    "state": "displayed",
+                    "path": "BTS - Production - Syst\u00e8mes num\u00e9riques - Option \u00e9lectronique et communication"
+                },
+                {
+                    "name": "BTS - Production - Conception et R\u00e9alisation de Syst\u00e8mes Automatiques",
+                    "count": 98,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception et R\u00e9alisation de Syst\u00e8mes Automatiques"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des syst\u00e8mes - option A Syst\u00e8mes de production",
+                    "count": 96,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des syst\u00e8mes - option A Syst\u00e8mes de production"
+                },
+                {
+                    "name": "BTS - Agricole - Analyse, conduite et strat\u00e9gie de l'entreprise agricole",
+                    "count": 91,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Analyse, conduite et strat\u00e9gie de l'entreprise agricole"
+                },
+                {
+                    "name": "BTS - Services - Communication",
+                    "count": 85,
+                    "state": "displayed",
+                    "path": "BTS - Services - Communication"
+                },
+                {
+                    "name": "BTS - Services - Management en h\u00f4tellerie restauration",
+                    "count": 79,
+                    "state": "displayed",
+                    "path": "BTS - Services - Management en h\u00f4tellerie restauration"
+                },
+                {
+                    "name": "BTS - Production - Conception des processus de r\u00e9alisation de produits (1\u00e8re ann\u00e9e commune)",
+                    "count": 78,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception des processus de r\u00e9alisation de produits (1\u00e8re ann\u00e9e commune)"
+                },
+                {
+                    "name": "BTS - Production - Conception de produits industriels",
+                    "count": 69,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception de produits industriels"
+                },
+                {
+                    "name": "BTS - Services - Professions immobili\u00e8res",
+                    "count": 59,
+                    "state": "displayed",
+                    "path": "BTS - Services - Professions immobili\u00e8res"
+                },
+                {
+                    "name": "BTS - Services - Banque conseiller de client\u00e8le",
+                    "count": 56,
+                    "state": "displayed",
+                    "path": "BTS - Services - Banque conseiller de client\u00e8le"
+                },
+                {
+                    "name": "BTS - Services - Gestion des transports et logistique associ\u00e9e",
+                    "count": 52,
+                    "state": "displayed",
+                    "path": "BTS - Services - Gestion des transports et logistique associ\u00e9e"
+                },
+                {
+                    "name": "BTS - Production - B\u00e2timent",
+                    "count": 47,
+                    "state": "displayed",
+                    "path": "BTS - Production - B\u00e2timent"
+                },
+                {
+                    "name": "BTS - Services - Collaborateur juriste notarial",
+                    "count": 47,
+                    "state": "displayed",
+                    "path": "BTS - Services - Collaborateur juriste notarial"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'esth\u00e9tique-cosm\u00e9tique-parfumerie",
+                    "count": 46,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'esth\u00e9tique-cosm\u00e9tique-parfumerie"
+                },
+                {
+                    "name": "BTS - Services - Assurance",
+                    "count": 45,
+                    "state": "displayed",
+                    "path": "BTS - Services - Assurance"
+                },
+                {
+                    "name": "BTS - Production - Bioanalyses et contr\u00f4les",
+                    "count": 43,
+                    "state": "displayed",
+                    "path": "BTS - Production - Bioanalyses et contr\u00f4les"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des v\u00e9hicules option voitures particuli\u00e8res",
+                    "count": 42,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des v\u00e9hicules option voitures particuli\u00e8res"
+                },
+                {
+                    "name": "BTS - Agricole - productions animales",
+                    "count": 41,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - productions animales"
+                },
+                {
+                    "name": "BTS - Production - Fluide, \u00e9nergie, domotique - option C domotique et b\u00e2timent communicants",
+                    "count": 40,
+                    "state": "displayed",
+                    "path": "BTS - Production - Fluide, \u00e9nergie, domotique - option C domotique et b\u00e2timent communicants"
+                },
+                {
+                    "name": "BTS - Agricole - Am\u00e9nagements paysagers",
+                    "count": 39,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Am\u00e9nagements paysagers"
+                },
+                {
+                    "name": "BTS - Agricole - D\u00e9veloppement, animation des territoires ruraux",
+                    "count": 39,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - D\u00e9veloppement, animation des territoires ruraux"
+                },
+                {
+                    "name": "BTS - Production - Management \u00e9conomique de la construction",
+                    "count": 39,
+                    "state": "displayed",
+                    "path": "BTS - Production - Management \u00e9conomique de la construction"
+                },
+                {
+                    "name": "BTS - Agricole - Gestion et protection de la nature",
+                    "count": 38,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Gestion et protection de la nature"
+                },
+                {
+                    "name": "BTS - Services - Di\u00e9t\u00e9tique",
+                    "count": 36,
+                    "state": "displayed",
+                    "path": "BTS - Services - Di\u00e9t\u00e9tique"
+                },
+                {
+                    "name": "BTS - Services - Analyses de biologie m\u00e9dicale",
+                    "count": 34,
+                    "state": "displayed",
+                    "path": "BTS - Services - Analyses de biologie m\u00e9dicale"
+                },
+                {
+                    "name": "BTS - Services - Management op\u00e9rationnel de la s\u00e9curit\u00e9",
+                    "count": 34,
+                    "state": "displayed",
+                    "path": "BTS - Services - Management op\u00e9rationnel de la s\u00e9curit\u00e9"
+                },
+                {
+                    "name": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 alimentation et boisson",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 alimentation et boisson"
+                },
+                {
+                    "name": "BTS - Production - Conception et r\u00e9alisation en chaudronnerie industrielle",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception et r\u00e9alisation en chaudronnerie industrielle"
+                },
+                {
+                    "name": "BTS - Production - Contr\u00f4le industriel et r\u00e9gulation automatique",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "BTS - Production - Contr\u00f4le industriel et r\u00e9gulation automatique"
+                },
+                {
+                    "name": "BTS - Production - Fluide, \u00e9nergie, domotique - option A g\u00e9nie climatique et fluidique",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "BTS - Production - Fluide, \u00e9nergie, domotique - option A g\u00e9nie climatique et fluidique"
+                },
+                {
+                    "name": "BTS - Production - Travaux publics",
+                    "count": 32,
+                    "state": "displayed",
+                    "path": "BTS - Production - Travaux publics"
+                },
+                {
+                    "name": "BTS - Agricole - Sciences et technologies des aliments sp\u00e9cialit\u00e9 Aliments et processus technologiques",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Sciences et technologies des aliments sp\u00e9cialit\u00e9 Aliments et processus technologiques"
+                },
+                {
+                    "name": "BTS - Production - Fluide, \u00e9nergie, domotique - option B froid et conditionnement d'air",
+                    "count": 31,
+                    "state": "displayed",
+                    "path": "BTS - Production - Fluide, \u00e9nergie, domotique - option B froid et conditionnement d'air"
+                },
+                {
+                    "name": "BTS - Production - Assistance technique d'ing\u00e9nieur",
+                    "count": 30,
+                    "state": "displayed",
+                    "path": "BTS - Production - Assistance technique d'ing\u00e9nieur"
+                },
+                {
+                    "name": "BTS - Agricole - Agronomie : Productions v\u00e9g\u00e9tales",
+                    "count": 29,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Agronomie : Productions v\u00e9g\u00e9tales"
+                },
+                {
+                    "name": "BTS - Production - Conception et industrialisation en microtechniques",
+                    "count": 29,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception et industrialisation en microtechniques"
+                },
+                {
+                    "name": "BTS - Agricole - Analyses agricoles biologiques et biotechnologiques",
+                    "count": 28,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Analyses agricoles biologiques et biotechnologiques"
+                },
+                {
+                    "name": "BTS - Production - M\u00e9tiers de la chimie",
+                    "count": 28,
+                    "state": "displayed",
+                    "path": "BTS - Production - M\u00e9tiers de la chimie"
+                },
+                {
+                    "name": "BTS - Production - M\u00e9tiers de la mode-v\u00eatements",
+                    "count": 28,
+                    "state": "displayed",
+                    "path": "BTS - Production - M\u00e9tiers de la mode-v\u00eatements"
+                },
+                {
+                    "name": "BTS - Production - Etude et r\u00e9alisation d'agencement",
+                    "count": 27,
+                    "state": "displayed",
+                    "path": "BTS - Production - Etude et r\u00e9alisation d'agencement"
+                },
+                {
+                    "name": "BTS - Services - Opticien-Lunetier",
+                    "count": 27,
+                    "state": "displayed",
+                    "path": "BTS - Services - Opticien-Lunetier"
+                },
+                {
+                    "name": "BTS - Agricole - Gestion et maitrise de l'eau",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Gestion et maitrise de l'eau"
+                },
+                {
+                    "name": "BTS - Agricole - Production horticole",
+                    "count": 26,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Production horticole"
+                },
+                {
+                    "name": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 univers jardins et animaux de compagnie",
+                    "count": 24,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 univers jardins et animaux de compagnie"
+                },
+                {
+                    "name": "BTS - Production - Syst\u00e8mes constructifs bois et habitat",
+                    "count": 24,
+                    "state": "displayed",
+                    "path": "BTS - Production - Syst\u00e8mes constructifs bois et habitat"
+                },
+                {
+                    "name": "BTS - Production - Biotechnologies",
+                    "count": 21,
+                    "state": "displayed",
+                    "path": "BTS - Production - Biotechnologies"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers des Services \u00e0 l'environnement",
+                    "count": 20,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers des Services \u00e0 l'environnement"
+                },
+                {
+                    "name": "BTS - Production - Bioqualit\u00e9",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "BTS - Production - Bioqualit\u00e9"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des syst\u00e8mes - option B Syst\u00e8mes \u00e9nerg\u00e9tiques et fluidiques",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des syst\u00e8mes - option B Syst\u00e8mes \u00e9nerg\u00e9tiques et fluidiques"
+                },
+                {
+                    "name": "BTS - Production - M\u00e9tiers du g\u00e9om\u00e8tre-topographe et de la mod\u00e9lisation num\u00e9rique",
+                    "count": 18,
+                    "state": "displayed",
+                    "path": "BTS - Production - M\u00e9tiers du g\u00e9om\u00e8tre-topographe et de la mod\u00e9lisation num\u00e9rique"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : m\u00e9tiers du son",
+                    "count": 17,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : m\u00e9tiers du son"
+                },
+                {
+                    "name": "BTS - Agricole - Gestion foresti\u00e8re",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Gestion foresti\u00e8re"
+                },
+                {
+                    "name": "BTS - Production - D\u00e9veloppement et R\u00e9alisation Bois",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Production - D\u00e9veloppement et R\u00e9alisation Bois"
+                },
+                {
+                    "name": "BTS - Production - Europlastics et composites \u00e0 r\u00e9f\u00e9rentiel commun europ\u00e9en - option Pilotage et Optimisation de la production",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Production - Europlastics et composites \u00e0 r\u00e9f\u00e9rentiel commun europ\u00e9en - option Pilotage et Optimisation de la production"
+                },
+                {
+                    "name": "BTS - Production - M\u00e9tiers de l'eau",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Production - M\u00e9tiers de l'eau"
+                },
+                {
+                    "name": "BTS - Services - Etudes de r\u00e9alisation d'un projet de communication - 1\u00e8re ann\u00e9e commune",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Services - Etudes de r\u00e9alisation d'un projet de communication - 1\u00e8re ann\u00e9e commune"
+                },
+                {
+                    "name": "BTS - Services - Gestion de la PME (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Services - Gestion de la PME (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : gestion de la production",
+                    "count": 16,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : gestion de la production"
+                },
+                {
+                    "name": "BTS - Production - Enveloppe des b\u00e2timents : conception et r\u00e9alisation",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "BTS - Production - Enveloppe des b\u00e2timents : conception et r\u00e9alisation"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : montage et post-production",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : montage et post-production"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : m\u00e9tiers de l'image",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : m\u00e9tiers de l'image"
+                },
+                {
+                    "name": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : techn. d'ingeni\u00e9rie et exploit. \u00e9quipements",
+                    "count": 15,
+                    "state": "displayed",
+                    "path": "BTS - Services - M\u00e9tiers de l'audio-visuel opt : techn. d'ingeni\u00e9rie et exploit. \u00e9quipements"
+                },
+                {
+                    "name": "BTS - Agricole - Viticulture-Oenologie",
+                    "count": 14,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Viticulture-Oenologie"
+                },
+                {
+                    "name": "BTS - Production - Europlastics et composites \u00e0 r\u00e9f\u00e9rentiel commun europ\u00e9en - option Conception d'Outillage",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "BTS - Production - Europlastics et composites \u00e0 r\u00e9f\u00e9rentiel commun europ\u00e9en - option Conception d'Outillage"
+                },
+                {
+                    "name": "BTS - Services - Comptabilit\u00e9 et gestion (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 13,
+                    "state": "displayed",
+                    "path": "BTS - Services - Comptabilit\u00e9 et gestion (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 vins, bi\u00e8res et spiritueux",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 vins, bi\u00e8res et spiritueux"
+                },
+                {
+                    "name": "BTS - Agricole - g\u00e9nie des \u00e9quipements agricoles",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - g\u00e9nie des \u00e9quipements agricoles"
+                },
+                {
+                    "name": "BTS - Production - Architectures en M\u00e9tal : conception et R\u00e9alisation",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "BTS - Production - Architectures en M\u00e9tal : conception et R\u00e9alisation"
+                },
+                {
+                    "name": "BTS - Production - M\u00e9tiers de la mesure",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "BTS - Production - M\u00e9tiers de la mesure"
+                },
+                {
+                    "name": "BTS - Services - Management Commercial Op\u00e9rationnel (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 12,
+                    "state": "displayed",
+                    "path": "BTS - Services - Management Commercial Op\u00e9rationnel (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des v\u00e9hicules option v\u00e9hicules de transport routier",
+                    "count": 11,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des v\u00e9hicules option v\u00e9hicules de transport routier"
+                },
+                {
+                    "name": "BTS - Production - Motorisations toutes \u00e9nergies",
+                    "count": 10,
+                    "state": "displayed",
+                    "path": "BTS - Production - Motorisations toutes \u00e9nergies"
+                },
+                {
+                    "name": "BTS - Production - A\u00e9ronautique",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "BTS - Production - A\u00e9ronautique"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des syst\u00e8mes - option C Syst\u00e8mes \u00e9oliens",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des syst\u00e8mes - option C Syst\u00e8mes \u00e9oliens"
+                },
+                {
+                    "name": "BTS - Production - Syst\u00e8mes photoniques",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "BTS - Production - Syst\u00e8mes photoniques"
+                },
+                {
+                    "name": "BTS - Services - Photographie",
+                    "count": 9,
+                    "state": "displayed",
+                    "path": "BTS - Services - Photographie"
+                },
+                {
+                    "name": "BTS - Agricole - Aquaculture",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Aquaculture"
+                },
+                {
+                    "name": "BTS - Production - Maintenance des mat\u00e9riels de construction et de manutention",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Production - Maintenance des mat\u00e9riels de construction et de manutention"
+                },
+                {
+                    "name": "BTS - Production - Pilotage des proc\u00e9d\u00e9s",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Production - Pilotage des proc\u00e9d\u00e9s"
+                },
+                {
+                    "name": "BTS - Production - Techniques et services en mat\u00e9riels agricoles",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Production - Techniques et services en mat\u00e9riels agricoles"
+                },
+                {
+                    "name": "BTS - Production - Traitement des mat\u00e9riaux",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Production - Traitement des mat\u00e9riaux"
+                },
+                {
+                    "name": "BTS - Services - N\u00e9gociation et digitalisation de la Relation Client (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Services - N\u00e9gociation et digitalisation de la Relation Client (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Services - Support \u00e0 l'action manag\u00e9riale (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 8,
+                    "state": "displayed",
+                    "path": "BTS - Services - Support \u00e0 l'action manag\u00e9riale (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Production - Finitions, am\u00e9nagement des b\u00e2timents: conception et r\u00e9alisation",
+                    "count": 7,
+                    "state": "displayed",
+                    "path": "BTS - Production - Finitions, am\u00e9nagement des b\u00e2timents: conception et r\u00e9alisation"
+                },
+                {
+                    "name": "BTS - Services - Services informatiques aux organisations (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 7,
+                    "state": "displayed",
+                    "path": "BTS - Services - Services informatiques aux organisations (Seconde ann\u00e9e possible en apprentissage)"
+                },
+                {
+                    "name": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 biens et services pour l'agriculture",
+                    "count": 6,
+                    "state": "displayed",
+                    "path": "BTS - Agricole - Technico-commercial - Sp\u00e9cialit\u00e9 biens et services pour l'agriculture"
+                },
+                {
+                    "name": "BTS - Production - Conception et R\u00e9alisation de Syst\u00e8mes Automatiques (Seconde ann\u00e9e possible en apprentissage)",
+                    "count": 6,
+                    "state": "displayed",
+                    "path": "BTS - Production - Conception et R\u00e9alisation de Syst\u00e8mes Automatiques (Seconde ann\u00e9e possible en apprentissage)"
+                }
+            ]
+        },
+        {
+            "name": "fili",
+            "facets": [
+                {
+                    "name": "BTS",
+                    "count": 5303,
+                    "state": "refined",
+                    "path": "BTS"
+                }
+            ]
+        }
+    ]
+}
