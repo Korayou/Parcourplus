@@ -1,38 +1,38 @@
 var mainController = {
   css: null,
   exports: {},
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><search expr19="expr19"></search></div><div class="column"><fili-info expr20="expr20"></fili-info><school expr21="expr21"></school></div></div><school-info expr22="expr22"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-2 m-2"><img src="../resources/logo-parcoursup.svg"/></div><search expr41="expr41"></search></div><div class="column"><fili-info expr42="expr42"></fili-info><school expr43="expr43"></school></div></div><school-info expr44="expr44"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr19',
-    selector: '[expr19]'
+    redundantAttribute: 'expr41',
+    selector: '[expr41]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'fili-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr20',
-    selector: '[expr20]'
+    redundantAttribute: 'expr42',
+    selector: '[expr42]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr21',
-    selector: '[expr21]'
+    redundantAttribute: 'expr43',
+    selector: '[expr43]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr22',
-    selector: '[expr22]'
+    redundantAttribute: 'expr44',
+    selector: '[expr44]'
   }]),
   name: 'main-controller'
 };

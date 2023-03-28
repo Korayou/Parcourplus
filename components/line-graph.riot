@@ -1,6 +1,6 @@
 <line-graph>
 
-    <div style="height: inherit; width: inherit; padding: inherit; margin: inherit;">
+    <div style="height: inherit; width: inherit;">
         <canvas style="height: 100%; width: 100%;">
         </canvas>
     </div>
@@ -25,10 +25,17 @@
                 cx.clearRect(0, 0, width, height)
                 if (!data) return;
 
+                cx.fillStyle = "#707070"
+                cx.font = "15px Arial"
+                cx.fillText("This is an example title", width / 2, 10)
+                cx.font = "10px Arial"
+                cx.translate(0, 20)
+
                 let total = data.reduce((total, current) => total + current.value, 0)
 
                 let curr = 0
                 let counter = 0
+                let legendWidth = 0
                 for (let field of data) {
                     let start = curr + spacing
                     let barWidth = field.value / total * width - spacing * 2
@@ -45,6 +52,22 @@
                     }
 
                     curr += field.value / total * width
+                    counter++
+
+                    legendWidth += cx.measureText(field.name).width + 25 + 15 // += textWidth + squareWidth + margin
+                }
+
+                cx.textAlign = "left"
+                legendWidth -= 15 //On enlève la dernière marge
+                cx.translate(width / 2 - legendWidth / 2, height / 4 + 20)
+
+                counter = 0
+                for (let field of data) {
+                    cx.fillStyle = this.colors[counter]
+                    cx.fillRect(0, 0, 25, 25)
+                    cx.fillStyle = "#707070"
+                    cx.fillText(field.name, 30, 12.5)
+                    cx.translate(cx.measureText(field.name).width + 25 + 15, 0)
                     counter++
                 }
             },
@@ -85,6 +108,12 @@
                 canvas.width = canvas.clientWidth
                 canvas.height = canvas.clientHeight
 
+                this.updateCanvas()
+                new ResizeObserver(this.updateCanvas).observe(canvas)
+            },
+
+            onUpdated(props, state) {
+                console.log("boop")
                 this.updateCanvas()
             }
         }
