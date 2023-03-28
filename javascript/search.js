@@ -119,9 +119,9 @@ var search = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr10="expr10" class="input" type="input"/><button expr11="expr11" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr12="expr12" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr10',
-    selector: '[expr10]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr6="expr6" class="input" type="input"/><button expr7="expr7" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr8="expr8" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr6',
+    selector: '[expr6]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeydown',
@@ -132,8 +132,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr11',
-    selector: '[expr11]',
+    redundantAttribute: 'expr7',
+    selector: '[expr7]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onclick',
@@ -143,33 +143,33 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr13="expr13" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr14="expr14"> </strong></span><div style="margin-left: auto;"></div><span expr15="expr15" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr13',
-      selector: '[expr13]',
+    template: template('<button expr9="expr9" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr10="expr10"> </strong></span><div style="margin-left: auto;"></div><span expr11="expr11" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr9',
+      selector: '[expr9]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onclick',
         evaluate: _scope => () => _scope.filter(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr14',
-      selector: '[expr14]',
+      redundantAttribute: 'expr10',
+      selector: '[expr10]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr15',
-      selector: '[expr15]',
+      redundantAttribute: 'expr11',
+      selector: '[expr11]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr12',
-    selector: '[expr12]',
+    redundantAttribute: 'expr8',
+    selector: '[expr8]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
