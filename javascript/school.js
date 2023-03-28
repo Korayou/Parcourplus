@@ -25,7 +25,6 @@ class PAPI {
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
     let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
     let result = await request.json();
-    console.log(result["records"]);
     return result["records"];
   }
 }
@@ -63,53 +62,53 @@ var school = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr90="expr90"></tr></tbody></table></main>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr108="expr108"></tr></tbody></table></main>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr91="expr91"> </td><td expr92="expr92"> </td><td expr93="expr93"> </td><td expr94="expr94"> </td><td expr95="expr95"> </td>', [{
-      redundantAttribute: 'expr91',
-      selector: '[expr91]',
+    template: template('<td expr109="expr109"> </td><td expr110="expr110"> </td><td expr111="expr111"> </td><td expr112="expr112"> </td><td expr113="expr113"> </td>', [{
+      redundantAttribute: 'expr109',
+      selector: '[expr109]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.g_ea_lib_vx
+        evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr92',
-      selector: '[expr92]',
+      redundantAttribute: 'expr110',
+      selector: '[expr110]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.ville_etab
+        evaluate: _scope => _scope.etablissement.fields.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr93',
-      selector: '[expr93]',
+      redundantAttribute: 'expr111',
+      selector: '[expr111]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.dep
+        evaluate: _scope => _scope.etablissement.fields.dep
       }]
     }, {
-      redundantAttribute: 'expr94',
-      selector: '[expr94]',
+      redundantAttribute: 'expr112',
+      selector: '[expr112]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.list_com
+        evaluate: _scope => _scope.etablissement.fields.list_com
       }]
     }, {
-      redundantAttribute: 'expr95',
-      selector: '[expr95]',
+      redundantAttribute: 'expr113',
+      selector: '[expr113]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.taux_acces_ens
+        evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr90',
-    selector: '[expr90]',
+    redundantAttribute: 'expr108',
+    selector: '[expr108]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items
