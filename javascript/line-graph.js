@@ -3,17 +3,18 @@ var lineGraph = {
   exports: {
     updateCanvas() {
       let canvas = this.$("canvas");
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
       let cx = canvas.getContext("2d");
-
-      //Default context properties
       cx.textBaseline = "middle";
       cx.textAlign = "center";
       let width = canvas.width;
       let height = canvas.height;
-      let spacing = 1; //Controls the spacing between each horizontal elements
-
+      let spacing = 1;
       let data = this.state.data;
+      let colors = ["#003F5C", "#2F4B7C", "#665191", "#A05195", "#D45087"];
       cx.clearRect(0, 0, width, height);
+      cx.resetTransform();
       if (!data) return;
       cx.fillStyle = "#707070";
       cx.font = "15px Arial";
@@ -28,7 +29,7 @@ var lineGraph = {
         let start = curr + spacing;
         let barWidth = field.value / total * width - spacing * 2;
         let text = `${Math.round(field.value / total * 1000) / 10}% (${field.name})`;
-        cx.fillStyle = this.colors[counter];
+        cx.fillStyle = colors[counter];
         cx.fillRect(start, 0, barWidth, height / 3);
         cx.fillStyle = "#FFFFFF";
         if (cx.measureText(text).width < barWidth) {
@@ -46,7 +47,7 @@ var lineGraph = {
       cx.translate(width / 2 - legendWidth / 2, height / 4 + 20);
       counter = 0;
       for (let field of data) {
-        cx.fillStyle = this.colors[counter];
+        cx.fillStyle = colors[counter];
         cx.fillRect(0, 0, 25, 25);
         cx.fillStyle = "#707070";
         cx.fillText(field.name, 30, 12.5);
@@ -54,32 +55,16 @@ var lineGraph = {
         counter++;
       }
     },
+    state: {
+      data: [],
+      title: "Example"
+    },
     onMounted() {
-      this.colors = ["#003F5C", "#2F4B7C", "#665191", "#A05195", "#D45087"];
-      this.state.data = [{
-        name: "P",
-        value: 52
-      }, {
-        name: "AB",
-        value: 43
-      }, {
-        name: "B",
-        value: 2
-      }, {
-        name: "TB",
-        value: 1
-      }, {
-        name: "TBF",
-        value: 0
-      }];
       let canvas = this.$("canvas");
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
       this.updateCanvas();
       new ResizeObserver(this.updateCanvas).observe(canvas);
     },
     onUpdated(props, state) {
-      console.log("boop");
       this.updateCanvas();
     }
   },
