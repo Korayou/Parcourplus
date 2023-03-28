@@ -62,53 +62,53 @@ var school = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr102="expr102"></tr></tbody></table></main>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr108="expr108"></tr></tbody></table></main>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr103="expr103"> </td><td expr104="expr104"> </td><td expr105="expr105"> </td><td expr106="expr106"> </td><td expr107="expr107"> </td>', [{
-      redundantAttribute: 'expr103',
-      selector: '[expr103]',
+    template: template('<td expr109="expr109"> </td><td expr110="expr110"> </td><td expr111="expr111"> </td><td expr112="expr112"> </td><td expr113="expr113"> </td>', [{
+      redundantAttribute: 'expr109',
+      selector: '[expr109]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.g_ea_lib_vx
+        evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr104',
-      selector: '[expr104]',
+      redundantAttribute: 'expr110',
+      selector: '[expr110]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.ville_etab
+        evaluate: _scope => _scope.etablissement.fields.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr105',
-      selector: '[expr105]',
+      redundantAttribute: 'expr111',
+      selector: '[expr111]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.dep
+        evaluate: _scope => _scope.etablissement.fields.dep
       }]
     }, {
-      redundantAttribute: 'expr106',
-      selector: '[expr106]',
+      redundantAttribute: 'expr112',
+      selector: '[expr112]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.list_com
+        evaluate: _scope => _scope.etablissement.fields.list_com
       }]
     }, {
-      redundantAttribute: 'expr107',
-      selector: '[expr107]',
+      redundantAttribute: 'expr113',
+      selector: '[expr113]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.taux_acces_ens
+        evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr102',
-    selector: '[expr102]',
+    redundantAttribute: 'expr108',
+    selector: '[expr108]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items

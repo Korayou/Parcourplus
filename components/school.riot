@@ -21,11 +21,11 @@
 			</thead>
             <tbody>
                 <tr each={etablissement in this.state.items}>
-                    <td>{etablissement.g_ea_lib_vx}</td>
-                    <td>{etablissement.ville_etab}</td>
-                    <td>{etablissement.dep}</td>
-                    <td>{etablissement.list_com}</td>
-                    <td>{etablissement.taux_acces_ens}</td>
+                    <td>{etablissement.fields.g_ea_lib_vx}</td>
+                    <td>{etablissement.fields.ville_etab}</td>
+                    <td>{etablissement.fields.dep}</td>
+                    <td>{etablissement.fields.list_com}</td>
+                    <td>{etablissement.fields.taux_acces_ens}</td>
                 </tr>
             </tbody>
         </table>
