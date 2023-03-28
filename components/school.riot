@@ -24,7 +24,7 @@
                     <td>{etablissement.fields.g_ea_lib_vx}</td>
                     <td>{etablissement.fields.ville_etab}</td>
                     <td>{etablissement.fields.dep}</td>
-                    <td>{etablissement.fields.list_com}</td>
+                    <td>{etablissement.fields.moyenne}</td>
                     <td>{etablissement.fields.taux_acces_ens}</td>
                 </tr>
             </tbody>
@@ -62,8 +62,10 @@
                             
                             let moyenne = ((pct_TBF*18)+(pct_TB*16)+(pct_B*14)+(pct_AB*12)+(pct_sansmention*10))/100
                             
-                            etablissement.fields['list_com']=moyenne
+                            etablissement.fields.moyenne=moyenne
+                            console.log(etablissement.fields)
                         })
+                        this.update()
                     })
                 }
             }
