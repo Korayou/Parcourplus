@@ -22,6 +22,12 @@ class PAPI {
     let result = await request.json();
     return result["facet_groups"][0]["facets"];
   }
+  static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
+    let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
+    let result = await request.json();
+    console.log(result["records"]);
+    return result["records"];
+  }
 }
 
 async function fetchFiliere(state) {
@@ -114,9 +120,9 @@ var search = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr6="expr6" class="input" type="input"/><button expr7="expr7" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr8="expr8" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr6',
-    selector: '[expr6]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr10="expr10" class="input" type="input"/><button expr11="expr11" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr12="expr12" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr10',
+    selector: '[expr10]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeydown',
@@ -127,8 +133,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr7',
-    selector: '[expr7]',
+    redundantAttribute: 'expr11',
+    selector: '[expr11]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onclick',
@@ -138,33 +144,33 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr9="expr9" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr10="expr10"> </strong></span><div style="margin-left: auto;"></div><span expr11="expr11" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr9',
-      selector: '[expr9]',
+    template: template('<button expr13="expr13" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr14="expr14"> </strong></span><div style="margin-left: auto;"></div><span expr15="expr15" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr13',
+      selector: '[expr13]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onclick',
         evaluate: _scope => () => _scope.filter(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr10',
-      selector: '[expr10]',
+      redundantAttribute: 'expr14',
+      selector: '[expr14]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr11',
-      selector: '[expr11]',
+      redundantAttribute: 'expr15',
+      selector: '[expr15]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr8',
-    selector: '[expr8]',
+    redundantAttribute: 'expr12',
+    selector: '[expr12]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
