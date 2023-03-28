@@ -25,7 +25,6 @@ class PAPI {
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
     let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
     let result = await request.json();
-    console.log(result["records"]);
     return result["records"];
   }
 }
@@ -63,53 +62,53 @@ var school = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr90="expr90"></tr></tbody></table></main>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr102="expr102"></tr></tbody></table></main>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr91="expr91"> </td><td expr92="expr92"> </td><td expr93="expr93"> </td><td expr94="expr94"> </td><td expr95="expr95"> </td>', [{
-      redundantAttribute: 'expr91',
-      selector: '[expr91]',
+    template: template('<td expr103="expr103"> </td><td expr104="expr104"> </td><td expr105="expr105"> </td><td expr106="expr106"> </td><td expr107="expr107"> </td>', [{
+      redundantAttribute: 'expr103',
+      selector: '[expr103]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr92',
-      selector: '[expr92]',
+      redundantAttribute: 'expr104',
+      selector: '[expr104]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr93',
-      selector: '[expr93]',
+      redundantAttribute: 'expr105',
+      selector: '[expr105]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.dep
       }]
     }, {
-      redundantAttribute: 'expr94',
-      selector: '[expr94]',
+      redundantAttribute: 'expr106',
+      selector: '[expr106]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.list_com
       }]
     }, {
-      redundantAttribute: 'expr95',
-      selector: '[expr95]',
+      redundantAttribute: 'expr107',
+      selector: '[expr107]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr90',
-    selector: '[expr90]',
+    redundantAttribute: 'expr102',
+    selector: '[expr102]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items

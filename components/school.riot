@@ -53,16 +53,17 @@
                         })
                         console.log(this.state.items)
                         this.state.items.forEach(etablissement => {
-                        // calcul la moyenne
-                        let pct_sansmention = etablissement.fields.pct_sansmention
-                        let pct_AB = etablissement.fields.pct_ab
-                        let pct_B = etablissement.fields.pct_b
-                        let pct_TB = etablissement.fields.pct_tb
-                        let pct_TBF = etablissement.fields.pct_tbf
-                        
-                        let moyenne = ((pct_TBF*18)+(pct_TB*16)+(pct_B*14)+(pct_AB*12)+(pct_sansmention*10))/100
-                        
-                        etablissement.fields['list_com']=moyenne
+                            // calcul la moyenne
+                            let pct_sansmention = etablissement.fields.pct_sansmention
+                            let pct_AB = etablissement.fields.pct_ab
+                            let pct_B = etablissement.fields.pct_b
+                            let pct_TB = etablissement.fields.pct_tb
+                            let pct_TBF = etablissement.fields.pct_tbf
+                            
+                            let moyenne = ((pct_TBF*18)+(pct_TB*16)+(pct_B*14)+(pct_AB*12)+(pct_sansmention*10))/100
+                            
+                            etablissement.fields['list_com']=moyenne
+                        })
                     })
                 }
             }
