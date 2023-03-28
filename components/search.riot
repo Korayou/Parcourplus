@@ -1,16 +1,21 @@
 <search>
-    <label>
-	    <input onkeydown={searchF} type="input" placeholder= {state.placeholder}>
-        <button onclick={back}><</button>
+    <div class="box p-1 m-2">
+	    <div class="columns m-1">
+            <input onkeydown={searchF} class="input" type="input" placeholder={state.placeholder}>
+            <button class="button ml-1" onclick={back}>&lt;</button>
+        </div>
 		<div id="list-formations">
             <ul>
-	            <li each={item in this.state.items}>
-		           <span onclick={()=>filter(item.name)}>{item.name}</span>
-                   <span>{item.count}</span>
+	            <li class="m-1" each={item in this.state.items}>
+		            <button class="button is-fullwidth" onclick={()=>filter(item.name)}>
+                        <span><strong>{item.name}</strong></span>
+                        <div style="margin-left: auto;"></div>
+                        <span class="tag is-primary">{item.count}</span>
+                    </button>
 	            </li>
             </ul>
 		</div>
-    </label>
+    </div>
     <script>
         import PAPI from '../javascript/parcoursup-link.js'
 

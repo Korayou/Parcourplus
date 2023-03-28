@@ -38,19 +38,19 @@ var lineGraph = {
       this.colors = ["#003F5C", "#2F4B7C", "#665191", "#A05195", "#D45087"];
       this.state.data = [{
         name: "P",
-        value: 100
+        value: 52
       }, {
         name: "AB",
-        value: 200
+        value: 43
       }, {
         name: "B",
-        value: 150
+        value: 2
       }, {
         name: "TB",
-        value: 50
+        value: 1
       }, {
         name: "TBF",
-        value: 50
+        value: 0
       }];
       let canvas = this.$("canvas");
       canvas.width = canvas.clientWidth;
@@ -58,7 +58,7 @@ var lineGraph = {
       this.updateCanvas();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div style="height: inherit;"><canvas style="height: 100%; width: 100%;"></canvas></div>', []),
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div style="height: inherit; width: inherit; padding: inherit; margin: inherit;"><canvas style="height: 100%; width: 100%;"></canvas></div>', []),
   name: 'line-graph'
 };
 

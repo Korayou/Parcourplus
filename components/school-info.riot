@@ -1,16 +1,24 @@
-<school-info style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #000000DD;">
-    <div style="position: absolute; top: 10%; left: 25%; width: 50%; height: 80%; background: #FFFFFF">
-        <button onclick={closeWindow}></button>
+<school-info>
+    <div if={state.enabled} style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #000000DD;">
+        <div style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; background: #FFFFFF">
+            <button onclick={closeWindow}>X</button>
+            <p>
+                <h2></h2>
+            </p>
+            <line-graph style="height: 90px; margin: 10px;"></line-graph>
+        </div>
     </div>
 
     <script>
         export default {
             onMounted() {
-                console.log("Test!")
+                this.state.enabled = true
+                this.update()
             },
 
             closeWindow() {
-                
+                this.state.enabled = false
+                this.update()
             }
         }
     </script>

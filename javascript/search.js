@@ -114,9 +114,9 @@ var search = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<label><input expr0="expr0" type="input"/><button expr1="expr1"><</button><div id="list-formations"><ul><li expr2="expr2"></li></ul></div></label>', [{
-    redundantAttribute: 'expr0',
-    selector: '[expr0]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr674="expr674" class="input" type="input"/><button expr675="expr675" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr676="expr676" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr674',
+    selector: '[expr674]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeydown',
@@ -127,8 +127,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr1',
-    selector: '[expr1]',
+    redundantAttribute: 'expr675',
+    selector: '[expr675]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onclick',
@@ -138,29 +138,33 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<span expr3="expr3"> </span><span expr4="expr4"> </span>', [{
-      redundantAttribute: 'expr3',
-      selector: '[expr3]',
+    template: template('<button expr677="expr677" class="button is-fullwidth"><span><strong expr678="expr678"> </strong></span><div style="margin-left: auto;"></div><span expr679="expr679" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr677',
+      selector: '[expr677]',
       expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.item.name
-      }, {
         type: expressionTypes.EVENT,
         name: 'onclick',
         evaluate: _scope => () => _scope.filter(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr4',
-      selector: '[expr4]',
+      redundantAttribute: 'expr678',
+      selector: '[expr678]',
+      expressions: [{
+        type: expressionTypes.TEXT,
+        childNodeIndex: 0,
+        evaluate: _scope => _scope.item.name
+      }]
+    }, {
+      redundantAttribute: 'expr679',
+      selector: '[expr679]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr2',
-    selector: '[expr2]',
+    redundantAttribute: 'expr676',
+    selector: '[expr676]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
