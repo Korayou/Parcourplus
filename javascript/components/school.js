@@ -23,9 +23,10 @@ class PAPI {
     return result["facet_groups"][0]["facets"];
   }
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
+    console.log(filiere + " " + sousfiliere + " " + soussousfiliere);
     let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
     let result = await request.json();
-    console.log(result["records"]);
+    console.log(result);
     return result["records"];
   }
 }
@@ -48,68 +49,69 @@ var school = {
           this.update({
             items: response
           });
-          console.log(this.state.items);
-          this.state.items.forEach(etablissement => {
-            // calcul la moyenne
-            let pct_sansmention = etablissement.fields.pct_sansmention;
-            let pct_AB = etablissement.fields.pct_ab;
-            let pct_B = etablissement.fields.pct_b;
-            let pct_TB = etablissement.fields.pct_tb;
-            let pct_TBF = etablissement.fields.pct_tbf;
-            let moyenne = (pct_TBF * 18 + pct_TB * 16 + pct_B * 14 + pct_AB * 12 + pct_sansmention * 10) / 100;
-            etablissement.fields['list_com'] = moyenne;
-          });
+        });
+        console.log(this.state.items);
+        this.state.items.forEach(etablissement => {
+          // calcul la moyenne
+          let pct_sansmention = etablissement.fields.pct_sansmention;
+          let pct_AB = etablissement.fields.pct_ab;
+          let pct_B = etablissement.fields.pct_b;
+          let pct_TB = etablissement.fields.pct_tb;
+          let pct_TBF = etablissement.fields.pct_tbf;
+          let moyenne = (pct_TBF * 18 + pct_TB * 16 + pct_B * 14 + pct_AB * 12 + pct_sansmention * 10) / 100;
+          record.fields['list_com'] = moyenne;
+          console.log(moyenne);
         });
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr90="expr90"></tr></tbody></table></main>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr0="expr0"></tr></tbody></table></main>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr91="expr91"> </td><td expr92="expr92"> </td><td expr93="expr93"> </td><td expr94="expr94"> </td><td expr95="expr95"> </td>', [{
-      redundantAttribute: 'expr91',
-      selector: '[expr91]',
+    template: template('<td expr1="expr1"> </td><td expr2="expr2"> </td><td expr3="expr3"> </td><td expr4="expr4"> </td><td expr5="expr5"> </td>', [{
+      redundantAttribute: 'expr1',
+      selector: '[expr1]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr92',
-      selector: '[expr92]',
+      redundantAttribute: 'expr2',
+      selector: '[expr2]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr93',
-      selector: '[expr93]',
+      redundantAttribute: 'expr3',
+      selector: '[expr3]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.dep
       }]
     }, {
-      redundantAttribute: 'expr94',
-      selector: '[expr94]',
+      redundantAttribute: 'expr4',
+      selector: '[expr4]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.list_com
       }]
     }, {
-      redundantAttribute: 'expr95',
-      selector: '[expr95]',
+      redundantAttribute: 'expr5',
+      selector: '[expr5]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr90',
-    selector: '[expr90]',
+    redundantAttribute: 'expr0',
+    selector: '[expr0]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items

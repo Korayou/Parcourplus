@@ -1,11 +1,13 @@
 <school>
-    <div class="box p-2 m-2">
-        <div class="block control has-icons-left is-inline-block is-pulled-right">
-            <input class="input" type="search" placeholder="Établissement">
-            <span class="icon is-small is-left">
-                <i class="fas fa-search"></i>
-            </span>
-        </div>
+<main class="container">
+    <div class="block control has-icons-left is-inline-block is-pulled-right">
+        <input class="input" type="search" placeholder="Établissement">
+        <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
+        </span>
+    </div>
+
+
 
 		<table class="table is-fullwidth is-hoverable">
 			<thead>
@@ -17,11 +19,52 @@
 					<th><abbr title="selectivite">Sélectivité</abbr></th>
 				</tr>
 			</thead>
-    </div>
+            <tbody>
+                <tr each={etablissement in this.state.items}>
+                    <td>{etablissement.g_ea_lib_vx}</td>
+                    <td>{etablissement.ville_etab}</td>
+                    <td>{etablissement.dep}</td>
+                    <td>{etablissement.list_com}</td>
+                    <td>{etablissement.taux_acces_ens}</td>
+                </tr>
+            </tbody>
+        </table>
+
     <script>
-        export default {
-            onMounted() {
-                console.log("Test!")
+        
+        import PAPI from '../javascript/parcoursup-link.js'
+
+        async function fetchEtablissement(state) {
+            return PAPI.fetchEtablissement(state.fili, state.sousfili, state.soussousfili);
+        }
+
+        export default function search(){
+            return {
+                onBeforeMount(props, state) {
+                    this.state = {
+                        items: null,
+                        fili: "BUT",
+                        sousfili: "BUT - Production",
+                        soussousfili : "Informatique"
+                    }
+                    fetchEtablissement(this.state).then((response) => {
+                        this.update({
+                            items: response
+                        })
+                        console.log(this.state.items)
+                        this.state.items.forEach(etablissement => {
+                        // calcul la moyenne
+                        let pct_sansmention = etablissement.fields.pct_sansmention
+                        let pct_AB = etablissement.fields.pct_ab
+                        let pct_B = etablissement.fields.pct_b
+                        let pct_TB = etablissement.fields.pct_tb
+                        let pct_TBF = etablissement.fields.pct_tbf
+                        
+                        let moyenne = ((pct_TBF*18)+(pct_TB*16)+(pct_B*14)+(pct_AB*12)+(pct_sansmention*10))/100
+                        
+                        etablissement.fields['list_com']=moyenne
+                    })
+                }
             }
         }
     </script>

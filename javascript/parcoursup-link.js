@@ -29,6 +29,13 @@ class PAPI {
 
         return result["facet_groups"][0]["facets"]
     }
+
+    static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
+        let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`)
+        let result  = await request.json()
+        console.log(result["records"])
+        return result["records"]
+    }
 }
 
 export default PAPI
