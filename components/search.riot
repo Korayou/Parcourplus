@@ -1,13 +1,13 @@
 <search>
     <div class="box p-1 m-2">
 	    <div class="columns m-1">
-            <input onkeydown={filterSearch} onfocusout={filterSearch} class="input" type="input" placeholder={state.placeholder}>
-            <button class="button ml-1" disabled={!state.currentStep} onclick={cruiseBack}>&lt;</button>
+            <input onkeyup={filterSearch} class="input" type="input" placeholder={state.placeholder}>
+            <button class="button ml-1" disabled={!state.currentStep || state.updating} onclick={cruiseBack}>&lt;</button>
         </div>
 		<div id="list-formations">
             <ul>
 	            <li class="m-1" each={item in this.state.items}>
-		            <button class="button is-fullwidth" onclick={()=>cruiseForward(item.name)}>
+		            <button class="button is-fullwidth" disabled={state.updating} onclick={()=>cruiseForward(item.name)}>
                         <span style="font-size: .75em;"><strong>{item.name}</strong></span>
                         <div style="margin-left: auto;"></div>
                         <span class="tag is-primary">{item.count}</span>
@@ -19,36 +19,108 @@
     <script>
         import PAPI from '../javascript/parcoursup-link.js'
 
-        function cruiseBack() {
-
-        }
-
-        function cruiseForward() {
-
-        }
-
-        function filterSearch() {
-
-        }
+        const PLACEHOLDERS = [
+            "Formation",
+            "Filière",
+            "Spécialité"
+        ]
 
         export default {
+
+            updateList() {
+                let promise
+                
+                this.update({
+                    updating: true
+                })
+
+                switch (this.state.currentStep) {
+                    case 0:
+                        promise = PAPI.fetchFilieres()
+                        break
+                    case 1:
+                        promise = PAPI.fetchFiliere(this.state.filiere)
+                        break
+                    case 2:
+                        promise = PAPI.fetchSpecialites(this.state.specialite)
+                        break
+                }
+
+                promise.then((response) => {
+                    this.state.allItems = response
+                    this.filterSearch()
+                    this.update({
+                        updating: false
+                    })
+                })
+            },
+
+            filterSearch() {
+                let input = this.$("input")
+                if (!input) return
+
+                let finalArray = []
+                
+                //On évite de trier avant d'avoir plus de 1 lettres.
+                if (input.value.length > 1) { 
+                    finalArray = this.state.allItems.filter((item) => {
+                        return item.name.toLowerCase().includes(input.value.toLowerCase())
+                    })
+                } else {
+                    finalArray = this.state.allItems
+                }
+                
+                this.update({
+                    items: finalArray
+                })
+            },
+
+            cruiseForward(selection) {
+                if (this.state.currentStep >= 2) return
+                switch (this.state.currentStep) {
+                    case 0:
+                        this.state.filiere = selection
+                        break
+
+                    case 1:
+                        this.state.specialite = selection
+                        break
+                }
+
+                this.state.currentStep++
+
+                this.updateList()
+                this.update({
+                    placeholder: PLACEHOLDERS[this.state.currentStep]
+                })
+            },
+
+            cruiseBack() {
+                if (!this.state.currentStep) return
+                this.state.currentStep--
+
+                this.updateList()
+                this.update({
+                    placeholder: PLACEHOLDERS[this.state.currentStep]
+                })
+            },
+
             onBeforeMount(props, state) {
                 //Initial state
                 this.state = {
-                    placeholder: "Formation",
+                    placeholder: PLACEHOLDERS[0],
                     currentStep: 0,
                     allItems: null,
                     filter: null,
-                    items: null
+                    items: null,
+                    filiere: null,
+                    specialite: null,
+                    updating: false
                 }
+            },
 
-                PAPI.fetchFilieres().then((response) => {
-                    this.state.allItems = response
-
-                    this.update({
-                        items: filterSearch(this.state.allItems)
-                    })
-                })
+            onMounted() {
+                this.updateList()
             }
         }
 

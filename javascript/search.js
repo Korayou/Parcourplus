@@ -29,37 +29,98 @@ class PAPI {
   }
 }
 
-function filterSearch() {}
+const PLACEHOLDERS = ["Formation", "Filière", "Spécialité"];
 var search = {
   css: null,
   exports: {
+    updateList() {
+      let promise;
+      this.update({
+        updating: true
+      });
+      switch (this.state.currentStep) {
+        case 0:
+          promise = PAPI.fetchFilieres();
+          break;
+        case 1:
+          promise = PAPI.fetchFiliere(this.state.filiere);
+          break;
+        case 2:
+          promise = PAPI.fetchSpecialites(this.state.specialite);
+          break;
+      }
+      promise.then(response => {
+        this.state.allItems = response;
+        this.filterSearch();
+        this.update({
+          updating: false
+        });
+      });
+    },
+    filterSearch() {
+      let input = this.$("input");
+      if (!input) return;
+      let finalArray = [];
+
+      //On évite de trier avant d'avoir plus de 1 lettres.
+      if (input.value.length > 1) {
+        finalArray = this.state.allItems.filter(item => {
+          return item.name.toLowerCase().includes(input.value.toLowerCase());
+        });
+      } else {
+        finalArray = this.state.allItems;
+      }
+      this.update({
+        items: finalArray
+      });
+    },
+    cruiseForward(selection) {
+      if (this.state.currentStep >= 2) return;
+      switch (this.state.currentStep) {
+        case 0:
+          this.state.filiere = selection;
+          break;
+        case 1:
+          this.state.specialite = selection;
+          break;
+      }
+      this.state.currentStep++;
+      this.updateList();
+      this.update({
+        placeholder: PLACEHOLDERS[this.state.currentStep]
+      });
+    },
+    cruiseBack() {
+      if (!this.state.currentStep) return;
+      this.state.currentStep--;
+      this.updateList();
+      this.update({
+        placeholder: PLACEHOLDERS[this.state.currentStep]
+      });
+    },
     onBeforeMount(props, state) {
       //Initial state
       this.state = {
-        placeholder: "Formation",
+        placeholder: PLACEHOLDERS[0],
         currentStep: 0,
         allItems: null,
         filter: null,
-        items: null
+        items: null,
+        filiere: null,
+        specialite: null,
+        updating: false
       };
-      PAPI.fetchFilieres().then(response => {
-        this.state.allItems = response;
-        this.update({
-          items: filterSearch(this.state.allItems)
-        });
-      });
+    },
+    onMounted() {
+      this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr10="expr10" class="input" type="input"/><button expr11="expr11" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr12="expr12" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr10',
-    selector: '[expr10]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr304="expr304" class="input" type="input"/><button expr305="expr305" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr306="expr306" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr304',
+    selector: '[expr304]',
     expressions: [{
       type: expressionTypes.EVENT,
-      name: 'onkeydown',
-      evaluate: _scope => _scope.filterSearch
-    }, {
-      type: expressionTypes.EVENT,
-      name: 'onfocusout',
+      name: 'onkeyup',
       evaluate: _scope => _scope.filterSearch
     }, {
       type: expressionTypes.ATTRIBUTE,
@@ -67,12 +128,12 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr11',
-    selector: '[expr11]',
+    redundantAttribute: 'expr305',
+    selector: '[expr305]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
-      evaluate: _scope => !_scope.state.currentStep
+      evaluate: _scope => !_scope.state.currentStep || _scope.state.updating
     }, {
       type: expressionTypes.EVENT,
       name: 'onclick',
@@ -82,33 +143,37 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr13="expr13" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr14="expr14"> </strong></span><div style="margin-left: auto;"></div><span expr15="expr15" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr13',
-      selector: '[expr13]',
+    template: template('<button expr307="expr307" class="button is-fullwidth"><span style="font-size: .75em;"><strong expr308="expr308"> </strong></span><div style="margin-left: auto;"></div><span expr309="expr309" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr307',
+      selector: '[expr307]',
       expressions: [{
+        type: expressionTypes.ATTRIBUTE,
+        name: 'disabled',
+        evaluate: _scope => _scope.state.updating
+      }, {
         type: expressionTypes.EVENT,
         name: 'onclick',
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr14',
-      selector: '[expr14]',
+      redundantAttribute: 'expr308',
+      selector: '[expr308]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr15',
-      selector: '[expr15]',
+      redundantAttribute: 'expr309',
+      selector: '[expr309]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr12',
-    selector: '[expr12]',
+    redundantAttribute: 'expr306',
+    selector: '[expr306]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items

@@ -34,14 +34,13 @@
     </div>
 
     <script>
-        
         import PAPI from '../javascript/parcoursup-link.js'
 
         async function fetchEtablissement(state) {
             return PAPI.fetchEtablissement(state.fili, state.sousfili, state.soussousfili);
         }
 
-        export default function search(){
+        export default function search() {
             return {
                 onBeforeMount(props, state) {
                     this.state = {
@@ -65,7 +64,7 @@
                             
                             // On prend la moyenne des moyennes comprises dans la mention
                             // Exemple : Assez bien est entre 12 et 14 donc 13.
-                            let moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11g))/100
+                            let moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11))/100
                             
                             etablissement.fields.moyenne=moyenne
                             //console.log(etablissement.fields)
@@ -76,6 +75,4 @@
             }
         }
     </script>
-
-
 </school>
