@@ -1,13 +1,13 @@
 <search>
     <div class="box p-1 m-2">
 	    <div class="columns m-1">
-            <input onkeydown={searchF} class="input" type="input" placeholder={state.placeholder}>
-            <button class="button ml-1" onclick={back}>&lt;</button>
+            <input onkeydown={filterSearch} onfocusout={filterSearch} class="input" type="input" placeholder={state.placeholder}>
+            <button class="button ml-1" disabled={!state.currentStep} onclick={cruiseBack}>&lt;</button>
         </div>
 		<div id="list-formations">
             <ul>
 	            <li class="m-1" each={item in this.state.items}>
-		            <button class="button is-fullwidth" onclick={()=>filter(item.name)}>
+		            <button class="button is-fullwidth" onclick={()=>cruiseForward(item.name)}>
                         <span style="font-size: .75em;"><strong>{item.name}</strong></span>
                         <div style="margin-left: auto;"></div>
                         <span class="tag is-primary">{item.count}</span>
@@ -19,28 +19,57 @@
     <script>
         import PAPI from '../javascript/parcoursup-link.js'
 
-        const searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&timezone=Europe%2FBerlin`
+        function cruiseBack() {
+
+        }
+
+        function cruiseForward() {
+
+        }
+
+        function filterSearch() {
+
+        }
+
+        export default {
+            onBeforeMount(props, state) {
+                //Initial state
+                this.state = {
+                    placeholder: "Formation",
+                    currentStep: 0,
+                    allItems: null,
+                    filter: null,
+                    items: null
+                }
+
+                PAPI.fetchFilieres().then((response) => {
+                    this.state.allItems = response
+
+                    this.update({
+                        items: filterSearch(this.state.allItems)
+                    })
+                })
+            }
+        }
+
+
+        /*const searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&timezone=Europe%2FBerlin`
 
         async function fetchFiliere(state) {
             if (state.sousfili){
                 return PAPI.fetchSpecialites(state.sousfili)
-                //var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${state.sousfili}`)
-            } else if (state.fili&&!state.sousfili){
+            } else if (state.fili && !state.sousfili){
                 return PAPI.fetchFiliere(state.fili)
-                //var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${state.fili}`)
-            } else if (!state.fili&&!state.sousfili){
+            } else if (!state.fili && !state.sousfili){
                 return PAPI.fetchFilieres()
-                //var request = await fetch(`${searchURL}&rows=0&sort=tri&facet=fili`)
             }
-            
-            //let result  = await request.json()
-            //return result["facet_groups"][0]["facets"]
         }
+        
 
         export default function search(){
             return {
                 onBeforeMount(props, state) {
-                // initial state
+                    // initial state
                     this.state = {
                         placeholder: "Formation",
                         items: null,
@@ -108,8 +137,6 @@
                     })
                 }
             }
-        }
-
-        
+        }*/
     </script>
 </search>

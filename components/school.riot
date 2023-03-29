@@ -1,11 +1,13 @@
 <school>
-<main class="container">
-    <div class="block control has-icons-left is-inline-block is-pulled-right">
-        <input class="input" type="search" placeholder="Établissement">
-        <span class="icon is-small is-left">
-            <i class="fas fa-search"></i>
-        </span>
-    </div>
+    <div class="box p-2 m-2">
+        <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe>
+        <br>
+        <div class="block control has-icons-left is-inline-block is-pulled-right">
+            <input class="input" type="search" placeholder="Établissement">
+            <span class="icon is-small is-left">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
 
 
 
@@ -29,6 +31,7 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 
     <script>
         
@@ -51,7 +54,7 @@
                         this.update({
                             items: response
                         })
-                        console.log(this.state.items)
+                        //console.log(this.state.items)
                         this.state.items.forEach(etablissement => {
                             // calcul la moyenne
                             let pct_sansmention = etablissement.fields.pct_sansmention
@@ -60,10 +63,12 @@
                             let pct_TB = etablissement.fields.pct_tb
                             let pct_TBF = etablissement.fields.pct_tbf
                             
-                            let moyenne = ((pct_TBF*18)+(pct_TB*16)+(pct_B*14)+(pct_AB*12)+(pct_sansmention*10))/100
+                            // On prend la moyenne des moyennes comprises dans la mention
+                            // Exemple : Assez bien est entre 12 et 14 donc 13.
+                            let moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11g))/100
                             
                             etablissement.fields.moyenne=moyenne
-                            console.log(etablissement.fields)
+                            //console.log(etablissement.fields)
                         })
                         this.update()
                     })

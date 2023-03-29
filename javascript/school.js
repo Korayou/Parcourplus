@@ -55,7 +55,10 @@ var school = {
             let pct_B = etablissement.fields.pct_b;
             let pct_TB = etablissement.fields.pct_tb;
             let pct_TBF = etablissement.fields.pct_tbf;
-            let moyenne = (pct_TBF * 18 + pct_TB * 16 + pct_B * 14 + pct_AB * 12 + pct_sansmention * 10) / 100;
+
+            // On prend la moyenne des moyennes comprises dans la mention
+            // Exemple : Assez bien est entre 12 et 14 donc 13.
+            let moyenne = (pct_TBF * 19 + pct_TB * 17 + pct_B * 15 + pct_AB * 13 + pct_sansmention * 11) / 100;
             etablissement.fields.moyenne = moyenne;
             console.log(etablissement.fields);
           });
@@ -64,53 +67,53 @@ var school = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<main class="container"><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr58="expr58"></tr></tbody></table></main>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-2 m-2"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr34="expr34"></tr></tbody></table></div>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr59="expr59"> </td><td expr60="expr60"> </td><td expr61="expr61"> </td><td expr62="expr62"> </td><td expr63="expr63"> </td>', [{
-      redundantAttribute: 'expr59',
-      selector: '[expr59]',
+    template: template('<td expr35="expr35"> </td><td expr36="expr36"> </td><td expr37="expr37"> </td><td expr38="expr38"> </td><td expr39="expr39"> </td>', [{
+      redundantAttribute: 'expr35',
+      selector: '[expr35]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr60',
-      selector: '[expr60]',
+      redundantAttribute: 'expr36',
+      selector: '[expr36]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr61',
-      selector: '[expr61]',
+      redundantAttribute: 'expr37',
+      selector: '[expr37]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.dep
       }]
     }, {
-      redundantAttribute: 'expr62',
-      selector: '[expr62]',
+      redundantAttribute: 'expr38',
+      selector: '[expr38]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.moyenne
       }]
     }, {
-      redundantAttribute: 'expr63',
-      selector: '[expr63]',
+      redundantAttribute: 'expr39',
+      selector: '[expr39]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr58',
-    selector: '[expr58]',
+    redundantAttribute: 'expr34',
+    selector: '[expr34]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items
