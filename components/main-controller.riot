@@ -4,7 +4,7 @@
             <div class="box p-3 m-2">
                 <img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/>
             </div>
-			<search></search>
+			<search updateCourse={updateCourse}></search>
 		</div>
 
 		<div class="column">
@@ -17,7 +17,17 @@
 
     <script>
         export default {
-
+            onBeforeMount(props, state) {
+                //Initial state
+                this.state = {
+                    formation: null
+                }
+            },
+            updateCourse(formation){
+                this.update({
+                    formation: formation
+                })
+            }
         }
     </script>
 

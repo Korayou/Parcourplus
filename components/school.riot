@@ -36,8 +36,8 @@
     <script>
         import PAPI from '../javascript/parcoursup-link.js'
 
-        async function fetchEtablissement(state) {
-            return PAPI.fetchEtablissement(state.fili, state.sousfili, state.soussousfili);
+        async function fetchEtablissement(formation) {
+            return PAPI.fetchEtablissement(formation.fili, formation.sousfili, formation.soussousfili);
         }
 
         export default function search() {
@@ -45,11 +45,9 @@
                 onBeforeMount(props, state) {
                     this.state = {
                         items: null,
-                        fili: "BUT",
-                        sousfili: "BUT - Production",
-                        soussousfili : "Informatique"
+                        formation: this.props.formation
                     }
-                    fetchEtablissement(this.state).then((response) => {
+                    fetchEtablissement(this.state.formation).then((response) => {
                         this.update({
                             items: response
                         })
