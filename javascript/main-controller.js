@@ -1,47 +1,54 @@
 var mainController = {
   css: null,
   exports: {
-    //Fonction qui va écouter ce que <search> a à dire.
-    searchListener(arg) {
-      console.log("Search il a dit: " + arg);
+    onBeforeMount(props, state) {
+      //Initial state
+      this.state = {
+        formation: null
+      };
+    },
+    updateCourse(formation) {
+      this.update({
+        formation: formation
+      });
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/></div><search expr932="expr932"></search></div><div class="column"><fili-info expr933="expr933"></fili-info><school expr934="expr934"></school></div></div><school-info expr935="expr935"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/></div><search expr984="expr984"></search></div><div class="column"><fili-info expr985="expr985"></fili-info><school expr986="expr986"></school></div></div><school-info expr987="expr987"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
     slots: [],
     attributes: [{
       type: expressionTypes.ATTRIBUTE,
-      name: 'partouse',
-      evaluate: _scope => _scope.searchListener
+      name: 'updateCourse',
+      evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr932',
-    selector: '[expr932]'
+    redundantAttribute: 'expr984',
+    selector: '[expr984]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'fili-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr933',
-    selector: '[expr933]'
+    redundantAttribute: 'expr985',
+    selector: '[expr985]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr934',
-    selector: '[expr934]'
+    redundantAttribute: 'expr986',
+    selector: '[expr986]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr935',
-    selector: '[expr935]'
+    redundantAttribute: 'expr987',
+    selector: '[expr987]'
   }]),
   name: 'main-controller'
 };

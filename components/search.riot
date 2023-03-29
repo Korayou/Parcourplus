@@ -39,10 +39,10 @@
                         promise = PAPI.fetchFilieres()
                         break
                     case 1:
-                        promise = PAPI.fetchFiliere(this.state.filiere)
+                        promise = PAPI.fetchFiliere(this.state.course.fili)
                         break
                     case 2:
-                        promise = PAPI.fetchSpecialites(this.state.specialite)
+                        promise = PAPI.fetchSpecialites(this.state.course.sousfili)
                         break
                 }
 
@@ -90,11 +90,16 @@
             cruiseForward(selection) {
                 switch (this.state.currentStep) {
                     case 0:
-                        this.state.filiere = selection
+                        this.state.course.fili = selection
                         break
 
                     case 1:
-                        this.state.specialite = selection
+                        this.state.course.sousfili = selection
+                        break
+
+                    case 2:
+                        this.state.course.soussousfili = selection
+                        this.state.updateCourse(this.state.course)
                         break
 
                     case 2:
@@ -127,16 +132,19 @@
             },
 
             onBeforeMount(props, state) {
+                console.log("on m'a appelé")
                 //Initial state
                 this.state = {
                     placeholder: PLACEHOLDERS[0],
                     currentStep: 0,
                     allItems: null,
                     items: null,
-                    filiere: null,
-                    specialite: null,
+                    course: [],
                     updating: false,
+                    updateCourse: this.props.updateCourse
                 }
+                console.log(this.state.updateCourse)
+
             },
 
             onMounted(props, state) {

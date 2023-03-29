@@ -29,8 +29,8 @@ class PAPI {
   }
 }
 
-async function fetchEtablissement(state) {
-  return PAPI.fetchEtablissement(state.fili, state.sousfili, state.soussousfili);
+async function fetchEtablissement(formation) {
+  return PAPI.fetchEtablissement(formation.fili, formation.sousfili, formation.soussousfili);
 }
 var school = {
   css: null,
@@ -39,11 +39,9 @@ var school = {
       onBeforeMount(props, state) {
         this.state = {
           items: null,
-          fili: "BUT",
-          sousfili: "BUT - Production",
-          soussousfili: "Informatique"
+          formation: this.props.formation
         };
-        fetchEtablissement(this.state).then(response => {
+        fetchEtablissement(this.state.formation).then(response => {
           this.update({
             items: response
           });
@@ -68,53 +66,53 @@ var school = {
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-2 m-2"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr406="expr406"></tr></tbody></table></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-2 m-2"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr972="expr972"></tr></tbody></table></div>', [{
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<td expr407="expr407"> </td><td expr408="expr408"> </td><td expr409="expr409"> </td><td expr410="expr410"> </td><td expr411="expr411"> </td>', [{
-      redundantAttribute: 'expr407',
-      selector: '[expr407]',
+    template: template('<td expr973="expr973"> </td><td expr974="expr974"> </td><td expr975="expr975"> </td><td expr976="expr976"> </td><td expr977="expr977"> </td>', [{
+      redundantAttribute: 'expr973',
+      selector: '[expr973]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr408',
-      selector: '[expr408]',
+      redundantAttribute: 'expr974',
+      selector: '[expr974]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.ville_etab
       }]
     }, {
-      redundantAttribute: 'expr409',
-      selector: '[expr409]',
+      redundantAttribute: 'expr975',
+      selector: '[expr975]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.dep
       }]
     }, {
-      redundantAttribute: 'expr410',
-      selector: '[expr410]',
+      redundantAttribute: 'expr976',
+      selector: '[expr976]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.moyenne
       }]
     }, {
-      redundantAttribute: 'expr411',
-      selector: '[expr411]',
+      redundantAttribute: 'expr977',
+      selector: '[expr977]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
       }]
     }]),
-    redundantAttribute: 'expr406',
-    selector: '[expr406]',
+    redundantAttribute: 'expr972',
+    selector: '[expr972]',
     itemName: 'etablissement',
     indexName: null,
     evaluate: _scope => _scope.state.items
