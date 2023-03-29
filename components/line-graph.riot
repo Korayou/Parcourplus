@@ -10,6 +10,8 @@
 
             updateCanvas() {
                 let canvas = this.$("canvas")
+                if (!canvas) return
+
                 canvas.width = canvas.clientWidth
                 canvas.height = canvas.clientHeight
                 
@@ -36,7 +38,7 @@
 
                 cx.fillStyle = "#707070"
                 cx.font = "15px Arial"
-                cx.fillText("This is an example title", width / 2, 10)
+                cx.fillText(this.props.title || "Example", width / 2, 10)
                 cx.font = "10px Arial"
                 cx.translate(0, 20)
 

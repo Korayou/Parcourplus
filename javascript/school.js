@@ -29,24 +29,19 @@ class PAPI {
   }
 }
 
-async function fetchEtablissement(formation) {
-  return PAPI.fetchEtablissement(formation.fili, formation.sousfili, formation.soussousfili);
+async function fetchEtablissement(course) {
+  return PAPI.fetchEtablissement(course.fili, course.sousfili, course.soussousfili);
 }
 var school = {
   css: null,
   exports: function search() {
     return {
       onBeforeMount(props, state) {
-        this.state = {
-          items: null,
-          formation: this.props.formation
-        };
-        fetchEtablissement(this.state.formation).then(response => {
-          this.update({
-            items: response
-          });
-          //console.log(this.state.items)
-          this.state.items.forEach(etablissement => {
+      },
+      onUpdated(props, state) {
+        if (!props.shouldShowInfos) return;
+        fetchEtablissement(props.course).then(response => {
+          response.forEach(etablissement => {
             // calcul la moyenne
             let pct_sansmention = etablissement.fields.pct_sansmention;
             let pct_AB = etablissement.fields.pct_ab;
@@ -56,66 +51,71 @@ var school = {
 
             // On prend la moyenne des moyennes comprises dans la mention
             // Exemple : Assez bien est entre 12 et 14 donc 13.
-            let moyenne = (pct_TBF * 19 + pct_TB * 17 + pct_B * 15 + pct_AB * 13 + pct_sansmention * 11) / 100;
-            etablissement.fields.moyenne = moyenne;
-            //console.log(etablissement.fields)
+            etablissement.fields.moyenne = (pct_TBF * 19 + pct_TB * 17 + pct_B * 15 + pct_AB * 13 + pct_sansmention * 11) / 100;
           });
-
-          this.update();
+          this.update({
+            items: response
+          });
         });
       }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-2 m-2"><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr972="expr972"></tr></tbody></table></div>', [{
-    type: bindingTypes.EACH,
-    getKey: null,
-    condition: null,
-    template: template('<td expr973="expr973"> </td><td expr974="expr974"> </td><td expr975="expr975"> </td><td expr976="expr976"> </td><td expr977="expr977"> </td>', [{
-      redundantAttribute: 'expr973',
-      selector: '[expr973]',
-      expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
-      }]
-    }, {
-      redundantAttribute: 'expr974',
-      selector: '[expr974]',
-      expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.fields.ville_etab
-      }]
-    }, {
-      redundantAttribute: 'expr975',
-      selector: '[expr975]',
-      expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.fields.dep
-      }]
-    }, {
-      redundantAttribute: 'expr976',
-      selector: '[expr976]',
-      expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.fields.moyenne
-      }]
-    }, {
-      redundantAttribute: 'expr977',
-      selector: '[expr977]',
-      expressions: [{
-        type: expressionTypes.TEXT,
-        childNodeIndex: 0,
-        evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
-      }]
-    }]),
-    redundantAttribute: 'expr972',
-    selector: '[expr972]',
-    itemName: 'etablissement',
-    indexName: null,
-    evaluate: _scope => _scope.state.items
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr1453="expr1453" class="box p-2 m-2"></div>', [{
+    type: bindingTypes.IF,
+    evaluate: _scope => _scope.props.shouldShowInfos,
+    redundantAttribute: 'expr1453',
+    selector: '[expr1453]',
+    template: template('<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><th><abbr title="city">Ville</abbr></th><th><abbr title="dept">Dpt</abbr></th><th><abbr title="moyenne">Moyenne</abbr></th><th><abbr title="selectivite">Sélectivité</abbr></th></tr></thead><tbody><tr expr1454="expr1454"></tr></tbody></table>', [{
+      type: bindingTypes.EACH,
+      getKey: null,
+      condition: _scope => !_scope.state.loading,
+      template: template('<td expr1455="expr1455"> </td><td expr1456="expr1456"> </td><td expr1457="expr1457"> </td><td expr1458="expr1458"> </td><td expr1459="expr1459"> </td>', [{
+        redundantAttribute: 'expr1455',
+        selector: '[expr1455]',
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
+        }]
+      }, {
+        redundantAttribute: 'expr1456',
+        selector: '[expr1456]',
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => _scope.etablissement.fields.ville_etab
+        }]
+      }, {
+        redundantAttribute: 'expr1457',
+        selector: '[expr1457]',
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => _scope.etablissement.fields.dep
+        }]
+      }, {
+        redundantAttribute: 'expr1458',
+        selector: '[expr1458]',
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => _scope.etablissement.fields.moyenne
+        }]
+      }, {
+        redundantAttribute: 'expr1459',
+        selector: '[expr1459]',
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
+        }]
+      }]),
+      redundantAttribute: 'expr1454',
+      selector: '[expr1454]',
+      itemName: 'etablissement',
+      indexName: null,
+      evaluate: _scope => _scope.state.items
+    }])
   }]),
   name: 'school'
 };

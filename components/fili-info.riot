@@ -1,24 +1,41 @@
 <fili-info>
-    <div class="box p-1 m-2">
-        <h1 class="title is-4 m-2"><a>BUT</a>  /  <a>BUT - Production</a>  /  <a>Informatique</a></h1>
+    <div class="box p-1 m-2" if={props.shouldShowInfos}>
+        <h1 class="title is-4 m-2">
+            <span style="color: #485FC7;">{props.course.fili}</span>  /  
+            <span style="color: #485FC7;">{props.course.sousfili}</span>  /  
+            <span style="color: #485FC7;">{props.course.soussousfili}</span>
+        </h1>
         <div class="box mt-2" style="background-color: #EAEAEA; margin: auto; width: 60%;">
-            <p>Moyenne des admis<span class="is-pulled-right">19.3</span></p>
-            <p>Nombre de formations<span class="is-pulled-right">5</span></p>
-            <p>Capacité<span class="is-pulled-right">90</span></p>
+            <p>Moyenne des admis<span class="is-pulled-right">{state.average}</span></p>
+            <p>Nombre de formations<span class="is-pulled-right">{state.courseNumber}</span></p>
+            <p>Capacité<span class="is-pulled-right">{state.capacity}</span></p>
             <p>Sélectivité</p>
         </div>
         <div class="m-4">
-            <line-graph style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par genre" style="height: 6rem;"></line-graph>
         </div>
         <div class="m-4">
-            <line-graph style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par bac" style="height: 6rem;"></line-graph>
         </div>
         <div class="m-4">
-            <line-graph style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par mention au bac" style="height: 6rem;"></line-graph>
         </div>
     </div>
 
     <script>
+        export default {
+            onBeforeMount(props, state) {
+                this.state = {
+                    average: 0,
+                    capacity: 0,
+                    selectivity: 0,
+                    courseNumber: 0
+                }
+            },
 
+            onUpdated(props, state) {
+
+            }
+        }
     </script>
 </fili-info>

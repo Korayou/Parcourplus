@@ -35,9 +35,6 @@ var search = {
   exports: {
     updateList() {
       let promise;
-      this.update({
-        updating: true
-      });
       switch (this.state.currentStep) {
         case 0:
           promise = PAPI.fetchFilieres();
@@ -48,7 +45,12 @@ var search = {
         case 2:
           promise = PAPI.fetchSpecialites(this.state.course.sousfili);
           break;
+        default:
+          return;
       }
+      this.update({
+        updating: true
+      });
       promise.then(response => {
         this.state.allItems = response;
         this.filterSearch();
@@ -94,12 +96,7 @@ var search = {
           break;
         case 2:
           this.state.course.soussousfili = selection;
-          this.state.updateCourse(this.state.course);
-          break;
-        case 2:
-          console.log(this.props);
-          console.log(this.root);
-          console.log("end");
+          this.props.updateCourse(this.state.course);
           return;
         default:
           return;
@@ -121,26 +118,23 @@ var search = {
       });
     },
     onBeforeMount(props, state) {
-      console.log("on m'a appelé");
       //Initial state
       this.state = {
         placeholder: PLACEHOLDERS[0],
         currentStep: 0,
         allItems: null,
         items: null,
-        course: [],
-        updating: false,
-        updateCourse: this.props.updateCourse
+        course: {},
+        updating: false
       };
-      console.log(this.state.updateCourse);
     },
     onMounted(props, state) {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr978="expr978" class="input" type="input"/><button expr979="expr979" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr980="expr980" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr978',
-    selector: '[expr978]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr1400="expr1400" class="input" type="input"/><button expr1401="expr1401" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr1402="expr1402" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr1400',
+    selector: '[expr1400]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -151,8 +145,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr979',
-    selector: '[expr979]',
+    redundantAttribute: 'expr1401',
+    selector: '[expr1401]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -166,9 +160,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr981="expr981" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr982="expr982"> </strong></span><div style="margin-left: auto;"></div><span expr983="expr983" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr981',
-      selector: '[expr981]',
+    template: template('<button expr1403="expr1403" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr1404="expr1404"> </strong></span><div style="margin-left: auto;"></div><span expr1405="expr1405" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr1403',
+      selector: '[expr1403]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -179,24 +173,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr982',
-      selector: '[expr982]',
+      redundantAttribute: 'expr1404',
+      selector: '[expr1404]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr983',
-      selector: '[expr983]',
+      redundantAttribute: 'expr1405',
+      selector: '[expr1405]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr980',
-    selector: '[expr980]',
+    redundantAttribute: 'expr1402',
+    selector: '[expr1402]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items

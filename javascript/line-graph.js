@@ -3,6 +3,7 @@ var lineGraph = {
   exports: {
     updateCanvas() {
       let canvas = this.$("canvas");
+      if (!canvas) return;
       canvas.width = canvas.clientWidth;
       canvas.height = canvas.clientHeight;
       let cx = canvas.getContext("2d");
@@ -18,7 +19,7 @@ var lineGraph = {
       if (!data) return;
       cx.fillStyle = "#707070";
       cx.font = "15px Arial";
-      cx.fillText("This is an example title", width / 2, 10);
+      cx.fillText(this.props.title || "Example", width / 2, 10);
       cx.font = "10px Arial";
       cx.translate(0, 20);
       let total = data.reduce((total, current) => total + current.value, 0);

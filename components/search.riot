@@ -29,10 +29,6 @@
 
             updateList() {
                 let promise
-                
-                this.update({
-                    updating: true
-                })
 
                 switch (this.state.currentStep) {
                     case 0:
@@ -44,7 +40,14 @@
                     case 2:
                         promise = PAPI.fetchSpecialites(this.state.course.sousfili)
                         break
+
+                    default:
+                        return
                 }
+
+                this.update({
+                    updating: true
+                })
 
                 promise.then((response) => {
                     this.state.allItems = response
@@ -99,13 +102,7 @@
 
                     case 2:
                         this.state.course.soussousfili = selection
-                        this.state.updateCourse(this.state.course)
-                        break
-
-                    case 2:
-                        console.log(this.props)
-                        console.log(this.root)
-                        console.log("end")
+                        this.props.updateCourse(this.state.course)
                         return
 
                     default:
@@ -132,19 +129,15 @@
             },
 
             onBeforeMount(props, state) {
-                console.log("on m'a appelé")
                 //Initial state
                 this.state = {
                     placeholder: PLACEHOLDERS[0],
                     currentStep: 0,
                     allItems: null,
                     items: null,
-                    course: [],
+                    course: {},
                     updating: false,
-                    updateCourse: this.props.updateCourse
                 }
-                console.log(this.state.updateCourse)
-
             },
 
             onMounted(props, state) {

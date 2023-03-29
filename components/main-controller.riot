@@ -8,24 +8,26 @@
 		</div>
 
 		<div class="column">
-			<fili-info></fili-info>
-			<school></school>
+			<fili-info course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
+			<school course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
 	<school-info></school-info>
 
     <script>
-        export default {
+         export default {
             onBeforeMount(props, state) {
                 //Initial state
                 this.state = {
-                    formation: null
+                    course: null,
+					shouldShowInfos: false
                 }
             },
-            updateCourse(formation){
+            updateCourse(course){
                 this.update({
-                    formation: formation
+                    course: course,
+					shouldShowInfos: course != null
                 })
             }
         }
