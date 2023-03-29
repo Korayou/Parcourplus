@@ -4,7 +4,7 @@
             <div class="box p-3 m-2">
                 <img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/>
             </div>
-			<search></search>
+			<search partouse={searchListener}></search>
 		</div>
 
 		<div class="column">
@@ -17,7 +17,10 @@
 
     <script>
         export default {
-
+			//Fonction qui va écouter ce que <search> a à dire.
+			searchListener(arg) {
+				console.log("Search il a dit: " + arg)
+			}
         }
     </script>
 

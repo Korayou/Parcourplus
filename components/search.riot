@@ -7,9 +7,9 @@
 		<div id="list-formations">
             <ul>
 	            <li class="m-1" each={item in this.state.items}>
-		            <button class="button is-fullwidth" disabled={state.updating} onclick={()=>cruiseForward(item.name)}>
-                        <span style="font-size: .75em;"><strong>{item.name}</strong></span>
-                        <div style="margin-left: auto;"></div>
+		            <button class="button is-fullwidth p-2" disabled={state.updating} onclick={()=>cruiseForward(item.name)}>
+                        <span style="font-size: .75em; max-size: 90%"><strong>{item.name}</strong></span>
+                        <div  style="margin-left: auto;"></div>
                         <span class="tag is-primary">{item.count}</span>
                     </button>
 	            </li>
@@ -52,7 +52,19 @@
                     this.update({
                         updating: false
                     })
+                }, () => {
+                    if (!this.state.currentStep) {
+                        this.cruiseBack()
+                    }
+
+                    this.update({
+                        updating: false
+                    })
                 })
+            },
+
+            clearSearch() {
+                this.$("input").value = ""
             },
 
             filterSearch() {
@@ -76,7 +88,6 @@
             },
 
             cruiseForward(selection) {
-                if (this.state.currentStep >= 2) return
                 switch (this.state.currentStep) {
                     case 0:
                         this.state.filiere = selection
@@ -85,11 +96,20 @@
                     case 1:
                         this.state.specialite = selection
                         break
-                }
 
+                    case 2:
+                        console.log(this.props)
+                        console.log(this.root)
+                        console.log("end")
+                        return
+
+                    default:
+                        return
+                }
                 this.state.currentStep++
 
                 this.updateList()
+                this.clearSearch()
                 this.update({
                     placeholder: PLACEHOLDERS[this.state.currentStep]
                 })
@@ -100,6 +120,7 @@
                 this.state.currentStep--
 
                 this.updateList()
+                this.clearSearch()
                 this.update({
                     placeholder: PLACEHOLDERS[this.state.currentStep]
                 })
@@ -111,104 +132,16 @@
                     placeholder: PLACEHOLDERS[0],
                     currentStep: 0,
                     allItems: null,
-                    filter: null,
                     items: null,
                     filiere: null,
                     specialite: null,
-                    updating: false
+                    updating: false,
                 }
             },
 
-            onMounted() {
+            onMounted(props, state) {
                 this.updateList()
             }
         }
-
-
-        /*const searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=fr-esr-parcoursup&timezone=Europe%2FBerlin`
-
-        async function fetchFiliere(state) {
-            if (state.sousfili){
-                return PAPI.fetchSpecialites(state.sousfili)
-            } else if (state.fili && !state.sousfili){
-                return PAPI.fetchFiliere(state.fili)
-            } else if (!state.fili && !state.sousfili){
-                return PAPI.fetchFilieres()
-            }
-        }
-        
-
-        export default function search(){
-            return {
-                onBeforeMount(props, state) {
-                    // initial state
-                    this.state = {
-                        placeholder: "Formation",
-                        items: null,
-                        allitems: null,
-                        fili: null,
-                        sousfili: null
-                    }
-                    fetchFiliere(this.state).then((response) => {
-			            this.update({
-                            items: response,
-                            allitems: response
-					    })
-		            })
-                },
-                searchF(e){
-                    let responseFiltered=[]
-			        this.state.allitems.forEach(formation => {
-                        if (formation.name.toUpperCase().includes(e.target.value.toUpperCase())) {
-                            responseFiltered.push(formation)
-                        }
-                    });
-                    this.update({
-                        items: responseFiltered
-				    })
-                },
-                filter(fili){
-                    console.log("filter! "+fili)
-                    if (this.state.placeholder==="Filière de formation"){
-                        this.update({
-                            placeholder: "Filière de formation détaillée",
-                            sousfili: fili,
-                        })
-                    } else if (this.state.placeholder="Formation"){
-                        this.update({
-                            placeholder: "Filière de formation",
-                            fili: fili
-                        })
-                    }
-                    fetchFiliere(this.state).then((response) => {
-                        this.update({
-                            allitems: response,
-                            items: response
-                        })
-                        console.log(this.state.items)
-                    })
-                },
-                back(){
-                    console.log("back")
-                    if (this.state.placeholder==="Filière de formation"){
-                        this.update({
-                            placeholder: "Formation",
-                            fili: null,
-                        })
-                    } else if (this.state.placeholder="Filière de formation détaillée"){
-                        this.update({
-                            placeholder: "Filière de formation",
-                            sousfili: null
-                        })
-                    }
-                    fetchFiliere(this.state).then((response) => {
-                        this.update({
-                            allitems: response,
-                            items: response
-                        })
-                    })
-                }
-            }
-        }*/
     </script>
 </search>

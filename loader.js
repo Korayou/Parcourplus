@@ -16,9 +16,10 @@ riot.register("fili-info", FiliInfo)
 riot.register("search", Search)
 riot.register("school", School)
 
-riot.mount("main-controller")
-riot.mount("school-info")
+
 riot.mount("line-graph")
-riot.mount("fili-info")
 riot.mount("search")
+riot.mount("school-info")
+riot.mount("fili-info")
 riot.mount("school")
+riot.mount("main-controller")
