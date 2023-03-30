@@ -10,31 +10,55 @@ class PAPI {
     static searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=${PAPI.dataset}&timezone=${PAPI.timezone}`
 
     static async fetchFilieres() {
-        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fili`)
-        let result  = await request.json()
 
-        return result["facet_groups"][0]["facets"]
+        if (localStorage.getItem("filis")) return JSON.parse(localStorage.getItem("filis"))
+
+        let request  = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fili`)
+        let result   = await request.json()
+        let response = result["facet_groups"][0]["facets"]
+
+        localStorage.setItem("filis", JSON.stringify(response))
+
+        return response
     }
 
     static async fetchFiliere(filiere) {
-        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`)
-        let result  = await request.json()
 
-        return result["facet_groups"][0]["facets"]
+        if (localStorage.getItem("fili." + filiere)) return JSON.parse(localStorage.getItem("fili." + filiere))
+
+        let request  = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`)
+        let result   = await request.json()
+        let response = result["facet_groups"][0]["facets"]
+
+        localStorage.setItem("fili." + filiere, JSON.stringify(response))
+
+        return response
     }
 
     static async fetchSpecialites(specialite) {
+
+        if (localStorage.getItem("spe." + specialite)) return JSON.parse(localStorage.getItem("spe." + specialite))
+
         let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}`)
         let result  = await request.json()
+        let response = result["facet_groups"][0]["facets"]
 
-        return result["facet_groups"][0]["facets"]
+        localStorage.setItem("spe." + specialite, JSON.stringify(response))
+
+        return response
     }
 
     static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
+
+        if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`))
+
         let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`)
         let result  = await request.json()
+        let response = result["records"]
 
-        return result["records"]
+        localStorage.setItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`, JSON.stringify(response))
+
+        return response
     }
 }
 
