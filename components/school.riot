@@ -21,7 +21,7 @@
 				</tr>
 			</thead>
             <tbody>
-                <tr if={!state.loading} each={etablissement in state.items}>
+                <tr each={etablissement in state.items}>
                     <td>{etablissement.fields.g_ea_lib_vx}</td>
                     <td>{etablissement.fields.ville_etab}</td>
                     <td>{etablissement.fields.dep}</td>
@@ -43,12 +43,13 @@
             return {
                 onBeforeMount(props, state) {
                     state = {
-                        items: null
+                        items: null,
+                        breakCycle: false
                     }
                 },
 
                 onUpdated(props, state) {
-                    if (!props.shouldShowInfos) return
+                    if (!props.shouldShowInfos || state.breakCycle) return
                     fetchEtablissement(props.course).then((response) => {
                         response.forEach(etablissement => {
                             // calcul la moyenne
@@ -63,9 +64,11 @@
                             etablissement.fields.moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11))/100
                         })
 
+                        state.breakCycle = true
                         this.update({
                             items: response
                         })
+                        state.breakCycle = false
                     })
                 }
             }
