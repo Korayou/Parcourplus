@@ -1,0 +1,49 @@
+<title-progress>
+
+<div style="display: flex;">
+    <span if={props.title}>{props.title}</span>
+    <span class="ml-1">{calcPct()}</span>
+    <progress value={props.value} max={props.max} class={state.class} style="box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);"></progress>
+</div>
+
+<script>
+    const DEFAULT_CLASSES = "progress is-small m-2 mt-auto mb-auto"
+    const COLOR_CLASSES = [
+        "is-link",
+        "is-info",
+        "is-success",
+        "is-warning",
+        "is-danger"
+    ]
+
+
+    export default {
+        computeClasses() {
+            if (!this.props.value) return DEFAULT_CLASSES
+            let n = Math.floor(this.props.value / 20)
+            if (n == 5) n = 4
+
+            return DEFAULT_CLASSES + " " + COLOR_CLASSES[n]
+        },
+
+        calcPct() {
+            if (!this.props.value) {
+                return "???"
+            } else {
+                return Math.round(this.props.value / this.props.max * 100) + "%"
+            }
+        },
+
+        onMounted(props, state) {
+            this.update({
+                class: this.computeClasses()
+            })
+        },
+
+        onBeforeUpdate(props, state) {
+            state.class = this.computeClasses()
+        }
+    }
+</script>
+
+</title-progress>

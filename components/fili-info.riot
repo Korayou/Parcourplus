@@ -9,32 +9,127 @@
             <p>Moyenne des admis<span class="is-pulled-right">{state.average}</span></p>
             <p>Nombre de formations<span class="is-pulled-right">{state.courseNumber}</span></p>
             <p>Capacité<span class="is-pulled-right">{state.capacity}</span></p>
-            <p>Sélectivité</p>
+            <title-progress title={"Sélectivité"} value={state.selectivity} max="100"></title-progress>
         </div>
         <div class="m-4">
-            <line-graph title="Répartition par genre" style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par genre" data={state.genreStats} style="height: 6rem;"></line-graph>
         </div>
         <div class="m-4">
-            <line-graph title="Répartition par bac" style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par bac" data={state.bacStats} style="height: 6rem;"></line-graph>
         </div>
         <div class="m-4">
-            <line-graph title="Répartition par mention au bac" style="height: 6rem;"></line-graph>
+            <line-graph title="Répartition par mention au bac" data={state.mentionStats} style="height: 6rem;"></line-graph>
         </div>
     </div>
 
     <script>
         export default {
             onBeforeMount(props, state) {
-                this.state = {
+                state = {
                     average: 0,
                     capacity: 0,
                     selectivity: 0,
-                    courseNumber: 0
+                    courseNumber: 0,
+                    bacStats: [],
+                    genreStats: [],
+                    mentionStats: []
                 }
             },
 
-            onUpdated(props, state) {
+            onBeforeUpdate(props, state) {
+                if (!props.schoolList || !props.schoolList.length) return
 
+                let list = props.schoolList
+
+                let avg = list.reduce((s, e) => s + e.fields.moyenne, 0) / list.length
+                let avgCap = list.reduce((s, e) => s + e.fields.capa_fin, 0) / list.length
+                let avgSlc = list.reduce((s, e) => s + (e.fields.taux_acces_ens || 0), 0) / list.filter((e) => e.fields.taux_acces_ens).length
+
+                state.courseNumber = list.length
+                state.average = Math.round(avg * 100) / 100
+                state.capacity = Math.floor(avgCap)
+                state.selectivity = Math.floor(avgSlc)
+
+                let pctFemmes = Math.round(list.reduce((s, e) => s + (e.fields.pct_f || 0), 0) / list.filter((e) => e.fields.pct_f).length)
+                console.log(pctFemmes)
+                state.genreStats = [
+                    {
+                        name: "Hommes",
+                        short: "H",
+                        value: (100 - pctFemmes)
+                    },
+                    {
+                        name: "Femmes",
+                        short: "F",
+                        value: pctFemmes
+                    },
+                ]
+
+                let pctBG = Math.round(list.reduce((s, e) => s + (e.fields.part_acces_gen || 0), 0) / list.filter((e) => e.fields.part_acces_gen).length)
+                let pctBT = Math.round(list.reduce((s, e) => s + (e.fields.part_acces_tec || 0), 0) / list.filter((e) => e.fields.part_acces_tec).length)
+                let pctBP = Math.round(list.reduce((s, e) => s + (e.fields.part_acces_pro || 0), 0) / list.filter((e) => e.fields.part_acces_pro).length)
+
+                state.bacStats = [
+                    {
+                        name: "Général",
+                        short: "Gen.",
+                        value: pctBG
+                    },
+                    {
+                        name: "Technologique",
+                        short: "Tech.",
+                        value: pctBT
+                    },
+                    {
+                        name: "Professionnel",
+                        short: "Pro.",
+                        value: pctBP
+                    },
+                    {
+                        name: "Autre",
+                        short: "Au.",
+                        value: 100 - (pctBG + pctBT + pctBP)
+                    }
+                ]
+
+                let pctSM  = Math.round(list.reduce((s, e) => s + e.fields.pct_sansmention, 0) / list.length)
+                let pctAB  = Math.round(list.reduce((s, e) => s + e.fields.pct_ab, 0) / list.length)
+                let pctB   = Math.round(list.reduce((s, e) => s + e.fields.pct_b, 0) / list.length)
+                let pctTB  = Math.round(list.reduce((s, e) => s + e.fields.pct_tb, 0) / list.length)
+                let pctTBF = Math.round(list.reduce((s, e) => s + e.fields.pct_tbf, 0) / list.length)
+
+                state.mentionStats = [
+                    {
+                        name: "Sans Mention",
+                        short: "SM",
+                        value: pctSM
+                    },
+                    {
+                        name: "Assez Bien",
+                        short: "AB",
+                        value: pctAB
+                    },
+                    {
+                        name: "Bien",
+                        short: "B",
+                        value: pctB
+                    },
+                    {
+                        name: "Très Bien",
+                        short: "TB",
+                        value: pctTB
+                    },
+                    {
+                        name: "Très Bien + Félicitations",
+                        short: "TBF",
+                        value: pctTBF
+                    },
+                    {
+                        name: "Non Spécifié",
+                        short: "NS",
+                        value: 100 - (pctSM + pctAB + pctB + pctTB + pctTBF)
+                    }
+                ]
             }
         }
     </script>

@@ -35,15 +35,15 @@ class PAPI {
         return response
     }
 
-    static async fetchSpecialites(specialite) {
+    static async fetchSpecialites(filiere, specialite) {
 
-        if (localStorage.getItem("spe." + specialite)) return JSON.parse(localStorage.getItem("spe." + specialite))
+        if (localStorage.getItem(`spe.${filiere}.${specialite}`)) return JSON.parse(localStorage.getItem(`spe.${filiere}.${specialite}`))
 
-        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}`)
+        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`)
         let result  = await request.json()
         let response = result["facet_groups"][0]["facets"]
 
-        localStorage.setItem("spe." + specialite, JSON.stringify(response))
+        localStorage.setItem(`spe.${filiere}.${specialite}`, JSON.stringify(response))
 
         return response
     }
@@ -52,7 +52,7 @@ class PAPI {
 
         if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`))
 
-        let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`)
+        let request = await fetch(`${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`)
         let result  = await request.json()
         let response = result["records"]
 

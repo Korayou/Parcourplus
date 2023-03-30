@@ -8,28 +8,96 @@
 		</div>
 
 		<div class="column">
-			<fili-info course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
-			<school parentUpdate={state.updating} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
+			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
+			<school sortList={sortList} schoolList={state.schoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
 	<school-info></school-info>
 
     <script>
-         export default {
-            onBeforeMount(props, state) {
-                //Initial state
-                this.state = {
-                    course: null,
-                    updating: false,
-					shouldShowInfos: false
+
+        import PAPI from '../javascript/parcoursup-link.js'
+
+        const SORT_TABLE = [
+            {name: "Nom", id: "g_ea_lib_vx"},
+            {name: "Ville", id: "ville_etab"},
+            {name: "Département", id: "dep"},
+            {name: "Moyenne", id: "moyenne"},
+            {name: "Sélectivité", id: "taux_acces_ens"}
+        ]
+
+        export default {
+            sortList(sortBy) {
+                //Si la liste est déjà triée par la bonne catégorie, on l'inverse
+                if (sortBy == this.state.sortBy) {
+                    this.state.schoolList.reverse()
+                } 
+                //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
+                else { 
+                    this.state.sortBy = sortBy
+
+                    switch (sortBy) {
+                        case SORT_TABLE[3].id:
+                        case SORT_TABLE[4].id: {
+                            this.state.schoolList.sort((a, b) => {
+                                if (a.fields[sortBy] > b.fields[sortBy]) return 1
+                                else return -1
+                            })
+                            break
+                        }
+
+                        default: {
+                            this.state.schoolList.sort((a, b) => {
+                                return (a.fields[sortBy]).localeCompare(b.fields[sortBy])
+                            })
+                            break
+                        }
+                    }
                 }
+
+                this.update({
+                    schoolList: this.state.schoolList
+                })
+            },
+            updateList(course) {
+                course = course || this.state.course
+                PAPI.fetchEtablissement(course.fili, course.sousfili, course.soussousfili).then((response) => {
+                    response.forEach(etablissement => {
+                        // calcul la moyenne
+                        let pct_sansmention = etablissement.fields.pct_sansmention
+                        let pct_AB = etablissement.fields.pct_ab
+                        let pct_B = etablissement.fields.pct_b
+                        let pct_TB = etablissement.fields.pct_tb
+                        let pct_TBF = etablissement.fields.pct_tbf
+                        
+                        // On prend la moyenne des moyennes comprises dans la mention
+                        // Exemple : Assez bien est entre 12 et 14 donc 13.
+                        etablissement.fields.moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11))/100
+                    }) 
+
+                    this.update({
+                        schoolList: response
+                    })                  
+                })
             },
             updateCourse(course){
+                this.updateList(course)
+
                 this.update({
                     course: course,
+                    sortFields: SORT_TABLE,
 					shouldShowInfos: course != null,
-                    updating: !this.state.updating
+                })
+            },
+
+            onMounted(props, state) {
+                this.update({
+                    course: null,
+                    sortBy: null,
+                    schoolList: null,
+                    sortFields: SORT_TABLE,
+					shouldShowInfos: false
                 })
             }
         }

@@ -23,17 +23,17 @@ class PAPI {
     localStorage.setItem("fili." + filiere, JSON.stringify(response));
     return response;
   }
-  static async fetchSpecialites(specialite) {
-    if (localStorage.getItem("spe." + specialite)) return JSON.parse(localStorage.getItem("spe." + specialite));
-    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}`);
+  static async fetchSpecialites(filiere, specialite) {
+    if (localStorage.getItem(`spe.${filiere}.${specialite}`)) return JSON.parse(localStorage.getItem(`spe.${filiere}.${specialite}`));
+    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`);
     let result = await request.json();
     let response = result["facet_groups"][0]["facets"];
-    localStorage.setItem("spe." + specialite, JSON.stringify(response));
+    localStorage.setItem(`spe.${filiere}.${specialite}`, JSON.stringify(response));
     return response;
   }
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
     if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`));
-    let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
+    let request = await fetch(`${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
     let result = await request.json();
     let response = result["records"];
     localStorage.setItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`, JSON.stringify(response));
@@ -55,7 +55,7 @@ var search = {
           promise = PAPI.fetchFiliere(this.state.course.fili);
           break;
         case 2:
-          promise = PAPI.fetchSpecialites(this.state.course.sousfili);
+          promise = PAPI.fetchSpecialites(this.state.course.fili, this.state.course.sousfili);
           break;
         default:
           return;
@@ -144,9 +144,9 @@ var search = {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr27="expr27" class="input" type="input"/><button expr28="expr28" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr29="expr29" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr27',
-    selector: '[expr27]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr23="expr23" class="input" type="input"/><button expr24="expr24" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr25="expr25" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr23',
+    selector: '[expr23]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -157,8 +157,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr28',
-    selector: '[expr28]',
+    redundantAttribute: 'expr24',
+    selector: '[expr24]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -172,9 +172,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr30="expr30" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr31="expr31"> </strong></span><div style="margin-left: auto;"></div><span expr32="expr32" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr30',
-      selector: '[expr30]',
+    template: template('<button expr26="expr26" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr27="expr27"> </strong></span><div style="margin-left: auto;"></div><span expr28="expr28" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr26',
+      selector: '[expr26]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -185,24 +185,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr31',
-      selector: '[expr31]',
+      redundantAttribute: 'expr27',
+      selector: '[expr27]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr32',
-      selector: '[expr32]',
+      redundantAttribute: 'expr28',
+      selector: '[expr28]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr29',
-    selector: '[expr29]',
+    redundantAttribute: 'expr25',
+    selector: '[expr25]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items

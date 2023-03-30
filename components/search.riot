@@ -38,7 +38,7 @@
                         promise = PAPI.fetchFiliere(this.state.course.fili)
                         break
                     case 2:
-                        promise = PAPI.fetchSpecialites(this.state.course.sousfili)
+                        promise = PAPI.fetchSpecialites(this.state.course.fili, this.state.course.sousfili)
                         break
 
                     default:
