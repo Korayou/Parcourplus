@@ -13,11 +13,11 @@
 		<table class="table is-fullwidth is-hoverable">
 			<thead>
 				<tr>
-					<th><abbr title="name">Nom</abbr></th>
-					<th><abbr title="city">Ville</abbr></th>
-					<th><abbr title="dept">Dpt</abbr></th>
-					<th><abbr title="moyenne">Moyenne</abbr></th>
-					<th><abbr title="selectivite">Sélectivité</abbr></th>
+					<th><abbr title="name">Nom</abbr></th><a id="g_ea_lib_vx" onclick={sort}><span class="icon"><i class="fas fa-sort"></i></span></a>
+					<th><abbr title="city">Ville</abbr></th><a id="ville_etab" onclick={sort}><span class="icon"><i class="fas fa-sort"></i></span></a>
+					<th><abbr title="dept">Dpt</abbr></th><a id="dep" onclick={sort}><span class="icon"><i class="fas fa-sort"></i></span></a>
+					<th><abbr title="moyenne">Moyenne</abbr></th><a id="moyenne" onclick={sort}><span class="icon"><i class="fas fa-sort"></i></span></a>
+					<th><abbr title="selectivite">Sélectivité</abbr></th><a id="taux_acces_ens" onclick={sort}><span class="icon"><i class="fas fa-sort"></i></span></a>
 				</tr>
 			</thead>
             <tbody>
@@ -44,10 +44,10 @@
                 onBeforeMount(props, state) {
                     state = {
                         items: null,
-                        breakCycle: false
+                        breakCycle: false,
+                        ascOrder: true
                     }
                 },
-
                 onUpdated(props, state) {
                     if (!props.shouldShowInfos || state.breakCycle) return
                     fetchEtablissement(props.course).then((response) => {
@@ -70,6 +70,17 @@
                         })
                         state.breakCycle = false
                     })
+                },
+                sort(e){
+                    console.log("sort")
+                    console.log(e.target)
+                    if (this.state.ascOrder){
+                        this.state.items.sort((etablissement1, etablissement2)=>etablissement2.fields[order]-etablissement1.fields[order]))
+                    } else {
+                        this.state.items.sort((etablissement1, etablissement2)=>etablissement1.fields[order]-etablissement2.fields[order]))
+                    }
+                    this.state.ascOrder=!this.state.ascOrder
+                    this.update()
                 }
             }
         }

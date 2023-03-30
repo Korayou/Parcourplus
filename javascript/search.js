@@ -8,24 +8,36 @@ class PAPI {
   static timezone = "Europe%2FBerlin";
   static searchURL = `https://data.enseignementsup-recherche.gouv.fr/api/records/1.0/search/?dataset=${PAPI.dataset}&timezone=${PAPI.timezone}`;
   static async fetchFilieres() {
+    if (localStorage.getItem("filis")) return JSON.parse(localStorage.getItem("filis"));
     let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fili`);
     let result = await request.json();
-    return result["facet_groups"][0]["facets"];
+    let response = result["facet_groups"][0]["facets"];
+    localStorage.setItem("filis", JSON.stringify(response));
+    return response;
   }
   static async fetchFiliere(filiere) {
+    if (localStorage.getItem("fili." + filiere)) return JSON.parse(localStorage.getItem("fili." + filiere));
     let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`);
     let result = await request.json();
-    return result["facet_groups"][0]["facets"];
+    let response = result["facet_groups"][0]["facets"];
+    localStorage.setItem("fili." + filiere, JSON.stringify(response));
+    return response;
   }
   static async fetchSpecialites(specialite) {
+    if (localStorage.getItem("spe." + specialite)) return JSON.parse(localStorage.getItem("spe." + specialite));
     let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}`);
     let result = await request.json();
-    return result["facet_groups"][0]["facets"];
+    let response = result["facet_groups"][0]["facets"];
+    localStorage.setItem("spe." + specialite, JSON.stringify(response));
+    return response;
   }
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
+    if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`));
     let request = await fetch(`${PAPI.searchURL}&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
     let result = await request.json();
-    return result["records"];
+    let response = result["records"];
+    localStorage.setItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`, JSON.stringify(response));
+    return response;
   }
 }
 
@@ -132,9 +144,9 @@ var search = {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr1400="expr1400" class="input" type="input"/><button expr1401="expr1401" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr1402="expr1402" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr1400',
-    selector: '[expr1400]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr626="expr626" class="input" type="input"/><button expr627="expr627" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr628="expr628" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr626',
+    selector: '[expr626]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -145,8 +157,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr1401',
-    selector: '[expr1401]',
+    redundantAttribute: 'expr627',
+    selector: '[expr627]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -160,9 +172,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr1403="expr1403" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr1404="expr1404"> </strong></span><div style="margin-left: auto;"></div><span expr1405="expr1405" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr1403',
-      selector: '[expr1403]',
+    template: template('<button expr629="expr629" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr630="expr630"> </strong></span><div style="margin-left: auto;"></div><span expr631="expr631" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr629',
+      selector: '[expr629]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -173,24 +185,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr1404',
-      selector: '[expr1404]',
+      redundantAttribute: 'expr630',
+      selector: '[expr630]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr1405',
-      selector: '[expr1405]',
+      redundantAttribute: 'expr631',
+      selector: '[expr631]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr1402',
-    selector: '[expr1402]',
+    redundantAttribute: 'expr628',
+    selector: '[expr628]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
