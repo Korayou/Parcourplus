@@ -9,7 +9,7 @@
 
 		<div class="column">
 			<fili-info course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
-			<school course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
+			<school parentUpdate={state.updating} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
@@ -21,13 +21,15 @@
                 //Initial state
                 this.state = {
                     course: null,
+                    updating: false,
 					shouldShowInfos: false
                 }
             },
             updateCourse(course){
                 this.update({
                     course: course,
-					shouldShowInfos: course != null
+					shouldShowInfos: course != null,
+                    updating: !this.state.updating
                 })
             }
         }

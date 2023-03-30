@@ -144,9 +144,9 @@ var search = {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr626="expr626" class="input" type="input"/><button expr627="expr627" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr628="expr628" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr626',
-    selector: '[expr626]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr27="expr27" class="input" type="input"/><button expr28="expr28" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr29="expr29" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr27',
+    selector: '[expr27]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -157,8 +157,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr627',
-    selector: '[expr627]',
+    redundantAttribute: 'expr28',
+    selector: '[expr28]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -172,9 +172,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr629="expr629" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr630="expr630"> </strong></span><div style="margin-left: auto;"></div><span expr631="expr631" class="tag is-primary"> </span></button>', [{
-      redundantAttribute: 'expr629',
-      selector: '[expr629]',
+    template: template('<button expr30="expr30" class="button is-fullwidth p-2"><span style="font-size: .75em; max-size: 90%"><strong expr31="expr31"> </strong></span><div style="margin-left: auto;"></div><span expr32="expr32" class="tag is-primary"> </span></button>', [{
+      redundantAttribute: 'expr30',
+      selector: '[expr30]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -185,24 +185,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr630',
-      selector: '[expr630]',
+      redundantAttribute: 'expr31',
+      selector: '[expr31]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr631',
-      selector: '[expr631]',
+      redundantAttribute: 'expr32',
+      selector: '[expr32]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr628',
-    selector: '[expr628]',
+    redundantAttribute: 'expr29',
+    selector: '[expr29]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items

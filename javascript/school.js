@@ -44,15 +44,28 @@ class PAPI {
 async function fetchEtablissement(course) {
   return PAPI.fetchEtablissement(course.fili, course.sousfili, course.soussousfili);
 }
+const SORT_TABLE = [{
+  name: "Nom",
+  id: "g_ea_lib_vx"
+}, {
+  name: "Ville",
+  id: "ville_etab"
+}, {
+  name: "Département",
+  id: "dep"
+}, {
+  name: "Moyenne",
+  id: "moyenne"
+}, {
+  name: "Sélectivité",
+  id: "taux_acces_ens"
+}];
 var school = {
   css: null,
   exports: function search() {
     return {
-      onBeforeMount(props, state) {
-      },
-      onUpdated(props, state) {
-        if (!props.shouldShowInfos || state.breakCycle) return;
-        fetchEtablissement(props.course).then(response => {
+      updateList() {
+        fetchEtablissement(this.props.course).then(response => {
           response.forEach(etablissement => {
             // calcul la moyenne
             let pct_sansmention = etablissement.fields.pct_sansmention;
@@ -65,108 +78,135 @@ var school = {
             // Exemple : Assez bien est entre 12 et 14 donc 13.
             etablissement.fields.moyenne = (pct_TBF * 19 + pct_TB * 17 + pct_B * 15 + pct_AB * 13 + pct_sansmention * 11) / 100;
           });
-          state.breakCycle = true;
           this.update({
-            items: response
+            items: response,
+            parentUpdate: this.props.parentUpdate
           });
-          state.breakCycle = false;
         });
       },
-      sort(e) {}
+      sortList(sortBy) {
+        //Si la liste est déjà triée par la bonne catégorie, on l'inverse
+        if (sortBy == this.state.sortBy) {
+          this.state.items.reverse();
+        }
+        //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
+        else {
+          this.state.sortBy = sortBy;
+          switch (sortBy) {
+            case SORT_TABLE[3].id:
+            case SORT_TABLE[4].id:
+              {
+                this.state.items.sort((a, b) => {
+                  if (a.fields[sortBy] > b.fields[sortBy]) return 1;else return -1;
+                });
+                break;
+              }
+            default:
+              {
+                this.state.items.sort((a, b) => {
+                  return a.fields[sortBy].localeCompare(b.fields[sortBy]);
+                });
+                break;
+              }
+          }
+        }
+        this.update({
+          items: this.state.items
+        });
+      },
+      onBeforeMount(props, state) {
+      },
+      onMounted(props, state) {
+        this.update({
+          sortFields: SORT_TABLE
+        });
+      },
+      onUpdated(props, state) {
+        if (!props.shouldShowInfos || state.parentUpdate == props.parentUpdate) return;
+        this.updateList();
+      }
     };
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr693="expr693" class="box p-2 m-2"></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr336="expr336" class="box p-2 m-2"></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.shouldShowInfos,
-    redundantAttribute: 'expr693',
-    selector: '[expr693]',
-    template: template('<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th><abbr title="name">Nom</abbr></th><a expr694="expr694" id="name"><span class="icon"><i class="fas fa-sort"></i></span></a><th><abbr title="city">Ville</abbr></th><a expr695="expr695" id="city"><span class="icon"><i class="fas fa-sort"></i></span></a><th><abbr title="dept">Dpt</abbr></th><a expr696="expr696" id="dept"><span class="icon"><i class="fas fa-sort"></i></span></a><th><abbr title="moyenne">Moyenne</abbr></th><a expr697="expr697" id="moyenne"><span class="icon"><i class="fas fa-sort"></i></span></a><th><abbr title="selectivite">Sélectivité</abbr></th><a expr698="expr698" id="select"><span class="icon"><i class="fas fa-sort"></i></span></a></tr></thead><tbody><tr expr699="expr699"></tr></tbody></table>', [{
-      redundantAttribute: 'expr694',
-      selector: '[expr694]',
-      expressions: [{
-        type: expressionTypes.EVENT,
-        name: 'onclick',
-        evaluate: _scope => _scope.sort
-      }]
-    }, {
-      redundantAttribute: 'expr695',
-      selector: '[expr695]',
-      expressions: [{
-        type: expressionTypes.EVENT,
-        name: 'onclick',
-        evaluate: _scope => _scope.sort
-      }]
-    }, {
-      redundantAttribute: 'expr696',
-      selector: '[expr696]',
-      expressions: [{
-        type: expressionTypes.EVENT,
-        name: 'onclick',
-        evaluate: _scope => _scope.sort
-      }]
-    }, {
-      redundantAttribute: 'expr697',
-      selector: '[expr697]',
-      expressions: [{
-        type: expressionTypes.EVENT,
-        name: 'onclick',
-        evaluate: _scope => _scope.sort
-      }]
-    }, {
-      redundantAttribute: 'expr698',
-      selector: '[expr698]',
-      expressions: [{
-        type: expressionTypes.EVENT,
-        name: 'onclick',
-        evaluate: _scope => _scope.sort
-      }]
+    redundantAttribute: 'expr336',
+    selector: '[expr336]',
+    template: template('<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" style="border-radius: 5px;"></iframe><br/><div class="block control has-icons-left is-inline-block is-pulled-right"><input class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable"><thead><tr><th expr337="expr337"></th></tr></thead><tbody><tr expr339="expr339"></tr></tbody></table>', [{
+      type: bindingTypes.EACH,
+      getKey: null,
+      condition: null,
+      template: template(' <a expr338="expr338"><span class="icon"><i class="fas fa-sort"></i></span></a>', [{
+        expressions: [{
+          type: expressionTypes.TEXT,
+          childNodeIndex: 0,
+          evaluate: _scope => [_scope.sortField.name].join('')
+        }]
+      }, {
+        redundantAttribute: 'expr338',
+        selector: '[expr338]',
+        expressions: [{
+          type: expressionTypes.ATTRIBUTE,
+          name: 'id',
+          evaluate: _scope => _scope.sortField.id
+        }, {
+          type: expressionTypes.EVENT,
+          name: 'onclick',
+          evaluate: _scope => () => _scope.sortList(_scope.sortField.id)
+        }]
+      }]),
+      redundantAttribute: 'expr337',
+      selector: '[expr337]',
+      itemName: 'sortField',
+      indexName: null,
+      evaluate: _scope => _scope.state.sortFields
     }, {
       type: bindingTypes.EACH,
       getKey: null,
       condition: null,
-      template: template('<td expr700="expr700"> </td><td expr701="expr701"> </td><td expr702="expr702"> </td><td expr703="expr703"> </td><td expr704="expr704"> </td>', [{
-        redundantAttribute: 'expr700',
-        selector: '[expr700]',
+      template: template('<td expr340="expr340"> </td><td expr341="expr341"> </td><td expr342="expr342"> </td><td expr343="expr343"> </td><td expr344="expr344"> </td>', [{
+        redundantAttribute: 'expr340',
+        selector: '[expr340]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.etablissement.fields.g_ea_lib_vx
         }]
       }, {
-        redundantAttribute: 'expr701',
-        selector: '[expr701]',
+        redundantAttribute: 'expr341',
+        selector: '[expr341]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.etablissement.fields.ville_etab
         }]
       }, {
-        redundantAttribute: 'expr702',
-        selector: '[expr702]',
+        redundantAttribute: 'expr342',
+        selector: '[expr342]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.etablissement.fields.dep
         }]
       }, {
-        redundantAttribute: 'expr703',
-        selector: '[expr703]',
+        redundantAttribute: 'expr343',
+        selector: '[expr343]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.etablissement.fields.moyenne
         }]
       }, {
-        redundantAttribute: 'expr704',
-        selector: '[expr704]',
+        redundantAttribute: 'expr344',
+        selector: '[expr344]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.etablissement.fields.taux_acces_ens
         }]
       }]),
-      redundantAttribute: 'expr699',
-      selector: '[expr699]',
+      redundantAttribute: 'expr339',
+      selector: '[expr339]',
       itemName: 'etablissement',
       indexName: null,
       evaluate: _scope => _scope.state.items
