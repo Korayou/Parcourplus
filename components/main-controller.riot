@@ -5,9 +5,10 @@
                 <img class="m-auto" src="./resources/logo-parcoursup.svg"/>
             </div>
 			<search updateCourse={updateCourse}></search>
+            <button class="button is-danger ml-2 is-outlined" onclick={clearCache}>Vider le cache</button>
 		</div>
 
-		<div class="column">
+		<div class="column pl-0">
 			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
 			<school popup={popup} schoolList={state.schoolList} schoolListUpdating={state.schoolListUpdating} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
@@ -25,7 +26,7 @@
 
                 this.update({
                     course: course,
-					shouldShowInfos: course != null,
+					shouldShowInfos: course != null
                 })
             },
 
@@ -59,11 +60,20 @@
             onMounted(props, state) {
                 this.update({
                     course: null,
+                    schoolList: [],
                     school: null,
-                    schoolList: null,
                     popupEnabled: false,
 					shouldShowInfos: false
                 })
+            },
+
+            clearCache(e) {
+                localStorage.clear()
+                e.target.textContent = "Cache vidé !"
+                
+                setTimeout(() => {
+                    e.target.textContent = "Vider le cache"
+                }, 3000)
             },
             popup(school){
                 this.update({

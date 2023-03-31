@@ -1,2452 +1,1382 @@
 {
-    "nhits": 272,
+    "nhits": 11,
     "parameters": {
-        "dataset": [
-            "fr-esr-parcoursup"
-        ],
-        "q": "PASS",
-        "rows": 10,
+        "dataset": "fr-esr-parcoursup",
+        "rows": 10000,
         "start": 0,
-        "facet": [
-            "session",
-            "contrat_etab",
-            "cod_uai",
-            "g_ea_lib_vx",
-            "dep_lib",
-            "region_etab_aff",
-            "acad_mies",
-            "ville_etab",
-            "lib_for_voe_ins",
-            "select_form",
-            "fili",
-            "form_lib_voe_acc",
-            "fil_lib_voe_acc",
-            "detail_forma",
-            "tri",
-            "cod_aff_form",
-            "etablissement_id_paysage",
-            "composante_id_paysage"
-        ],
+        "refine": {
+            "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+            "form_lib_voe_acc": "BUT - Service",
+            "fili": "BUT"
+        },
         "format": "json",
-        "timezone": "UTC"
+        "timezone": "Europe/Berlin"
     },
     "records": [
         {
             "datasetid": "fr-esr-parcoursup",
-            "recordid": "5f747d402fcce5f48c63b8e49224d361c8a7cf1e",
+            "recordid": "e039595302cdc6b2ca18a11a13ce39dbd2ad4873",
             "fields": {
-                "acc_sansmention": 2,
-                "ville_etab": "Clermont-Ferrand",
-                "nb_cla_pp_bg_brs": 246,
-                "nb_voe_pp_bt": 28,
-                "acc_tb": 25,
-                "lib_comp_voe_ins": "Universit\u00e9 Clermont Auvergne - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "63",
-                "etablissement_id_paysage": "K4lR3",
-                "g_olocalisation_des_formations": [
-                    45.7596,
-                    3.08917
-                ],
-                "acc_aca_orig": 75,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Puy-de-D\u00f4me",
-                "nb_cla_pp_bt_brs": 9,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Clermont-Ferrand",
-                "pct_ab": 22.0,
-                "prop_tot_bt": 0.0,
-                "pct_sansmention": 2.0,
-                "capa_fin": 80,
-                "nb_voe_pp_bg": 1784,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0632084Y",
-                "nb_voe_pc": 0,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 368.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 98.0,
-                "pct_acc_debutpp": 66.0,
-                "pct_tb": 31.0,
-                "pct_aca_orig_idf": 94.0,
-                "part_acces_pro": 0.0,
-                "acc_pc": 0,
-                "pct_bours": 12.0,
-                "prop_tot_bt_brs": 0.0,
-                "acc_pp": 80,
-                "nb_voe_pp_at": 381,
-                "acc_tot_f": 51,
-                "pct_acc_datebac": 98.0,
-                "nb_voe_pp": 2200,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 0.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 0,
-                "voe_tot": 2200,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 246,
-                "prop_tot_at": 0.0,
-                "pct_f": 64.0,
-                "prop_tot_bg_brs": 50.0,
-                "cod_aff_form": "26631",
-                "nb_cla_pp": 2181,
-                "acc_datebac": 78.0,
-                "voe_tot_f": 1407,
-                "nb_voe_pp_bp_brs": 4,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 0,
-                "acc_b": 29,
-                "pct_b": 36.0,
-                "pct_bg_mention": 98.0,
-                "prop_tot_bp_brs": 0.0,
-                "acc_finpp": 78.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 0,
-                "pct_neobac": 100.0,
-                "g_ea_lib_vx": "Universit\u00e9 Clermont Auvergne",
-                "nb_voe_pp_bt_brs": 9,
-                "taux_acces_ens": 19.0,
-                "prop_tot": 368,
-                "region_etab_aff": "Auvergne-Rh\u00f4ne-Alpes",
-                "acc_bt": 0,
-                "acc_tot": 80,
-                "nb_cla_pc": 0,
-                "nb_voe_pp_bp": 7,
-                "part_acces_tec": 0.0,
-                "pct_bt": 0.0,
-                "pct_bp": 0.0,
-                "acc_ab": 18,
-                "nb_cla_pp_bt": 28,
-                "acc_brs": 10,
-                "acc_debutpp": 53.0,
-                "nb_cla_pp_bp": 7,
-                "nb_cla_pp_at": 362,
-                "acc_aca_orig_idf": 75,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26631",
-                "pct_bg": 100.0,
-                "pct_tbf": 8.0,
-                "pct_bt_mention": 0.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 78,
-                "fili": "PASS",
-                "part_acces_gen": 100.0,
-                "acc_bg": 80,
-                "nb_cla_pp_bp_brs": 4,
-                "nb_voe_pc_bt": 0,
-                "nb_voe_pc_bg": 0,
-                "acc_neobac": 80,
-                "nb_cla_pp_bg": 1784,
-                "acc_tbf": 6.0,
-                "pct_aca_orig": 94.0,
-                "ran_grp1": 997.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    3.08917,
-                    45.7596
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "2f3dfd3653aec9d37d2f1009d0edcad28daa5787",
-            "fields": {
-                "acc_sansmention": 25,
-                "ville_etab": "Schoelcher",
-                "nb_cla_pp_bg_brs": 49,
-                "nb_voe_pp_bt": 25,
-                "acc_tb": 1,
-                "lib_comp_voe_ins": "Universit\u00e9 des Antilles - P\u00f4le Martinique - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "972",
-                "etablissement_id_paysage": "z3hdL",
-                "g_olocalisation_des_formations": [
-                    14.6479,
-                    -61.0995
-                ],
-                "acc_aca_orig": 33,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Martinique",
-                "nb_cla_pp_bt_brs": 13,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Martinique",
-                "pct_ab": 24.0,
-                "prop_tot_bt": 23.0,
-                "pct_sansmention": 68.0,
-                "capa_fin": 50,
-                "nb_voe_pp_bg": 211,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "9720832X",
-                "nb_voe_pc": 37,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 179.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 84.0,
-                "pct_acc_debutpp": 12.0,
-                "pct_tb": 3.0,
-                "pct_aca_orig_idf": 89.0,
-                "part_acces_pro": 6.0,
-                "acc_pc": 8,
-                "pct_bours": 43.0,
-                "prop_tot_bt_brs": 15.0,
-                "acc_pp": 35,
-                "nb_voe_pp_at": 52,
-                "acc_tot_f": 37,
-                "pct_acc_datebac": 79.0,
-                "nb_voe_pp": 301,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 9.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 17,
-                "voe_tot": 338,
-                "acc_bt_mention": 2,
-                "nb_voe_pp_bg_brs": 49,
-                "prop_tot_at": 55.0,
-                "pct_f": 86.0,
-                "prop_tot_bg_brs": 43.0,
-                "cod_aff_form": "26825",
-                "nb_cla_pp": 299,
-                "acc_datebac": 34.0,
-                "voe_tot_f": 255,
-                "nb_voe_pp_bp_brs": 8,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 1,
-                "acc_b": 2,
-                "pct_b": 5.0,
-                "pct_bg_mention": 27.0,
-                "prop_tot_bp_brs": 8.0,
-                "acc_finpp": 36.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 6,
-                "pct_neobac": 86.0,
-                "g_ea_lib_vx": "Universit\u00e9 des Antilles - P\u00f4le Martinique",
-                "nb_voe_pp_bt_brs": 13,
-                "taux_acces_ens": 99.0,
-                "prop_tot": 266,
-                "region_etab_aff": "Martinique",
-                "acc_bt": 10,
-                "acc_tot": 43,
-                "nb_cla_pc": 36,
-                "nb_voe_pp_bp": 13,
-                "part_acces_tec": 9.0,
-                "pct_bt": 27.0,
-                "pct_bp": 3.0,
-                "acc_ab": 9,
-                "nb_cla_pp_bt": 25,
-                "acc_brs": 16,
-                "acc_debutpp": 5.0,
-                "nb_cla_pp_bp": 13,
-                "nb_cla_pp_at": 50,
-                "acc_aca_orig_idf": 33,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26825",
-                "pct_bg": 70.0,
-                "pct_tbf": 0.0,
-                "pct_bt_mention": 5.0,
-                "acc_bp": 1,
-                "acc_bg_mention": 10,
-                "fili": "PASS",
-                "part_acces_gen": 85.0,
-                "acc_bg": 26,
-                "nb_cla_pp_bp_brs": 8,
-                "nb_voe_pc_bt": 6,
-                "nb_voe_pc_bg": 13,
-                "acc_neobac": 37,
-                "nb_cla_pp_bg": 211,
-                "acc_tbf": 0.0,
-                "pct_aca_orig": 89.0,
-                "ran_grp1": 1056.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    -61.0995,
-                    14.6479
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "ba765974f5b10a907836b7a3a44adb2a5ab0a059",
-            "fields": {
-                "acc_sansmention": 61,
-                "ville_etab": "Talence",
-                "nb_cla_pp_bg_brs": 432,
-                "nb_voe_pp_bt": 57,
-                "acc_tb": 7,
-                "lib_comp_voe_ins": "Universit\u00e9 de Bordeaux - Bordeaux M\u00e9tropole - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
+                "acc_sansmention": 3,
+                "ville_etab": "Bordeaux",
+                "nb_cla_pp_bg_brs": 40,
+                "nb_voe_pp_bt": 39,
+                "acc_tb": 4,
+                "lib_comp_voe_ins": "IUT Bordeaux Montaigne - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
                 "dep": "33",
-                "etablissement_id_paysage": "90I54",
+                "etablissement_id_paysage": "Mz90U",
+                "ran_grp2": "42",
                 "g_olocalisation_des_formations": [
-                    44.8259,
-                    -0.60421
+                    44.8304,
+                    -0.56235
                 ],
-                "acc_aca_orig": 173,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
+                "acc_aca_orig": 20,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
                 "dep_lib": "Gironde",
-                "nb_cla_pp_bt_brs": 12,
-                "lib_grp1": "Tous les candidats",
+                "nb_cla_pp_bt_brs": 7,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
                 "acad_mies": "Bordeaux",
-                "pct_ab": 38.0,
-                "prop_tot_bt": 18.0,
-                "pct_sansmention": 33.0,
-                "capa_fin": 240,
-                "nb_voe_pp_bg": 2659,
+                "pct_ab": 41.0,
+                "prop_tot_bt": 19.0,
+                "pct_sansmention": 9.0,
+                "capa_fin": 60,
+                "nb_voe_pp_bg": 381,
                 "pct_mention_nonrenseignee": 0.0,
                 "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0333298F",
+                "cod_uai": "0331420P",
                 "nb_voe_pc": 0,
                 "contrat_etab": "Public",
-                "prop_tot_bg": 1109.0,
-                "pct_bp_mention": 1.0,
-                "pct_acc_finpp": 89.0,
-                "pct_acc_debutpp": 3.0,
-                "pct_tb": 4.0,
-                "pct_aca_orig_idf": 94.0,
-                "part_acces_pro": 0.0,
+                "prop_tot_bg": 69.0,
+                "pct_bp_mention": 3.0,
+                "pct_acc_finpp": 100.0,
+                "pct_acc_debutpp": 27.0,
+                "pct_tb": 12.0,
+                "pct_aca_orig_idf": 59.0,
+                "part_acces_pro": 2.0,
                 "acc_pc": 0,
-                "pct_bours": 11.0,
-                "prop_tot_bt_brs": 4.0,
-                "acc_pp": 238,
-                "nb_voe_pp_at": 593,
-                "acc_tot_f": 164,
-                "pct_acc_datebac": 81.0,
-                "nb_voe_pp": 3320,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 7.0,
-                "select_form": "formation non s\u00e9lective",
+                "pct_bours": 21.0,
+                "prop_tot_bt_brs": 5.0,
+                "acc_pp": 59,
+                "nb_voe_pp_at": 333,
+                "acc_tot_f": 49,
+                "pct_acc_datebac": 97.0,
+                "nb_voe_pp": 763,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 2.0,
+                "select_form": "formation s\u00e9lective",
                 "acc_bp_mention": 1,
                 "nb_voe_pc_at": 0,
-                "voe_tot": 3320,
+                "voe_tot": 763,
                 "acc_bt_mention": 3,
-                "nb_voe_pp_bg_brs": 432,
-                "prop_tot_at": 139.0,
-                "pct_f": 69.0,
-                "prop_tot_bg_brs": 159.0,
-                "cod_aff_form": "26841",
-                "nb_cla_pp": 3278,
-                "acc_datebac": 193.0,
-                "voe_tot_f": 2386,
-                "nb_voe_pp_bp_brs": 6,
+                "nb_voe_pp_bg_brs": 67,
+                "prop_tot_at": 59.0,
+                "pct_f": 83.0,
+                "prop_tot_bg_brs": 12.0,
+                "cod_aff_form": "4336",
+                "nb_cla_pp": 508,
+                "acc_datebac": 57.0,
+                "voe_tot_f": 640,
+                "nb_voe_pp_bp_brs": 3,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
                 "tri": "1_universit\u00e9s",
                 "nb_voe_pc_bp": 0,
-                "acc_b": 47,
-                "pct_b": 25.0,
-                "pct_bg_mention": 65.0,
-                "prop_tot_bp_brs": 3.0,
-                "acc_finpp": 212.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 53,
-                "pct_neobac": 78.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Bordeaux - Bordeaux M\u00e9tropole",
-                "nb_voe_pp_bt_brs": 12,
-                "taux_acces_ens": 45.0,
-                "prop_tot": 1273,
+                "acc_b": 12,
+                "pct_b": 35.0,
+                "pct_bg_mention": 79.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 59.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 25,
+                "pct_neobac": 58.0,
+                "g_ea_lib_vx": "IUT Bordeaux Montaigne",
+                "nb_voe_pp_bt_brs": 10,
+                "taux_acces_ens": 25.0,
+                "prop_tot": 149,
                 "region_etab_aff": "Nouvelle-Aquitaine",
-                "acc_bt": 9,
-                "acc_tot": 238,
+                "acc_bt": 5,
+                "acc_tot": 59,
                 "nb_cla_pc": 0,
-                "nb_voe_pp_bp": 11,
-                "part_acces_tec": 2.0,
-                "pct_bt": 5.0,
-                "pct_bp": 1.0,
-                "acc_ab": 70,
-                "nb_cla_pp_bt": 57,
-                "acc_brs": 20,
-                "acc_debutpp": 8.0,
-                "nb_cla_pp_bp": 11,
-                "nb_cla_pp_at": 551,
-                "acc_aca_orig_idf": 173,
+                "nb_voe_pp_bp": 10,
+                "part_acces_tec": 22.0,
+                "pct_bt": 15.0,
+                "pct_bp": 3.0,
+                "acc_ab": 14,
+                "nb_cla_pp_bt": 26,
+                "acc_brs": 7,
+                "acc_debutpp": 16.0,
+                "nb_cla_pp_bp": 7,
+                "nb_cla_pp_at": 212,
+                "acc_aca_orig_idf": 20,
                 "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26841",
-                "pct_bg": 94.0,
-                "pct_tbf": 0.0,
-                "pct_bt_mention": 2.0,
-                "acc_bp": 2,
-                "acc_bg_mention": 120,
-                "fili": "PASS",
-                "part_acces_gen": 98.0,
-                "acc_bg": 174,
-                "nb_cla_pp_bp_brs": 6,
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=4336",
+                "pct_bg": 82.0,
+                "pct_tbf": 3.0,
+                "pct_bt_mention": 9.0,
+                "acc_bp": 1,
+                "acc_bg_mention": 27,
+                "fili": "BUT",
+                "part_acces_gen": 76.0,
+                "acc_bg": 28,
+                "nb_cla_pp_bp_brs": 2,
                 "nb_voe_pc_bt": 0,
                 "nb_voe_pc_bg": 0,
-                "acc_neobac": 185,
-                "nb_cla_pp_bg": 2659,
-                "acc_tbf": 0.0,
-                "pct_aca_orig": 94.0,
-                "ran_grp1": 4381.0
+                "acc_neobac": 34,
+                "nb_cla_pp_bg": 263,
+                "acc_tbf": 1.0,
+                "pct_aca_orig": 59.0,
+                "ran_grp1": 151.0
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -0.60421,
-                    44.8259
+                    -0.56235,
+                    44.8304
                 ]
             },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
         },
         {
             "datasetid": "fr-esr-parcoursup",
-            "recordid": "91d1567184441b19567a483a7f6df9f589df9f57",
+            "recordid": "3fa7d4ceb54937b80c61f6913378dbc96f38d1b0",
             "fields": {
-                "acc_sansmention": 5,
-                "ville_etab": "Limoges",
-                "nb_cla_pp_bg_brs": 168,
-                "nb_voe_pp_bt": 31,
-                "acc_tb": 1,
-                "lib_comp_voe_ins": "Universit\u00e9 de Limoges - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "87",
-                "etablissement_id_paysage": "nkbwh",
+                "acc_sansmention": 0,
+                "ville_etab": "Paris 16e  Arrondissement",
+                "nb_cla_pp_bg_brs": 9,
+                "nb_voe_pp_bt": 27,
+                "acc_tb": 6,
+                "lib_comp_voe_ins": "IUT de Paris - Rives de Seine - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "75",
+                "etablissement_id_paysage": "5cZyU",
+                "ran_grp2": "11",
                 "g_olocalisation_des_formations": [
-                    45.81398,
-                    1.23416
+                    48.842,
+                    2.26776
                 ],
                 "acc_aca_orig": 3,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Haute-Vienne",
-                "nb_cla_pp_bt_brs": 10,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Limoges",
-                "pct_ab": 68.0,
-                "prop_tot_bt": 9.0,
-                "pct_sansmention": 23.0,
-                "capa_fin": 24,
-                "nb_voe_pp_bg": 1099,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Paris",
+                "nb_cla_pp_bt_brs": 2,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Paris",
+                "pct_ab": 22.0,
+                "prop_tot_bt": 8.0,
+                "pct_sansmention": 0.0,
+                "capa_fin": 28,
+                "nb_voe_pp_bg": 123,
                 "pct_mention_nonrenseignee": 0.0,
                 "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0870669E",
-                "nb_voe_pc": 3,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 326.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 64.0,
-                "pct_acc_debutpp": 4.0,
-                "pct_tb": 5.0,
-                "pct_aca_orig_idf": 14.0,
-                "part_acces_pro": 1.0,
-                "acc_pc": 2,
-                "pct_bours": 18.0,
-                "prop_tot_bt_brs": 6.0,
-                "acc_pp": 23,
-                "nb_voe_pp_at": 248,
-                "acc_tot_f": 17,
-                "pct_acc_datebac": 32.0,
-                "nb_voe_pp": 1390,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 2.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 1,
-                "voe_tot": 1393,
-                "acc_bt_mention": 1,
-                "nb_voe_pp_bg_brs": 168,
-                "prop_tot_at": 48.0,
-                "pct_f": 68.0,
-                "prop_tot_bg_brs": 53.0,
-                "cod_aff_form": "26972",
-                "nb_cla_pp": 1372,
-                "acc_datebac": 8.0,
-                "voe_tot_f": 980,
-                "nb_voe_pp_bp_brs": 6,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 0,
-                "acc_b": 1,
-                "pct_b": 5.0,
-                "pct_bg_mention": 73.0,
-                "prop_tot_bp_brs": 1.0,
-                "acc_finpp": 16.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 3,
-                "pct_neobac": 88.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Limoges",
-                "nb_voe_pp_bt_brs": 10,
-                "taux_acces_ens": 69.0,
-                "prop_tot": 385,
-                "region_etab_aff": "Nouvelle-Aquitaine",
-                "acc_bt": 1,
-                "acc_tot": 25,
-                "nb_cla_pc": 3,
-                "nb_voe_pp_bp": 12,
-                "part_acces_tec": 2.0,
-                "pct_bt": 5.0,
-                "pct_bp": 0.0,
-                "acc_ab": 15,
-                "nb_cla_pp_bt": 31,
-                "acc_brs": 4,
-                "acc_debutpp": 1.0,
-                "nb_cla_pp_bp": 12,
-                "nb_cla_pp_at": 230,
-                "acc_aca_orig_idf": 3,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26972",
-                "pct_bg": 95.0,
-                "pct_tbf": 0.0,
-                "pct_bt_mention": 5.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 16,
-                "fili": "PASS",
-                "part_acces_gen": 98.0,
-                "acc_bg": 21,
-                "nb_cla_pp_bp_brs": 6,
-                "nb_voe_pc_bt": 1,
-                "nb_voe_pc_bg": 1,
-                "acc_neobac": 22,
-                "nb_cla_pp_bg": 1099,
-                "acc_tbf": 0.0,
-                "pct_aca_orig": 14.0,
-                "ran_grp1": 4333.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    1.23416,
-                    45.81398
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "6543506ab31dc5fd53178a7064f6b703e609e455",
-            "fields": {
-                "acc_sansmention": 4,
-                "ville_etab": "Limoges",
-                "nb_cla_pp_bg_brs": 158,
-                "nb_voe_pp_bt": 20,
-                "acc_tb": 0,
-                "lib_comp_voe_ins": "Universit\u00e9 de Limoges - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "87",
-                "etablissement_id_paysage": "nkbwh",
-                "g_olocalisation_des_formations": [
-                    45.81377,
-                    1.23386
-                ],
-                "acc_aca_orig": 3,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Haute-Vienne",
-                "nb_cla_pp_bt_brs": 6,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Limoges",
-                "pct_ab": 50.0,
-                "prop_tot_bt": 2.0,
-                "pct_sansmention": 22.0,
-                "capa_fin": 24,
-                "nb_voe_pp_bg": 947,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0870669E",
-                "nb_voe_pc": 6,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 290.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 58.0,
-                "pct_acc_debutpp": 0.0,
-                "pct_tb": 0.0,
-                "pct_aca_orig_idf": 17.0,
-                "part_acces_pro": 1.0,
-                "acc_pc": 4,
-                "pct_bours": 17.0,
-                "prop_tot_bt_brs": 2.0,
-                "acc_pp": 22,
-                "nb_voe_pp_at": 241,
-                "acc_tot_f": 18,
-                "pct_acc_datebac": 46.0,
-                "nb_voe_pp": 1221,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 3.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 5,
-                "voe_tot": 1227,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 158,
-                "prop_tot_at": 49.0,
-                "pct_f": 69.0,
-                "prop_tot_bg_brs": 47.0,
-                "cod_aff_form": "26975",
-                "nb_cla_pp": 1200,
-                "acc_datebac": 12.0,
-                "voe_tot_f": 770,
-                "nb_voe_pp_bp_brs": 8,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 0,
-                "acc_b": 5,
-                "pct_b": 28.0,
-                "pct_bg_mention": 78.0,
-                "prop_tot_bp_brs": 2.0,
-                "acc_finpp": 15.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 8,
-                "pct_neobac": 69.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Limoges",
-                "nb_voe_pp_bt_brs": 6,
-                "taux_acces_ens": 70.0,
-                "prop_tot": 344,
-                "region_etab_aff": "Nouvelle-Aquitaine",
-                "acc_bt": 1,
-                "acc_tot": 26,
-                "nb_cla_pc": 5,
-                "nb_voe_pp_bp": 13,
-                "part_acces_tec": 1.0,
-                "pct_bt": 6.0,
-                "pct_bp": 0.0,
-                "acc_ab": 9,
-                "nb_cla_pp_bt": 20,
-                "acc_brs": 3,
-                "acc_debutpp": 0.0,
-                "nb_cla_pp_bp": 13,
-                "nb_cla_pp_at": 220,
-                "acc_aca_orig_idf": 3,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=26975",
-                "pct_bg": 94.0,
-                "pct_tbf": 0.0,
-                "pct_bt_mention": 0.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 14,
-                "fili": "PASS",
-                "part_acces_gen": 98.0,
-                "acc_bg": 17,
-                "nb_cla_pp_bp_brs": 8,
-                "nb_voe_pc_bt": 0,
-                "nb_voe_pc_bg": 1,
-                "acc_neobac": 18,
-                "nb_cla_pp_bg": 947,
-                "acc_tbf": 0.0,
-                "pct_aca_orig": 17.0,
-                "ran_grp1": 4299.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    1.23386,
-                    45.81377
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "8204a22de55846063b8ec7bad2e675cd3928587c",
-            "fields": {
-                "acc_sansmention": 14,
-                "ville_etab": "Besan\u00e7on",
-                "nb_cla_pp_bg_brs": 229,
-                "nb_voe_pp_bt": 20,
-                "acc_tb": 1,
-                "lib_comp_voe_ins": "Universit\u00e9 de Franche-Comt\u00e9 - Site de Besan\u00e7on - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "25",
-                "etablissement_id_paysage": "7Mpgt",
-                "g_olocalisation_des_formations": [
-                    47.2405,
-                    6.02271
-                ],
-                "acc_aca_orig": 21,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Doubs",
-                "nb_cla_pp_bt_brs": 6,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Besan\u00e7on",
-                "pct_ab": 34.0,
-                "prop_tot_bt": 6.0,
-                "pct_sansmention": 48.0,
-                "capa_fin": 46,
-                "nb_voe_pp_bg": 1506,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0251215K",
+                "cod_uai": "0754247J",
                 "nb_voe_pc": 0,
                 "contrat_etab": "Public",
-                "prop_tot_bg": 457.0,
+                "prop_tot_bg": 28.0,
                 "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 79.0,
-                "pct_acc_debutpp": 0.0,
-                "pct_tb": 3.0,
-                "pct_aca_orig_idf": 72.0,
+                "pct_acc_finpp": 100.0,
+                "pct_acc_debutpp": 67.0,
+                "pct_tb": 26.0,
+                "pct_aca_orig_idf": 52.0,
                 "part_acces_pro": 0.0,
                 "acc_pc": 0,
-                "pct_bours": 7.0,
-                "prop_tot_bt_brs": 0.0,
-                "acc_pp": 42,
-                "nb_voe_pp_at": 322,
-                "acc_tot_f": 18,
-                "pct_acc_datebac": 64.0,
-                "nb_voe_pp": 1852,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 3.0,
-                "select_form": "formation non s\u00e9lective",
+                "pct_bours": 17.0,
+                "prop_tot_bt_brs": 2.0,
+                "acc_pp": 27,
+                "nb_voe_pp_at": 103,
+                "acc_tot_f": 20,
+                "pct_acc_datebac": 100.0,
+                "nb_voe_pp": 256,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 0.0,
+                "select_form": "formation s\u00e9lective",
                 "acc_bp_mention": 0,
                 "nb_voe_pc_at": 0,
-                "voe_tot": 1852,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 229,
-                "prop_tot_at": 54.0,
-                "pct_f": 43.0,
-                "prop_tot_bg_brs": 52.0,
-                "cod_aff_form": "27353",
-                "nb_cla_pp": 1852,
+                "voe_tot": 256,
+                "acc_bt_mention": 3,
+                "nb_voe_pp_bg_brs": 19,
+                "prop_tot_at": 9.0,
+                "pct_f": 74.0,
+                "prop_tot_bg_brs": 5.0,
+                "cod_aff_form": "9523",
+                "nb_cla_pp": 99,
                 "acc_datebac": 27.0,
-                "voe_tot_f": 1143,
+                "voe_tot_f": 207,
                 "nb_voe_pp_bp_brs": 1,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 12,
+                "pct_b": 52.0,
+                "pct_bg_mention": 87.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 27.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 4,
+                "pct_neobac": 85.0,
+                "g_ea_lib_vx": "IUT de Paris - Rives de Seine",
+                "nb_voe_pp_bt_brs": 8,
+                "taux_acces_ens": 21.0,
+                "prop_tot": 45,
+                "region_etab_aff": "Ile-de-France",
+                "acc_bt": 3,
+                "acc_tot": 27,
+                "nb_cla_pc": 0,
+                "nb_voe_pp_bp": 3,
+                "part_acces_tec": 21.0,
+                "pct_bt": 13.0,
+                "pct_bp": 0.0,
+                "acc_ab": 5,
+                "nb_cla_pp_bt": 8,
+                "acc_brs": 4,
+                "acc_debutpp": 18.0,
+                "nb_cla_pp_bp": 0,
+                "nb_cla_pp_at": 23,
+                "acc_aca_orig_idf": 12,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9523",
+                "pct_bg": 87.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 13.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 20,
+                "fili": "BUT",
+                "part_acces_gen": 79.0,
+                "acc_bg": 20,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 0,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 23,
+                "nb_cla_pp_bg": 68,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 13.0,
+                "ran_grp1": 42.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.26776,
+                    48.842
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "75094b6ad2c46d90df9f6dd0876148e88b4bab86",
+            "fields": {
+                "acc_sansmention": 10,
+                "ville_etab": "Aix-en-Provence",
+                "nb_cla_pp_bg_brs": 23,
+                "nb_voe_pp_bt": 58,
+                "acc_tb": 4,
+                "lib_comp_voe_ins": "IUT Aix-Marseille - Site d'Aix-En-Provence - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "13",
+                "etablissement_id_paysage": "xJdyB",
+                "ran_grp2": "52",
+                "g_olocalisation_des_formations": [
+                    43.5253,
+                    5.43956
+                ],
+                "acc_aca_orig": 11,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Bouches-du-Rh\u00f4ne",
+                "nb_cla_pp_bt_brs": 8,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Aix-Marseille",
+                "pct_ab": 21.0,
+                "prop_tot_bt": 25.0,
+                "pct_sansmention": 36.0,
+                "capa_fin": 53,
+                "nb_voe_pp_bg": 340,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0134061U",
+                "nb_voe_pc": 0,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 48.0,
+                "pct_bp_mention": 0.0,
+                "pct_acc_finpp": 95.0,
+                "pct_acc_debutpp": 43.0,
+                "pct_tb": 14.0,
+                "pct_aca_orig_idf": 39.0,
+                "part_acces_pro": 0.0,
+                "acc_pc": 0,
+                "pct_bours": 39.0,
+                "prop_tot_bt_brs": 7.0,
+                "acc_pp": 56,
+                "nb_voe_pp_at": 291,
+                "acc_tot_f": 51,
+                "pct_acc_datebac": 95.0,
+                "nb_voe_pp": 702,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 0.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 0,
+                "nb_voe_pc_at": 0,
+                "voe_tot": 702,
+                "acc_bt_mention": 3,
+                "nb_voe_pp_bg_brs": 65,
+                "prop_tot_at": 55.0,
+                "pct_f": 91.0,
+                "prop_tot_bg_brs": 12.0,
+                "cod_aff_form": "2708",
+                "nb_cla_pp": 338,
+                "acc_datebac": 53.0,
+                "voe_tot_f": 578,
+                "nb_voe_pp_bp_brs": 6,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 8,
+                "pct_b": 29.0,
+                "pct_bg_mention": 54.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 53.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 28,
+                "pct_neobac": 50.0,
+                "g_ea_lib_vx": "IUT Aix-Marseille - Site d'Aix-En-Provence",
+                "nb_voe_pp_bt_brs": 16,
+                "taux_acces_ens": 21.0,
+                "prop_tot": 128,
+                "region_etab_aff": "Provence-Alpes-C\u00f4te d\u2019Azur",
+                "acc_bt": 6,
+                "acc_tot": 56,
+                "nb_cla_pc": 0,
+                "nb_voe_pp_bp": 13,
+                "part_acces_tec": 36.0,
+                "pct_bt": 21.0,
+                "pct_bp": 0.0,
+                "acc_ab": 6,
+                "nb_cla_pp_bt": 35,
+                "acc_brs": 11,
+                "acc_debutpp": 24.0,
+                "nb_cla_pp_bp": 2,
+                "nb_cla_pp_at": 133,
+                "acc_aca_orig_idf": 11,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=2708",
+                "pct_bg": 79.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 11.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 15,
+                "fili": "BUT",
+                "part_acces_gen": 64.0,
+                "acc_bg": 22,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 0,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 28,
+                "nb_cla_pp_bg": 168,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 39.0,
+                "ran_grp1": 191.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.43956,
+                    43.5253
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "6fa3047f786b9e11625be3e32f998f3bc23aa452",
+            "fields": {
+                "acc_sansmention": 13,
+                "ville_etab": "Dijon",
+                "nb_cla_pp_bg_brs": 60,
+                "nb_voe_pp_bt": 79,
+                "acc_tb": 2,
+                "lib_comp_voe_ins": "I.U.T de Dijon - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "21",
+                "etablissement_id_paysage": "Lr94O",
+                "ran_grp2": "89",
+                "g_olocalisation_des_formations": [
+                    47.311,
+                    5.06879
+                ],
+                "acc_aca_orig": 11,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "C\u00f4te-d'or",
+                "nb_cla_pp_bt_brs": 18,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Dijon",
+                "pct_ab": 38.0,
+                "prop_tot_bt": 41.0,
+                "pct_sansmention": 31.0,
+                "capa_fin": 56,
+                "nb_voe_pp_bg": 406,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0211139Z",
+                "nb_voe_pc": 7,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 83.0,
+                "pct_bp_mention": 0.0,
+                "pct_acc_finpp": 87.0,
+                "pct_acc_debutpp": 49.0,
+                "pct_tb": 5.0,
+                "pct_aca_orig_idf": 26.0,
+                "part_acces_pro": 2.0,
+                "acc_pc": 1,
+                "pct_bours": 19.0,
+                "prop_tot_bt_brs": 11.0,
+                "acc_pp": 54,
+                "nb_voe_pp_at": 360,
+                "acc_tot_f": 48,
+                "pct_acc_datebac": 85.0,
+                "nb_voe_pp": 858,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 2.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 0,
+                "nb_voe_pc_at": 6,
+                "voe_tot": 865,
+                "acc_bt_mention": 5,
+                "nb_voe_pp_bg_brs": 71,
+                "prop_tot_at": 61.0,
+                "pct_f": 87.0,
+                "prop_tot_bg_brs": 15.0,
+                "cod_aff_form": "3243",
+                "nb_cla_pp": 660,
+                "acc_datebac": 47.0,
+                "voe_tot_f": 706,
+                "nb_voe_pp_bp_brs": 3,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 11,
+                "pct_b": 26.0,
+                "pct_bg_mention": 57.0,
+                "prop_tot_bp_brs": 1.0,
+                "acc_finpp": 48.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 13,
+                "pct_neobac": 76.0,
+                "g_ea_lib_vx": "I.U.T de Dijon",
+                "nb_voe_pp_bt_brs": 23,
+                "taux_acces_ens": 26.0,
+                "prop_tot": 187,
+                "region_etab_aff": "Bourgogne-Franche-Comt\u00e9",
+                "acc_bt": 11,
+                "acc_tot": 55,
+                "nb_cla_pc": 2,
+                "nb_voe_pp_bp": 13,
+                "part_acces_tec": 40.0,
+                "pct_bt": 26.0,
+                "pct_bp": 0.0,
+                "acc_ab": 16,
+                "nb_cla_pp_bt": 60,
+                "acc_brs": 8,
+                "acc_debutpp": 27.0,
+                "nb_cla_pp_bp": 7,
+                "nb_cla_pp_at": 239,
+                "acc_aca_orig_idf": 11,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=3243",
+                "pct_bg": 74.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 12.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 24,
+                "fili": "BUT",
+                "part_acces_gen": 58.0,
+                "acc_bg": 31,
+                "nb_cla_pp_bp_brs": 2,
+                "nb_voe_pc_bt": 1,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 42,
+                "nb_cla_pp_bg": 354,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 26.0,
+                "ran_grp1": 262.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.06879,
+                    47.311
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "f21e02d5349ddded6aed7a1432d071ebe96708cb",
+            "fields": {
+                "acc_sansmention": 5,
+                "ville_etab": "Nancy",
+                "nb_cla_pp_bg_brs": 43,
+                "nb_voe_pp_bt": 58,
+                "acc_tb": 1,
+                "lib_comp_voe_ins": "I.U.T Nancy-Charlemagne - Universit\u00e9 de Lorraine - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "54",
+                "etablissement_id_paysage": "t6Cq5",
+                "ran_grp2": "40",
+                "g_olocalisation_des_formations": [
+                    48.6826,
+                    6.16211
+                ],
+                "acc_aca_orig": 16,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Meurthe-et-Moselle",
+                "nb_cla_pp_bt_brs": 10,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Nancy-Metz",
+                "pct_ab": 47.0,
+                "prop_tot_bt": 14.0,
+                "pct_sansmention": 17.0,
+                "capa_fin": 52,
+                "nb_voe_pp_bg": 365,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0541324W",
+                "nb_voe_pc": 0,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 97.0,
+                "pct_bp_mention": 3.0,
+                "pct_acc_finpp": 93.0,
+                "pct_acc_debutpp": 55.0,
+                "pct_tb": 3.0,
+                "pct_aca_orig_idf": 53.0,
+                "part_acces_pro": 0.0,
+                "acc_pc": 0,
+                "pct_bours": 13.0,
+                "prop_tot_bt_brs": 2.0,
+                "acc_pp": 56,
+                "nb_voe_pp_at": 354,
+                "acc_tot_f": 44,
+                "pct_acc_datebac": 93.0,
+                "nb_voe_pp": 800,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 1.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 1,
+                "nb_voe_pc_at": 0,
+                "voe_tot": 800,
+                "acc_bt_mention": 4,
+                "nb_voe_pp_bg_brs": 58,
+                "prop_tot_at": 101.0,
+                "pct_f": 79.0,
+                "prop_tot_bg_brs": 20.0,
+                "cod_aff_form": "6321",
+                "nb_cla_pp": 602,
+                "acc_datebac": 52.0,
+                "voe_tot_f": 655,
+                "nb_voe_pp_bp_brs": 5,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 9,
+                "pct_b": 30.0,
+                "pct_bg_mention": 63.0,
+                "prop_tot_bp_brs": 1.0,
+                "acc_finpp": 52.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 26,
+                "pct_neobac": 54.0,
+                "g_ea_lib_vx": "I.U.T Nancy-Charlemagne - Universit\u00e9 de Lorraine",
+                "nb_voe_pp_bt_brs": 17,
+                "taux_acces_ens": 30.0,
+                "prop_tot": 213,
+                "region_etab_aff": "Grand Est",
+                "acc_bt": 5,
+                "acc_tot": 56,
+                "nb_cla_pc": 0,
+                "nb_voe_pp_bp": 23,
+                "part_acces_tec": 17.0,
+                "pct_bt": 17.0,
+                "pct_bp": 3.0,
+                "acc_ab": 14,
+                "nb_cla_pp_bt": 47,
+                "acc_brs": 4,
+                "acc_debutpp": 31.0,
+                "nb_cla_pp_bp": 9,
+                "nb_cla_pp_at": 262,
+                "acc_aca_orig_idf": 16,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=6321",
+                "pct_bg": 80.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 13.0,
+                "acc_bp": 1,
+                "acc_bg_mention": 19,
+                "fili": "BUT",
+                "part_acces_gen": 83.0,
+                "acc_bg": 24,
+                "nb_cla_pp_bp_brs": 2,
+                "nb_voe_pc_bt": 0,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 30,
+                "nb_cla_pp_bg": 284,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 53.0,
+                "ran_grp1": 236.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.16211,
+                    48.6826
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "0a80e9a5612116fbaebe336d4276e2e9c471dce6",
+            "fields": {
+                "acc_sansmention": 6,
+                "ville_etab": "Grenoble",
+                "nb_cla_pp_bg_brs": 24,
+                "nb_voe_pp_bt": 35,
+                "acc_tb": 0,
+                "lib_comp_voe_ins": "I.U.T. 2 de Grenoble - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "38",
+                "etablissement_id_paysage": "Y7ch7",
+                "ran_grp2": "21",
+                "g_olocalisation_des_formations": [
+                    45.1918,
+                    5.71702
+                ],
+                "acc_aca_orig": 10,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Is\u00e8re",
+                "nb_cla_pp_bt_brs": 6,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Grenoble",
+                "pct_ab": 44.0,
+                "prop_tot_bt": 13.0,
+                "pct_sansmention": 33.0,
+                "capa_fin": 26,
+                "nb_voe_pp_bg": 213,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0381775Y",
+                "nb_voe_pc": 0,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 37.0,
+                "pct_bp_mention": 6.0,
+                "pct_acc_finpp": 96.0,
+                "pct_acc_debutpp": 26.0,
+                "pct_tb": 0.0,
+                "pct_aca_orig_idf": 56.0,
+                "part_acces_pro": 3.0,
+                "acc_pc": 0,
+                "pct_bours": 28.0,
+                "prop_tot_bt_brs": 5.0,
+                "acc_pp": 27,
+                "nb_voe_pp_at": 168,
+                "acc_tot_f": 23,
+                "pct_acc_datebac": 96.0,
+                "nb_voe_pp": 424,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 2.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 1,
+                "nb_voe_pc_at": 0,
+                "voe_tot": 424,
+                "acc_bt_mention": 3,
+                "nb_voe_pp_bg_brs": 42,
+                "prop_tot_at": 20.0,
+                "pct_f": 85.0,
+                "prop_tot_bg_brs": 8.0,
+                "cod_aff_form": "5004",
+                "nb_cla_pp": 252,
+                "acc_datebac": 26.0,
+                "voe_tot_f": 359,
+                "nb_voe_pp_bp_brs": 0,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
                 "tri": "1_universit\u00e9s",
                 "nb_voe_pc_bp": 0,
                 "acc_b": 4,
-                "pct_b": 14.0,
-                "pct_bg_mention": 52.0,
+                "pct_b": 22.0,
+                "pct_bg_mention": 44.0,
                 "prop_tot_bp_brs": 0.0,
-                "acc_finpp": 33.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 13,
-                "pct_neobac": 69.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Franche-Comt\u00e9 - Site de Besan\u00e7on",
-                "nb_voe_pp_bt_brs": 6,
-                "taux_acces_ens": 40.0,
-                "prop_tot": 520,
-                "region_etab_aff": "Bourgogne-Franche-Comt\u00e9",
-                "acc_bt": 1,
-                "acc_tot": 42,
+                "acc_finpp": 26.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 9,
+                "pct_neobac": 67.0,
+                "g_ea_lib_vx": "I.U.T. 2 de Grenoble",
+                "nb_voe_pp_bt_brs": 13,
+                "taux_acces_ens": 21.0,
+                "prop_tot": 72,
+                "region_etab_aff": "Auvergne-Rh\u00f4ne-Alpes",
+                "acc_bt": 5,
+                "acc_tot": 27,
                 "nb_cla_pc": 0,
-                "nb_voe_pp_bp": 4,
-                "part_acces_tec": 2.0,
-                "pct_bt": 3.0,
-                "pct_bp": 0.0,
-                "acc_ab": 10,
-                "nb_cla_pp_bt": 20,
-                "acc_brs": 2,
-                "acc_debutpp": 0.0,
+                "nb_voe_pp_bp": 8,
+                "part_acces_tec": 24.0,
+                "pct_bt": 28.0,
+                "pct_bp": 6.0,
+                "acc_ab": 8,
+                "nb_cla_pp_bt": 18,
+                "acc_brs": 5,
+                "acc_debutpp": 7.0,
                 "nb_cla_pp_bp": 4,
-                "nb_cla_pp_at": 322,
-                "acc_aca_orig_idf": 21,
+                "nb_cla_pp_at": 96,
+                "acc_aca_orig_idf": 10,
                 "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27353",
-                "pct_bg": 97.0,
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=5004",
+                "pct_bg": 67.0,
                 "pct_tbf": 0.0,
-                "pct_bt_mention": 0.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 15,
-                "fili": "PASS",
-                "part_acces_gen": 98.0,
-                "acc_bg": 28,
-                "nb_cla_pp_bp_brs": 1,
+                "pct_bt_mention": 17.0,
+                "acc_bp": 1,
+                "acc_bg_mention": 8,
+                "fili": "BUT",
+                "part_acces_gen": 72.0,
+                "acc_bg": 12,
+                "nb_cla_pp_bp_brs": 0,
                 "nb_voe_pc_bt": 0,
                 "nb_voe_pc_bg": 0,
-                "acc_neobac": 29,
-                "nb_cla_pp_bg": 1506,
+                "acc_neobac": 18,
+                "nb_cla_pp_bg": 134,
                 "acc_tbf": 0.0,
-                "pct_aca_orig": 72.0,
-                "ran_grp1": 5779.0
+                "pct_aca_orig": 56.0,
+                "ran_grp1": 76.0
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    6.02271,
-                    47.2405
+                    5.71702,
+                    45.1918
                 ]
             },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
         },
         {
             "datasetid": "fr-esr-parcoursup",
-            "recordid": "e2e766e45d550fd837c94d4ddeca8972bd6f7fef",
+            "recordid": "42c37f9693dac3e920dda0404c22cc6318d1a365",
             "fields": {
-                "acc_sansmention": 7,
-                "ville_etab": "Le Tampon",
-                "nb_cla_pp_bg_brs": 74,
-                "nb_voe_pp_bt": 25,
-                "acc_tb": 0,
-                "lib_comp_voe_ins": "Universit\u00e9 de la R\u00e9union - Le Tampon - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "974",
-                "etablissement_id_paysage": "cEt92",
+                "acc_sansmention": 0,
+                "ville_etab": "Villeneuve-d'Ascq",
+                "nb_cla_pp_bg_brs": 6,
+                "nb_voe_pp_bt": 19,
+                "acc_tb": 4,
+                "lib_comp_voe_ins": "Institut universitaire de technologie de Lille - Universit\u00e9 de Lille - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "59",
+                "etablissement_id_paysage": "U8a0v",
+                "ran_grp2": "6",
                 "g_olocalisation_des_formations": [
-                    -21.2698,
-                    55.507
+                    50.72443,
+                    3.16408
                 ],
-                "acc_aca_orig": 15,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "La R\u00e9union",
-                "nb_cla_pp_bt_brs": 12,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "La R\u00e9union",
-                "pct_ab": 42.0,
-                "prop_tot_bt": 16.0,
-                "pct_sansmention": 37.0,
-                "capa_fin": 30,
-                "nb_voe_pp_bg": 317,
+                "acc_aca_orig": 6,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Nord",
+                "nb_cla_pp_bt_brs": 8,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Lille",
+                "pct_ab": 40.0,
+                "prop_tot_bt": 4.0,
+                "pct_sansmention": 0.0,
+                "capa_fin": 16,
+                "nb_voe_pp_bg": 199,
                 "pct_mention_nonrenseignee": 0.0,
                 "acc_mention_nonrenseignee": 0,
-                "cod_uai": "9741204R",
-                "nb_voe_pc": 50,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 239.0,
-                "pct_bp_mention": 5.0,
-                "pct_acc_finpp": 68.0,
-                "pct_acc_debutpp": 4.0,
-                "pct_tb": 0.0,
-                "pct_aca_orig_idf": 79.0,
-                "part_acces_pro": 4.0,
-                "acc_pc": 9,
-                "pct_bours": 42.0,
-                "prop_tot_bt_brs": 6.0,
-                "acc_pp": 19,
-                "nb_voe_pp_at": 104,
-                "acc_tot_f": 23,
-                "pct_acc_datebac": 68.0,
-                "nb_voe_pp": 457,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 10.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 1,
-                "nb_voe_pc_at": 34,
-                "voe_tot": 507,
-                "acc_bt_mention": 1,
-                "nb_voe_pp_bg_brs": 74,
-                "prop_tot_at": 104.0,
-                "pct_f": 82.0,
-                "prop_tot_bg_brs": 54.0,
-                "cod_aff_form": "27570",
-                "nb_cla_pp": 456,
-                "acc_datebac": 19.0,
-                "voe_tot_f": 349,
-                "nb_voe_pp_bp_brs": 7,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 4,
-                "acc_b": 3,
-                "pct_b": 16.0,
-                "pct_bg_mention": 53.0,
-                "prop_tot_bp_brs": 8.0,
-                "acc_finpp": 19.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 9,
-                "pct_neobac": 68.0,
-                "g_ea_lib_vx": "Universit\u00e9 de la R\u00e9union - Le Tampon",
-                "nb_voe_pp_bt_brs": 12,
-                "taux_acces_ens": 100.0,
-                "prop_tot": 369,
-                "region_etab_aff": "La R\u00e9union",
-                "acc_bt": 3,
-                "acc_tot": 28,
-                "nb_cla_pc": 47,
-                "nb_voe_pp_bp": 11,
-                "part_acces_tec": 7.0,
-                "pct_bt": 16.0,
-                "pct_bp": 11.0,
-                "acc_ab": 8,
-                "nb_cla_pp_bt": 25,
-                "acc_brs": 8,
-                "acc_debutpp": 1.0,
-                "nb_cla_pp_bp": 11,
-                "nb_cla_pp_at": 103,
-                "acc_aca_orig_idf": 15,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27570",
-                "pct_bg": 74.0,
-                "pct_tbf": 5.0,
-                "pct_bt_mention": 5.0,
-                "acc_bp": 2,
-                "acc_bg_mention": 10,
-                "fili": "PASS",
-                "part_acces_gen": 89.0,
-                "acc_bg": 14,
-                "nb_cla_pp_bp_brs": 7,
-                "nb_voe_pc_bt": 2,
-                "nb_voe_pc_bg": 10,
-                "acc_neobac": 19,
-                "nb_cla_pp_bg": 317,
-                "acc_tbf": 1.0,
-                "pct_aca_orig": 79.0,
-                "ran_grp1": 1252.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    55.507,
-                    -21.2698
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "64a59d711382bb686238ccbcfa60a0a08ac0a5e5",
-            "fields": {
-                "acc_sansmention": 22,
-                "ville_etab": "Tours",
-                "nb_cla_pp_bg_brs": 169,
-                "nb_voe_pp_bt": 14,
-                "acc_tb": 5,
-                "lib_comp_voe_ins": "Universit\u00e9 de Tours - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "37",
-                "etablissement_id_paysage": "cqkij",
-                "g_olocalisation_des_formations": [
-                    47.3859,
-                    0.66869
-                ],
-                "acc_aca_orig": 66,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Indre-et-Loire",
-                "nb_cla_pp_bt_brs": 4,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Orl\u00e9ans-Tours",
-                "pct_ab": 45.0,
-                "prop_tot_bt": 3.0,
-                "pct_sansmention": 30.0,
-                "capa_fin": 90,
-                "nb_voe_pp_bg": 1087,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0370800U",
-                "nb_voe_pc": 5,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 526.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 91.0,
-                "pct_acc_debutpp": 0.0,
-                "pct_tb": 7.0,
-                "pct_aca_orig_idf": 90.0,
-                "part_acces_pro": 0.0,
-                "acc_pc": 0,
-                "pct_bours": 25.0,
-                "prop_tot_bt_brs": 1.0,
-                "acc_pp": 87,
-                "nb_voe_pp_at": 283,
-                "acc_tot_f": 47,
-                "pct_acc_datebac": 83.0,
-                "nb_voe_pp": 1387,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 1.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 4,
-                "voe_tot": 1392,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 169,
-                "prop_tot_at": 81.0,
-                "pct_f": 54.0,
-                "prop_tot_bg_brs": 89.0,
-                "cod_aff_form": "27676",
-                "nb_cla_pp": 1359,
-                "acc_datebac": 72.0,
-                "voe_tot_f": 866,
-                "nb_voe_pp_bp_brs": 3,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 0,
-                "acc_b": 13,
-                "pct_b": 18.0,
-                "pct_bg_mention": 70.0,
-                "prop_tot_bp_brs": 1.0,
-                "acc_finpp": 79.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 14,
-                "pct_neobac": 84.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Tours",
-                "nb_voe_pp_bt_brs": 4,
-                "taux_acces_ens": 50.0,
-                "prop_tot": 611,
-                "region_etab_aff": "Centre-Val de Loire",
-                "acc_bt": 0,
-                "acc_tot": 87,
-                "nb_cla_pc": 5,
-                "nb_voe_pp_bp": 3,
-                "part_acces_tec": 0.0,
-                "pct_bt": 0.0,
-                "pct_bp": 0.0,
-                "acc_ab": 33,
-                "nb_cla_pp_bt": 14,
-                "acc_brs": 18,
-                "acc_debutpp": 0.0,
-                "nb_cla_pp_bp": 3,
-                "nb_cla_pp_at": 255,
-                "acc_aca_orig_idf": 66,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27676",
-                "pct_bg": 100.0,
-                "pct_tbf": 0.0,
-                "pct_bt_mention": 0.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 51,
-                "fili": "PASS",
-                "part_acces_gen": 100.0,
-                "acc_bg": 73,
-                "nb_cla_pp_bp_brs": 3,
-                "nb_voe_pc_bt": 0,
-                "nb_voe_pc_bg": 1,
-                "acc_neobac": 73,
-                "nb_cla_pp_bg": 1087,
-                "acc_tbf": 0.0,
-                "pct_aca_orig": 90.0,
-                "ran_grp1": 5271.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    0.66869,
-                    47.3859
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "0a20029059d541c92df7c80c603509091e49050f",
-            "fields": {
-                "acc_sansmention": 6,
-                "ville_etab": "Tours",
-                "nb_cla_pp_bg_brs": 378,
-                "nb_voe_pp_bt": 24,
-                "acc_tb": 36,
-                "lib_comp_voe_ins": "Universit\u00e9 de Tours - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "37",
-                "etablissement_id_paysage": "cqkij",
-                "g_olocalisation_des_formations": [
-                    47.386,
-                    0.66879
-                ],
-                "acc_aca_orig": 125,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Indre-et-Loire",
-                "nb_cla_pp_bt_brs": 5,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Orl\u00e9ans-Tours",
-                "pct_ab": 32.0,
-                "prop_tot_bt": 2.0,
-                "pct_sansmention": 5.0,
-                "capa_fin": 150,
-                "nb_voe_pp_bg": 2625,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0370800U",
-                "nb_voe_pc": 12,
-                "contrat_etab": "Public",
-                "prop_tot_bg": 859.0,
-                "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 89.0,
-                "pct_acc_debutpp": 6.0,
-                "pct_tb": 27.0,
-                "pct_aca_orig_idf": 94.0,
-                "part_acces_pro": 0.0,
-                "acc_pc": 2,
-                "pct_bours": 12.0,
-                "prop_tot_bt_brs": 0.0,
-                "acc_pp": 145,
-                "nb_voe_pp_at": 482,
-                "acc_tot_f": 94,
-                "pct_acc_datebac": 84.0,
-                "nb_voe_pp": 3139,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
-                "prop_tot_bp": 0.0,
-                "select_form": "formation non s\u00e9lective",
-                "acc_bp_mention": 0,
-                "nb_voe_pc_at": 10,
-                "voe_tot": 3151,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 378,
-                "prop_tot_at": 88.0,
-                "pct_f": 64.0,
-                "prop_tot_bg_brs": 112.0,
-                "cod_aff_form": "27677",
-                "nb_cla_pp": 3081,
-                "acc_datebac": 124.0,
-                "voe_tot_f": 2090,
-                "nb_voe_pp_bp_brs": 5,
-                "tri": "1_universit\u00e9s",
-                "nb_voe_pc_bp": 0,
-                "acc_b": 42,
-                "pct_b": 32.0,
-                "pct_bg_mention": 95.0,
-                "prop_tot_bp_brs": 0.0,
-                "acc_finpp": 131.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 14,
-                "pct_neobac": 90.0,
-                "g_ea_lib_vx": "Universit\u00e9 de Tours",
-                "nb_voe_pp_bt_brs": 5,
-                "taux_acces_ens": 40.0,
-                "prop_tot": 949,
-                "region_etab_aff": "Centre-Val de Loire",
-                "acc_bt": 0,
-                "acc_tot": 147,
-                "nb_cla_pc": 11,
-                "nb_voe_pp_bp": 8,
-                "part_acces_tec": 0.0,
-                "pct_bt": 0.0,
-                "pct_bp": 0.0,
-                "acc_ab": 42,
-                "nb_cla_pp_bt": 24,
-                "acc_brs": 16,
-                "acc_debutpp": 9.0,
-                "nb_cla_pp_bp": 8,
-                "nb_cla_pp_at": 424,
-                "acc_aca_orig_idf": 125,
-                "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27677",
-                "pct_bg": 100.0,
-                "pct_tbf": 5.0,
-                "pct_bt_mention": 0.0,
-                "acc_bp": 0,
-                "acc_bg_mention": 126,
-                "fili": "PASS",
-                "part_acces_gen": 100.0,
-                "acc_bg": 133,
-                "nb_cla_pp_bp_brs": 5,
-                "nb_voe_pc_bt": 1,
-                "nb_voe_pc_bg": 1,
-                "acc_neobac": 133,
-                "nb_cla_pp_bg": 2625,
-                "acc_tbf": 6.0,
-                "pct_aca_orig": 94.0,
-                "ran_grp1": 5371.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    0.66879,
-                    47.386
-                ]
-            },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
-        },
-        {
-            "datasetid": "fr-esr-parcoursup",
-            "recordid": "0691d4a968013ae9ef7ecdf2199eda00e31faf0e",
-            "fields": {
-                "acc_sansmention": 3,
-                "ville_etab": "Saint-Etienne",
-                "nb_cla_pp_bg_brs": 292,
-                "nb_voe_pp_bt": 55,
-                "acc_tb": 24,
-                "lib_comp_voe_ins": "Universite Jean Monnet, Saint-Etienne - Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "dep": "42",
-                "etablissement_id_paysage": "tIJ02",
-                "g_olocalisation_des_formations": [
-                    45.48261,
-                    4.36594
-                ],
-                "acc_aca_orig": 62,
-                "list_com": "Liste d'appel commune \u00e0 plusieurs formations",
-                "dep_lib": "Loire",
-                "nb_cla_pp_bt_brs": 19,
-                "lib_grp1": "Tous les candidats",
-                "acad_mies": "Lyon",
-                "pct_ab": 26.0,
-                "prop_tot_bt": 0.0,
-                "pct_sansmention": 3.0,
-                "capa_fin": 96,
-                "nb_voe_pp_bg": 1571,
-                "pct_mention_nonrenseignee": 0.0,
-                "acc_mention_nonrenseignee": 0,
-                "cod_uai": "0421095M",
+                "cod_uai": "0597215X",
                 "nb_voe_pc": 0,
                 "contrat_etab": "Public",
-                "prop_tot_bg": 315.0,
+                "prop_tot_bg": 20.0,
                 "pct_bp_mention": 0.0,
-                "pct_acc_finpp": 95.0,
-                "pct_acc_debutpp": 19.0,
-                "pct_tb": 28.0,
-                "pct_aca_orig_idf": 72.0,
+                "pct_acc_finpp": 100.0,
+                "pct_acc_debutpp": 38.0,
+                "pct_tb": 40.0,
+                "pct_aca_orig_idf": 60.0,
                 "part_acces_pro": 0.0,
                 "acc_pc": 0,
-                "pct_bours": 20.0,
-                "prop_tot_bt_brs": 0.0,
-                "acc_pp": 96,
-                "nb_voe_pp_at": 372,
-                "acc_tot_f": 85,
-                "pct_acc_datebac": 94.0,
-                "nb_voe_pp": 2022,
-                "form_lib_voe_acc": "Licence - Sciences - technologies - sant\u00e9",
+                "pct_bours": 10.0,
+                "prop_tot_bt_brs": 1.0,
+                "acc_pp": 16,
+                "nb_voe_pp_at": 182,
+                "acc_tot_f": 16,
+                "pct_acc_datebac": 100.0,
+                "nb_voe_pp": 404,
+                "form_lib_voe_acc": "BUT - Service",
                 "prop_tot_bp": 0.0,
-                "select_form": "formation non s\u00e9lective",
+                "select_form": "formation s\u00e9lective",
                 "acc_bp_mention": 0,
                 "nb_voe_pc_at": 0,
-                "voe_tot": 2022,
-                "acc_bt_mention": 0,
-                "nb_voe_pp_bg_brs": 292,
-                "prop_tot_at": 43.0,
-                "pct_f": 89.0,
-                "prop_tot_bg_brs": 70.0,
-                "cod_aff_form": "27885",
-                "nb_cla_pp": 2007,
-                "acc_datebac": 90.0,
-                "voe_tot_f": 1498,
-                "nb_voe_pp_bp_brs": 13,
+                "voe_tot": 404,
+                "acc_bt_mention": 2,
+                "nb_voe_pp_bg_brs": 37,
+                "prop_tot_at": 10.0,
+                "pct_f": 100.0,
+                "prop_tot_bg_brs": 4.0,
+                "cod_aff_form": "7113",
+                "nb_cla_pp": 124,
+                "acc_datebac": 16.0,
+                "voe_tot_f": 350,
+                "nb_voe_pp_bp_brs": 0,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
                 "tri": "1_universit\u00e9s",
                 "nb_voe_pc_bp": 0,
-                "acc_b": 34,
-                "pct_b": 40.0,
-                "pct_bg_mention": 97.0,
+                "acc_b": 2,
+                "pct_b": 20.0,
+                "pct_bg_mention": 80.0,
                 "prop_tot_bp_brs": 0.0,
-                "acc_finpp": 91.0,
-                "lib_for_voe_ins": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "acc_at": 10,
-                "pct_neobac": 90.0,
-                "g_ea_lib_vx": "Universite Jean Monnet, Saint-Etienne",
-                "nb_voe_pp_bt_brs": 19,
-                "taux_acces_ens": 21.0,
-                "prop_tot": 358,
-                "region_etab_aff": "Auvergne-Rh\u00f4ne-Alpes",
-                "acc_bt": 0,
-                "acc_tot": 96,
+                "acc_finpp": 16.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 6,
+                "pct_neobac": 62.0,
+                "g_ea_lib_vx": "Institut universitaire de technologie de Lille - Universit\u00e9 de Lille",
+                "nb_voe_pp_bt_brs": 8,
+                "taux_acces_ens": 12.0,
+                "prop_tot": 34,
+                "region_etab_aff": "Hauts-de-France",
+                "acc_bt": 2,
+                "acc_tot": 16,
                 "nb_cla_pc": 0,
-                "nb_voe_pp_bp": 24,
-                "part_acces_tec": 0.0,
-                "pct_bt": 0.0,
+                "nb_voe_pp_bp": 4,
+                "part_acces_tec": 12.0,
+                "pct_bt": 20.0,
                 "pct_bp": 0.0,
-                "acc_ab": 22,
-                "nb_cla_pp_bt": 55,
-                "acc_brs": 17,
-                "acc_debutpp": 18.0,
-                "nb_cla_pp_bp": 24,
-                "nb_cla_pp_at": 357,
-                "acc_aca_orig_idf": 62,
+                "acc_ab": 4,
+                "nb_cla_pp_bt": 16,
+                "acc_brs": 1,
+                "acc_debutpp": 6.0,
+                "nb_cla_pp_bp": 0,
+                "nb_cla_pp_at": 34,
+                "acc_aca_orig_idf": 6,
                 "session": "2022",
-                "fil_lib_voe_acc": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=27885",
-                "pct_bg": 100.0,
-                "pct_tbf": 3.0,
-                "pct_bt_mention": 0.0,
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=7113",
+                "pct_bg": 80.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 20.0,
                 "acc_bp": 0,
-                "acc_bg_mention": 83,
-                "fili": "PASS",
-                "part_acces_gen": 100.0,
-                "acc_bg": 86,
-                "nb_cla_pp_bp_brs": 13,
+                "acc_bg_mention": 8,
+                "fili": "BUT",
+                "part_acces_gen": 88.0,
+                "acc_bg": 8,
+                "nb_cla_pp_bp_brs": 0,
                 "nb_voe_pc_bt": 0,
                 "nb_voe_pc_bg": 0,
-                "acc_neobac": 86,
-                "nb_cla_pp_bg": 1571,
-                "acc_tbf": 3.0,
-                "pct_aca_orig": 72.0,
-                "ran_grp1": 873.0
+                "acc_neobac": 10,
+                "nb_cla_pp_bg": 74,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 60.0,
+                "ran_grp1": 44.0
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    4.36594,
-                    45.48261
+                    3.16408,
+                    50.72443
                 ]
             },
-            "record_timestamp": "2023-01-30T16:50:36.65Z"
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "f41a32f32a7cbc432df3629ab9c6ee1a512232d0",
+            "fields": {
+                "acc_sansmention": 1,
+                "ville_etab": "Saint-Cloud",
+                "nb_cla_pp_bg_brs": 22,
+                "nb_voe_pp_bt": 83,
+                "acc_tb": 3,
+                "lib_comp_voe_ins": "I.U.T de Ville d'Avray - Antenne de Saint-Cloud - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "92",
+                "etablissement_id_paysage": "g6rwB",
+                "ran_grp2": "28",
+                "g_olocalisation_des_formations": [
+                    48.8437,
+                    2.21542
+                ],
+                "acc_aca_orig": 12,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Hauts-de-Seine",
+                "nb_cla_pp_bt_brs": 8,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Versailles",
+                "pct_ab": 39.0,
+                "prop_tot_bt": 19.0,
+                "pct_sansmention": 4.0,
+                "capa_fin": 50,
+                "nb_voe_pp_bg": 365,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0922573X",
+                "nb_voe_pc": 25,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 114.0,
+                "pct_bp_mention": 4.0,
+                "pct_acc_finpp": 100.0,
+                "pct_acc_debutpp": 26.0,
+                "pct_tb": 11.0,
+                "pct_aca_orig_idf": 64.0,
+                "part_acces_pro": 1.0,
+                "acc_pc": 4,
+                "pct_bours": 21.0,
+                "prop_tot_bt_brs": 5.0,
+                "acc_pp": 46,
+                "nb_voe_pp_at": 375,
+                "acc_tot_f": 45,
+                "pct_acc_datebac": 96.0,
+                "nb_voe_pp": 840,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 1.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 1,
+                "nb_voe_pc_at": 15,
+                "voe_tot": 865,
+                "acc_bt_mention": 2,
+                "nb_voe_pp_bg_brs": 61,
+                "prop_tot_at": 76.0,
+                "pct_f": 90.0,
+                "prop_tot_bg_brs": 18.0,
+                "cod_aff_form": "11154",
+                "nb_cla_pp": 299,
+                "acc_datebac": 48.0,
+                "voe_tot_f": 678,
+                "nb_voe_pp_bp_brs": 5,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 12,
+                "pct_b": 43.0,
+                "pct_bg_mention": 86.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 50.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 22,
+                "pct_neobac": 56.0,
+                "g_ea_lib_vx": "I.U.T de Ville d'Avray - Antenne de Saint-Cloud",
+                "nb_voe_pp_bt_brs": 31,
+                "taux_acces_ens": 33.0,
+                "prop_tot": 210,
+                "region_etab_aff": "Ile-de-France",
+                "acc_bt": 3,
+                "acc_tot": 50,
+                "nb_cla_pc": 7,
+                "nb_voe_pp_bp": 17,
+                "part_acces_tec": 10.0,
+                "pct_bt": 11.0,
+                "pct_bp": 4.0,
+                "acc_ab": 11,
+                "nb_cla_pp_bt": 21,
+                "acc_brs": 6,
+                "acc_debutpp": 13.0,
+                "nb_cla_pp_bp": 1,
+                "nb_cla_pp_at": 108,
+                "acc_aca_orig_idf": 18,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "composante_id_paysage": "qLLem",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=11154",
+                "pct_bg": 86.0,
+                "pct_tbf": 4.0,
+                "pct_bt_mention": 7.0,
+                "acc_bp": 1,
+                "acc_bg_mention": 24,
+                "fili": "BUT",
+                "part_acces_gen": 89.0,
+                "acc_bg": 24,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 10,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 28,
+                "nb_cla_pp_bg": 169,
+                "acc_tbf": 1.0,
+                "pct_aca_orig": 43.0,
+                "ran_grp1": 244.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.21542,
+                    48.8437
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "ba633f599a271da0222819e92774300fc3498810",
+            "fields": {
+                "acc_sansmention": 1,
+                "ville_etab": "Le Havre",
+                "nb_cla_pp_bg_brs": 39,
+                "nb_voe_pp_bt": 59,
+                "acc_tb": 1,
+                "lib_comp_voe_ins": "I.U.T du Havre - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "76",
+                "etablissement_id_paysage": "LsQ24",
+                "ran_grp2": "39",
+                "g_olocalisation_des_formations": [
+                    49.4893,
+                    0.12773
+                ],
+                "acc_aca_orig": 15,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Seine-Maritime",
+                "nb_cla_pp_bt_brs": 10,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Normandie",
+                "pct_ab": 35.0,
+                "prop_tot_bt": 19.0,
+                "pct_sansmention": 5.0,
+                "capa_fin": 20,
+                "nb_voe_pp_bg": 349,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0761688X",
+                "nb_voe_pc": 16,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 46.0,
+                "pct_bp_mention": 0.0,
+                "pct_acc_finpp": 86.0,
+                "pct_acc_debutpp": 9.0,
+                "pct_tb": 5.0,
+                "pct_aca_orig_idf": 75.0,
+                "part_acces_pro": 0.0,
+                "acc_pc": 0,
+                "pct_bours": 5.0,
+                "prop_tot_bt_brs": 6.0,
+                "acc_pp": 22,
+                "nb_voe_pp_at": 310,
+                "acc_tot_f": 19,
+                "pct_acc_datebac": 86.0,
+                "nb_voe_pp": 729,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 0.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 0,
+                "nb_voe_pc_at": 9,
+                "voe_tot": 745,
+                "acc_bt_mention": 1,
+                "nb_voe_pp_bg_brs": 65,
+                "prop_tot_at": 13.0,
+                "pct_f": 86.0,
+                "prop_tot_bg_brs": 9.0,
+                "cod_aff_form": "9663",
+                "nb_cla_pp": 310,
+                "acc_datebac": 19.0,
+                "voe_tot_f": 621,
+                "nb_voe_pp_bp_brs": 3,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 10,
+                "pct_b": 50.0,
+                "pct_bg_mention": 90.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 19.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 2,
+                "pct_neobac": 91.0,
+                "g_ea_lib_vx": "I.U.T du Havre",
+                "nb_voe_pp_bt_brs": 21,
+                "taux_acces_ens": 15.0,
+                "prop_tot": 78,
+                "region_etab_aff": "Normandie",
+                "acc_bt": 1,
+                "acc_tot": 22,
+                "nb_cla_pc": 1,
+                "nb_voe_pp_bp": 11,
+                "part_acces_tec": 36.0,
+                "pct_bt": 5.0,
+                "pct_bp": 0.0,
+                "acc_ab": 7,
+                "nb_cla_pp_bt": 31,
+                "acc_brs": 1,
+                "acc_debutpp": 2.0,
+                "nb_cla_pp_bp": 5,
+                "nb_cla_pp_at": 59,
+                "acc_aca_orig_idf": 15,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=9663",
+                "pct_bg": 95.0,
+                "pct_tbf": 5.0,
+                "pct_bt_mention": 5.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 18,
+                "fili": "BUT",
+                "part_acces_gen": 64.0,
+                "acc_bg": 19,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 7,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 20,
+                "nb_cla_pp_bg": 215,
+                "acc_tbf": 1.0,
+                "pct_aca_orig": 75.0,
+                "ran_grp1": 205.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.12773,
+                    49.4893
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "cd57ac2bd2f05a2bb3088ca7de86ddd5ddb31812",
+            "fields": {
+                "acc_sansmention": 3,
+                "ville_etab": "La Roche-sur-Yon",
+                "nb_cla_pp_bg_brs": 7,
+                "nb_voe_pp_bt": 44,
+                "acc_tb": 2,
+                "lib_comp_voe_ins": "I.U.T. La Roche-sur-Yon - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "85",
+                "etablissement_id_paysage": "qUCQp",
+                "ran_grp2": "29",
+                "g_olocalisation_des_formations": [
+                    46.6771,
+                    -1.40498
+                ],
+                "acc_aca_orig": 8,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Vend\u00e9e",
+                "nb_cla_pp_bt_brs": 7,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Nantes",
+                "pct_ab": 41.0,
+                "prop_tot_bt": 13.0,
+                "pct_sansmention": 18.0,
+                "capa_fin": 29,
+                "nb_voe_pp_bg": 308,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0851457X",
+                "nb_voe_pc": 0,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 35.0,
+                "pct_bp_mention": 0.0,
+                "pct_acc_finpp": 97.0,
+                "pct_acc_debutpp": 24.0,
+                "pct_tb": 12.0,
+                "pct_aca_orig_idf": 47.0,
+                "part_acces_pro": 0.0,
+                "acc_pc": 0,
+                "pct_bours": 18.0,
+                "prop_tot_bt_brs": 3.0,
+                "acc_pp": 29,
+                "nb_voe_pp_at": 266,
+                "acc_tot_f": 27,
+                "pct_acc_datebac": 93.0,
+                "nb_voe_pp": 630,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 0.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 0,
+                "nb_voe_pc_at": 0,
+                "voe_tot": 630,
+                "acc_bt_mention": 1,
+                "nb_voe_pp_bg_brs": 52,
+                "prop_tot_at": 29.0,
+                "pct_f": 93.0,
+                "prop_tot_bg_brs": 6.0,
+                "cod_aff_form": "10562",
+                "nb_cla_pp": 147,
+                "acc_datebac": 27.0,
+                "voe_tot_f": 530,
+                "nb_voe_pp_bp_brs": 4,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 5,
+                "pct_b": 29.0,
+                "pct_bg_mention": 76.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 28.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 12,
+                "pct_neobac": 59.0,
+                "g_ea_lib_vx": "I.U.T. La Roche-sur-Yon",
+                "nb_voe_pp_bt_brs": 9,
+                "taux_acces_ens": 16.0,
+                "prop_tot": 77,
+                "region_etab_aff": "Pays de la Loire",
+                "acc_bt": 2,
+                "acc_tot": 29,
+                "nb_cla_pc": 0,
+                "nb_voe_pp_bp": 12,
+                "part_acces_tec": 29.0,
+                "pct_bt": 12.0,
+                "pct_bp": 0.0,
+                "acc_ab": 7,
+                "nb_cla_pp_bt": 31,
+                "acc_brs": 3,
+                "acc_debutpp": 7.0,
+                "nb_cla_pp_bp": 0,
+                "nb_cla_pp_at": 57,
+                "acc_aca_orig_idf": 8,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=10562",
+                "pct_bg": 88.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 6.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 13,
+                "fili": "BUT",
+                "part_acces_gen": 71.0,
+                "acc_bg": 15,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 0,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 17,
+                "nb_cla_pp_bg": 59,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 47.0,
+                "ran_grp1": 73.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.40498,
+                    46.6771
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
+        },
+        {
+            "datasetid": "fr-esr-parcoursup",
+            "recordid": "b0390d5024d1b76968d6f53e91ff9c87fce17041",
+            "fields": {
+                "acc_sansmention": 1,
+                "ville_etab": "Toulouse",
+                "nb_cla_pp_bg_brs": 31,
+                "nb_voe_pp_bt": 43,
+                "acc_tb": 3,
+                "lib_comp_voe_ins": "I.U.T de Toulouse - BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "dep": "31",
+                "etablissement_id_paysage": "1PpB9",
+                "ran_grp2": "34",
+                "g_olocalisation_des_formations": [
+                    43.5655,
+                    1.45883
+                ],
+                "acc_aca_orig": 5,
+                "list_com": "Liste d'appel propre \u00e0 cette formation",
+                "dep_lib": "Haute-Garonne",
+                "nb_cla_pp_bt_brs": 4,
+                "lib_grp1": "Tous les candidats sauf les Bac technologiques",
+                "acad_mies": "Toulouse",
+                "pct_ab": 30.0,
+                "prop_tot_bt": 16.0,
+                "pct_sansmention": 10.0,
+                "capa_fin": 13,
+                "nb_voe_pp_bg": 251,
+                "pct_mention_nonrenseignee": 0.0,
+                "acc_mention_nonrenseignee": 0,
+                "cod_uai": "0311086M",
+                "nb_voe_pc": 0,
+                "contrat_etab": "Public",
+                "prop_tot_bg": 13.0,
+                "pct_bp_mention": 0.0,
+                "pct_acc_finpp": 80.0,
+                "pct_acc_debutpp": 33.0,
+                "pct_tb": 30.0,
+                "pct_aca_orig_idf": 50.0,
+                "part_acces_pro": 0.0,
+                "acc_pc": 0,
+                "pct_bours": 30.0,
+                "prop_tot_bt_brs": 3.0,
+                "acc_pp": 15,
+                "nb_voe_pp_at": 252,
+                "acc_tot_f": 13,
+                "pct_acc_datebac": 73.0,
+                "nb_voe_pp": 555,
+                "form_lib_voe_acc": "BUT - Service",
+                "prop_tot_bp": 0.0,
+                "select_form": "formation s\u00e9lective",
+                "acc_bp_mention": 0,
+                "nb_voe_pc_at": 0,
+                "voe_tot": 555,
+                "acc_bt_mention": 4,
+                "nb_voe_pp_bg_brs": 46,
+                "prop_tot_at": 22.0,
+                "pct_f": 87.0,
+                "prop_tot_bg_brs": 5.0,
+                "cod_aff_form": "18833",
+                "nb_cla_pp": 378,
+                "acc_datebac": 11.0,
+                "voe_tot_f": 452,
+                "nb_voe_pp_bp_brs": 3,
+                "lib_grp2": "Bacheliers technologiques toutes s\u00e9ries",
+                "tri": "1_universit\u00e9s",
+                "nb_voe_pc_bp": 0,
+                "acc_b": 3,
+                "pct_b": 30.0,
+                "pct_bg_mention": 50.0,
+                "prop_tot_bp_brs": 0.0,
+                "acc_finpp": 12.0,
+                "lib_for_voe_ins": "BUT - Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "acc_at": 5,
+                "pct_neobac": 67.0,
+                "g_ea_lib_vx": "I.U.T de Toulouse",
+                "nb_voe_pp_bt_brs": 7,
+                "taux_acces_ens": 16.0,
+                "prop_tot": 51,
+                "region_etab_aff": "Occitanie",
+                "acc_bt": 4,
+                "acc_tot": 15,
+                "nb_cla_pc": 0,
+                "nb_voe_pp_bp": 9,
+                "part_acces_tec": 39.0,
+                "pct_bt": 40.0,
+                "pct_bp": 0.0,
+                "acc_ab": 3,
+                "nb_cla_pp_bt": 30,
+                "acc_brs": 3,
+                "acc_debutpp": 5.0,
+                "nb_cla_pp_bp": 0,
+                "nb_cla_pp_at": 168,
+                "acc_aca_orig_idf": 5,
+                "session": "2022",
+                "fil_lib_voe_acc": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
+                "lien_form_psup": "https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18833",
+                "pct_bg": 60.0,
+                "pct_tbf": 0.0,
+                "pct_bt_mention": 40.0,
+                "acc_bp": 0,
+                "acc_bg_mention": 5,
+                "fili": "BUT",
+                "part_acces_gen": 61.0,
+                "acc_bg": 6,
+                "nb_cla_pp_bp_brs": 0,
+                "nb_voe_pc_bt": 0,
+                "nb_voe_pc_bg": 0,
+                "acc_neobac": 10,
+                "nb_cla_pp_bg": 180,
+                "acc_tbf": 0.0,
+                "pct_aca_orig": 50.0,
+                "ran_grp1": 78.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.45883,
+                    43.5655
+                ]
+            },
+            "record_timestamp": "2023-01-30T17:50:36.65+01:00"
         }
     ],
     "facet_groups": [
         {
-            "name": "session",
+            "name": "fil_lib_voe_acc",
             "facets": [
                 {
-                    "name": "2022",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "2022"
-                }
-            ]
-        },
-        {
-            "name": "contrat_etab",
-            "facets": [
-                {
-                    "name": "Public",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "Public"
-                }
-            ]
-        },
-        {
-            "name": "cod_uai",
-            "facets": [
-                {
-                    "name": "0290346U",
-                    "count": 17,
-                    "state": "displayed",
-                    "path": "0290346U"
-                },
-                {
-                    "name": "0311384L",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "0311384L"
-                },
-                {
-                    "name": "0597065J",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "0597065J"
-                },
-                {
-                    "name": "0691774D",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "0691774D"
-                },
-                {
-                    "name": "0442953W",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "0442953W"
-                },
-                {
-                    "name": "0301577B",
+                    "name": "Information communication Parcours m\u00e9tiers du livre et du patrimoine",
                     "count": 11,
-                    "state": "displayed",
-                    "path": "0301577B"
-                },
-                {
-                    "name": "0342321N",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "0342321N"
-                },
-                {
-                    "name": "0350936C",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "0350936C"
-                },
-                {
-                    "name": "0870669E",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "0870669E"
-                },
-                {
-                    "name": "0931391G",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "0931391G"
-                },
-                {
-                    "name": "0755976N",
-                    "count": 10,
-                    "state": "displayed",
-                    "path": "0755976N"
-                },
-                {
-                    "name": "0211237F",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "0211237F"
-                },
-                {
-                    "name": "0421095M",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "0421095M"
-                },
-                {
-                    "name": "0632084Y",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "0632084Y"
-                },
-                {
-                    "name": "9710585J",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "9710585J"
-                },
-                {
-                    "name": "9720832X",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "9720832X"
-                },
-                {
-                    "name": "0251215K",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "0251215K"
-                },
-                {
-                    "name": "0333298F",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "0333298F"
-                },
-                {
-                    "name": "0370800U",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "0370800U"
-                },
-                {
-                    "name": "0134248X",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "0134248X"
-                },
-                {
-                    "name": "0451721B",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "0451721B"
-                },
-                {
-                    "name": "0580758J",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "0580758J"
-                },
-                {
-                    "name": "0781944P",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "0781944P"
-                },
-                {
-                    "name": "0912409Z",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "0912409Z"
-                },
-                {
-                    "name": "0383546Y",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "0383546Y"
-                },
-                {
-                    "name": "0801344B",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "0801344B"
-                },
-                {
-                    "name": "9740478B",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "9740478B"
-                },
-                {
-                    "name": "0561992L",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "0561992L"
-                },
-                {
-                    "name": "0762047M",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "0762047M"
-                },
-                {
-                    "name": "9741204R",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "9741204R"
-                },
-                {
-                    "name": "0222032P",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "0222032P"
-                },
-                {
-                    "name": "0755188G",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "0755188G"
-                },
-                {
-                    "name": "0763470J",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "0763470J"
-                },
-                {
-                    "name": "0490970N",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "0490970N"
-                },
-                {
-                    "name": "0542493S",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "0542493S"
-                },
-                {
-                    "name": "7200664J",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "7200664J"
-                },
-                {
-                    "name": "9730429D",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "9730429D"
-                }
-            ]
-        },
-        {
-            "name": "g_ea_lib_vx",
-            "facets": [
-                {
-                    "name": "Universit\u00e9 de Brest",
-                    "count": 17,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Brest"
-                },
-                {
-                    "name": "Universit\u00e9 Toulouse 3 Paul Sabatier",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Toulouse 3 Paul Sabatier"
-                },
-                {
-                    "name": "Universit\u00e9 Claude Bernard Lyon 1",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Claude Bernard Lyon 1"
-                },
-                {
-                    "name": "Universit\u00e9 de Lille",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Lille"
-                },
-                {
-                    "name": "Nantes Universit\u00e9",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Nantes Universit\u00e9"
-                },
-                {
-                    "name": "Universit\u00e9 Sorbonne Paris Nord - Antenne de Bobigny",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Sorbonne Paris Nord - Antenne de Bobigny"
-                },
-                {
-                    "name": "Universit\u00e9 de Limoges",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Limoges"
-                },
-                {
-                    "name": "Universit\u00e9 de Montpellier",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Montpellier"
-                },
-                {
-                    "name": "Universit\u00e9 de Montpellier, Antenne de N\u00eemes",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Montpellier, Antenne de N\u00eemes"
-                },
-                {
-                    "name": "Universit\u00e9 de Rennes 1",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Rennes 1"
-                },
-                {
-                    "name": "Universit\u00e9 de Paris",
-                    "count": 10,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Paris"
-                },
-                {
-                    "name": "Universite Jean Monnet, Saint-Etienne",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Universite Jean Monnet, Saint-Etienne"
-                },
-                {
-                    "name": "Universit\u00e9 Clermont Auvergne",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Clermont Auvergne"
-                },
-                {
-                    "name": "Universit\u00e9 de Bourgogne - site de Dijon",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Bourgogne - site de Dijon"
-                },
-                {
-                    "name": "Universit\u00e9 des Antilles - P\u00f4le Guadeloupe",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 des Antilles - P\u00f4le Guadeloupe"
-                },
-                {
-                    "name": "Universit\u00e9 des Antilles - P\u00f4le Martinique",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 des Antilles - P\u00f4le Martinique"
-                },
-                {
-                    "name": "Universit\u00e9 de Bordeaux - Bordeaux M\u00e9tropole",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Bordeaux - Bordeaux M\u00e9tropole"
-                },
-                {
-                    "name": "Universit\u00e9 de Franche-Comt\u00e9 - Site de Besan\u00e7on",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Franche-Comt\u00e9 - Site de Besan\u00e7on"
-                },
-                {
-                    "name": "Universit\u00e9 de Tours",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Tours"
-                },
-                {
-                    "name": "Aix-Marseille Universit\u00e9 - Site de Marseille Timone",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Aix-Marseille Universit\u00e9 - Site de Marseille Timone"
-                },
-                {
-                    "name": "Campus d'Orl\u00e9ans",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Campus d'Orl\u00e9ans"
-                },
-                {
-                    "name": "Universit\u00e9 de Bourgogne - site de Nevers",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Bourgogne - site de Nevers"
-                },
-                {
-                    "name": "Ecole Universitaire de premier cycle - Campus d'Orsay Universit\u00e9 Paris-Saclay",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Ecole Universitaire de premier cycle - Campus d'Orsay Universit\u00e9 Paris-Saclay"
-                },
-                {
-                    "name": "Universit\u00e9 de Versailles - Saint Quentin en Yvelines",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Versailles - Saint Quentin en Yvelines"
-                },
-                {
-                    "name": "Universit\u00e9 Grenoble Alpes",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Grenoble Alpes"
-                },
-                {
-                    "name": "Universit\u00e9 d'Amiens",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 d'Amiens"
-                },
-                {
-                    "name": "Universit\u00e9 de La R\u00e9union - Saint Denis",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de La R\u00e9union - Saint Denis"
-                },
-                {
-                    "name": "Universit\u00e9 de Rennes 1 - Antenne de Vannes",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Rennes 1 - Antenne de Vannes"
-                },
-                {
-                    "name": "Universit\u00e9 de Rouen Normandie - Campus Martainville Rouen - UFR Sant\u00e9",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Rouen Normandie - Campus Martainville Rouen - UFR Sant\u00e9"
-                },
-                {
-                    "name": "Universit\u00e9 de la R\u00e9union - Le Tampon",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de la R\u00e9union - Le Tampon"
-                },
-                {
-                    "name": "Sorbonne Universit\u00e9 - M\u00e9decine",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Sorbonne Universit\u00e9 - M\u00e9decine"
-                },
-                {
-                    "name": "Universit\u00e9 Rennes 1 - Site de Saint-Brieuc",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Rennes 1 - Site de Saint-Brieuc"
-                },
-                {
-                    "name": "Universit\u00e9 de Rouen Normandie - Campus PASS Le Havre",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Rouen Normandie - Campus PASS Le Havre"
-                },
-                {
-                    "name": "Universit\u00e9 Angers",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 Angers"
-                },
-                {
-                    "name": "Universit\u00e9 de Corte",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Corte"
-                },
-                {
-                    "name": "Universit\u00e9 de Guyane",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Guyane"
-                },
-                {
-                    "name": "Universit\u00e9 de Lorraine - Site de Nancy",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Universit\u00e9 de Lorraine - Site de Nancy"
-                }
-            ]
-        },
-        {
-            "name": "dep_lib",
-            "facets": [
-                {
-                    "name": "Finist\u00e8re",
-                    "count": 17,
-                    "state": "displayed",
-                    "path": "Finist\u00e8re"
-                },
-                {
-                    "name": "Haute-Garonne",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Haute-Garonne"
-                },
-                {
-                    "name": "Nord",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Nord"
-                },
-                {
-                    "name": "Rh\u00f4ne",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Rh\u00f4ne"
-                },
-                {
-                    "name": "Loire-Atlantique",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Loire-Atlantique"
-                },
-                {
-                    "name": "Paris",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Paris"
-                },
-                {
-                    "name": "Gard",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Gard"
-                },
-                {
-                    "name": "Haute-Vienne",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Haute-Vienne"
-                },
-                {
-                    "name": "H\u00e9rault",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "H\u00e9rault"
-                },
-                {
-                    "name": "Ille-et-Vilaine",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Ille-et-Vilaine"
-                },
-                {
-                    "name": "Seine-Saint-Denis",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Seine-Saint-Denis"
-                },
-                {
-                    "name": "C\u00f4te-d'or",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "C\u00f4te-d'or"
-                },
-                {
-                    "name": "Guadeloupe",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Guadeloupe"
-                },
-                {
-                    "name": "Loire",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Loire"
-                },
-                {
-                    "name": "Martinique",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Martinique"
-                },
-                {
-                    "name": "Puy-de-D\u00f4me",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Puy-de-D\u00f4me"
-                },
-                {
-                    "name": "Doubs",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Doubs"
-                },
-                {
-                    "name": "Gironde",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Gironde"
-                },
-                {
-                    "name": "Indre-et-Loire",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Indre-et-Loire"
-                },
-                {
-                    "name": "La R\u00e9union",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "La R\u00e9union"
-                },
-                {
-                    "name": "Bouches-du-Rh\u00f4ne",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Bouches-du-Rh\u00f4ne"
-                },
-                {
-                    "name": "Loiret",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Loiret"
-                },
-                {
-                    "name": "Ni\u00e8vre",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Ni\u00e8vre"
-                },
-                {
-                    "name": "Essonne",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Essonne"
-                },
-                {
-                    "name": "Yvelines",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Yvelines"
-                },
-                {
-                    "name": "Is\u00e8re",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Is\u00e8re"
-                },
-                {
-                    "name": "Seine-Maritime",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Seine-Maritime"
-                },
-                {
-                    "name": "Somme",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Somme"
-                },
-                {
-                    "name": "Morbihan",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Morbihan"
-                },
-                {
-                    "name": "C\u00f4tes-d'armor",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "C\u00f4tes-d'armor"
-                },
-                {
-                    "name": "Guyane",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Guyane"
-                },
-                {
-                    "name": "Haute-Corse",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Haute-Corse"
-                },
-                {
-                    "name": "Maine-et-Loire",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Maine-et-Loire"
-                },
-                {
-                    "name": "Meurthe-et-Moselle",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Meurthe-et-Moselle"
-                }
-            ]
-        },
-        {
-            "name": "region_etab_aff",
-            "facets": [
-                {
-                    "name": "Occitanie",
-                    "count": 38,
-                    "state": "displayed",
-                    "path": "Occitanie"
-                },
-                {
-                    "name": "Auvergne-Rh\u00f4ne-Alpes",
-                    "count": 36,
-                    "state": "displayed",
-                    "path": "Auvergne-Rh\u00f4ne-Alpes"
-                },
-                {
-                    "name": "Ile-de-France",
-                    "count": 35,
-                    "state": "displayed",
-                    "path": "Ile-de-France"
-                },
-                {
-                    "name": "Bretagne",
-                    "count": 33,
-                    "state": "displayed",
-                    "path": "Bretagne"
-                },
-                {
-                    "name": "Bourgogne-Franche-Comt\u00e9",
-                    "count": 24,
-                    "state": "displayed",
-                    "path": "Bourgogne-Franche-Comt\u00e9"
-                },
-                {
-                    "name": "Nouvelle-Aquitaine",
-                    "count": 19,
-                    "state": "displayed",
-                    "path": "Nouvelle-Aquitaine"
-                },
-                {
-                    "name": "Hauts-de-France",
-                    "count": 18,
-                    "state": "displayed",
-                    "path": "Hauts-de-France"
-                },
-                {
-                    "name": "Centre-Val de Loire",
-                    "count": 15,
-                    "state": "displayed",
-                    "path": "Centre-Val de Loire"
-                },
-                {
-                    "name": "Pays de la Loire",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Pays de la Loire"
-                },
-                {
-                    "name": "Guadeloupe",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Guadeloupe"
-                },
-                {
-                    "name": "Martinique",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Martinique"
-                },
-                {
-                    "name": "La R\u00e9union",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "La R\u00e9union"
-                },
-                {
-                    "name": "Provence-Alpes-C\u00f4te d\u2019Azur",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Provence-Alpes-C\u00f4te d\u2019Azur"
-                },
-                {
-                    "name": "Normandie",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Normandie"
-                },
-                {
-                    "name": "Corse",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Corse"
-                },
-                {
-                    "name": "Grand Est",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Grand Est"
-                },
-                {
-                    "name": "Guyane",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Guyane"
-                }
-            ]
-        },
-        {
-            "name": "acad_mies",
-            "facets": [
-                {
-                    "name": "Rennes",
-                    "count": 33,
-                    "state": "displayed",
-                    "path": "Rennes"
-                },
-                {
-                    "name": "Lyon",
-                    "count": 22,
-                    "state": "displayed",
-                    "path": "Lyon"
-                },
-                {
-                    "name": "Montpellier",
-                    "count": 22,
-                    "state": "displayed",
-                    "path": "Montpellier"
-                },
-                {
-                    "name": "Dijon",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Dijon"
-                },
-                {
-                    "name": "Toulouse",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Toulouse"
-                },
-                {
-                    "name": "Orl\u00e9ans-Tours",
-                    "count": 15,
-                    "state": "displayed",
-                    "path": "Orl\u00e9ans-Tours"
-                },
-                {
-                    "name": "Lille",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Lille"
-                },
-                {
-                    "name": "Nantes",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Nantes"
-                },
-                {
-                    "name": "Paris",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Paris"
-                },
-                {
-                    "name": "Versailles",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Versailles"
-                },
-                {
-                    "name": "Cr\u00e9teil",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Cr\u00e9teil"
-                },
-                {
-                    "name": "Limoges",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Limoges"
-                },
-                {
-                    "name": "Clermont-Ferrand",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Clermont-Ferrand"
-                },
-                {
-                    "name": "Guadeloupe",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Guadeloupe"
-                },
-                {
-                    "name": "Martinique",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Martinique"
-                },
-                {
-                    "name": "Besan\u00e7on",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Besan\u00e7on"
-                },
-                {
-                    "name": "Bordeaux",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Bordeaux"
-                },
-                {
-                    "name": "La R\u00e9union",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "La R\u00e9union"
-                },
-                {
-                    "name": "Aix-Marseille",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Aix-Marseille"
-                },
-                {
-                    "name": "Amiens",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Amiens"
-                },
-                {
-                    "name": "Grenoble",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Grenoble"
-                },
-                {
-                    "name": "Normandie",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Normandie"
-                },
-                {
-                    "name": "Corse",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Corse"
-                },
-                {
-                    "name": "Guyane",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Guyane"
-                },
-                {
-                    "name": "Nancy-Metz",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Nancy-Metz"
-                }
-            ]
-        },
-        {
-            "name": "ville_etab",
-            "facets": [
-                {
-                    "name": "Brest",
-                    "count": 17,
-                    "state": "displayed",
-                    "path": "Brest"
-                },
-                {
-                    "name": "Toulouse",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Toulouse"
-                },
-                {
-                    "name": "Lille",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Lille"
-                },
-                {
-                    "name": "Villeurbanne",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "Villeurbanne"
-                },
-                {
-                    "name": "Nantes",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "Nantes"
-                },
-                {
-                    "name": "Bobigny",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Bobigny"
-                },
-                {
-                    "name": "Limoges",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Limoges"
-                },
-                {
-                    "name": "Montpellier",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Montpellier"
-                },
-                {
-                    "name": "N\u00eemes",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "N\u00eemes"
-                },
-                {
-                    "name": "Rennes",
-                    "count": 11,
-                    "state": "displayed",
-                    "path": "Rennes"
-                },
-                {
-                    "name": "Paris  6e  Arrondissement",
-                    "count": 10,
-                    "state": "displayed",
-                    "path": "Paris  6e  Arrondissement"
-                },
-                {
-                    "name": "Clermont-Ferrand",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Clermont-Ferrand"
-                },
-                {
-                    "name": "Dijon",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Dijon"
-                },
-                {
-                    "name": "Pointe-\u00e0-Pitre",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Pointe-\u00e0-Pitre"
-                },
-                {
-                    "name": "Saint-Etienne",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Saint-Etienne"
-                },
-                {
-                    "name": "Schoelcher",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "Schoelcher"
-                },
-                {
-                    "name": "Besan\u00e7on",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Besan\u00e7on"
-                },
-                {
-                    "name": "Talence",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Talence"
-                },
-                {
-                    "name": "Tours",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "Tours"
-                },
-                {
-                    "name": "Marseille  5e  Arrondissement",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Marseille  5e  Arrondissement"
-                },
-                {
-                    "name": "Nevers",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Nevers"
-                },
-                {
-                    "name": "Orl\u00e9ans",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "Orl\u00e9ans"
-                },
-                {
-                    "name": "Guyancourt",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Guyancourt"
-                },
-                {
-                    "name": "Orsay",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "Orsay"
-                },
-                {
-                    "name": "Amiens",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Amiens"
-                },
-                {
-                    "name": "Saint-Denis",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Saint-Denis"
-                },
-                {
-                    "name": "Saint-Martin-d'H\u00e8res",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Saint-Martin-d'H\u00e8res"
-                },
-                {
-                    "name": "Le Tampon",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Le Tampon"
-                },
-                {
-                    "name": "Rouen",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Rouen"
-                },
-                {
-                    "name": "Vannes",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Vannes"
-                },
-                {
-                    "name": "Le Havre",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Le Havre"
-                },
-                {
-                    "name": "Paris 13e  Arrondissement",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Paris 13e  Arrondissement"
-                },
-                {
-                    "name": "Saint-Brieuc",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Saint-Brieuc"
-                },
-                {
-                    "name": "Angers",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Angers"
-                },
-                {
-                    "name": "Cayenne",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Cayenne"
-                },
-                {
-                    "name": "Corte",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Corte"
-                },
-                {
-                    "name": "Nancy",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Nancy"
-                }
-            ]
-        },
-        {
-            "name": "lib_for_voe_ins",
-            "facets": [
-                {
-                    "name": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                    "count": 272,
                     "state": "refined",
-                    "path": "Licence - Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)"
-                }
-            ]
-        },
-        {
-            "name": "select_form",
-            "facets": [
-                {
-                    "name": "formation non s\u00e9lective",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "formation non s\u00e9lective"
-                }
-            ]
-        },
-        {
-            "name": "fili",
-            "facets": [
-                {
-                    "name": "PASS",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "PASS"
+                    "path": "Information communication Parcours m\u00e9tiers du livre et du patrimoine"
                 }
             ]
         },
@@ -2454,1187 +1384,21 @@
             "name": "form_lib_voe_acc",
             "facets": [
                 {
-                    "name": "Licence - Sciences - technologies - sant\u00e9",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "Licence - Sciences - technologies - sant\u00e9"
-                }
-            ]
-        },
-        {
-            "name": "fil_lib_voe_acc",
-            "facets": [
-                {
-                    "name": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "Parcours d'Acc\u00e8s Sp\u00e9cifique Sant\u00e9 (PASS)"
-                }
-            ]
-        },
-        {
-            "name": "detail_forma",
-            "facets": [
-                {
-                    "name": "Dispens\u00e9e \u00e0 l'Universit\u00e9 Paris 8",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "Dispens\u00e9e \u00e0 l'Universit\u00e9 Paris 8"
-                },
-                {
-                    "name": "propos\u00e9e par l?Universit\u00e9 Claude Bernard Lyon 1",
-                    "count": 3,
-                    "state": "displayed",
-                    "path": "propos\u00e9e par l?Universit\u00e9 Claude Bernard Lyon 1"
-                },
-                {
-                    "name": "Dispens\u00e9e sur le site de Villetaneuse",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Dispens\u00e9e sur le site de Villetaneuse"
-                },
-                {
-                    "name": "Dispens\u00e9e \u00e0 l'Universit\u00e9 de Cergy",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Dispens\u00e9e \u00e0 l'Universit\u00e9 de Cergy"
-                },
-                {
-                    "name": "Sciences de la vie et de la terre",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Sciences de la vie et de la terre"
-                },
-                {
-                    "name": "Sciences et techniques",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "Sciences et techniques"
-                },
-                {
-                    "name": "Anglais",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Anglais"
-                },
-                {
-                    "name": "Biologie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Biologie"
-                },
-                {
-                    "name": "Biologie - Informatique",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Biologie - Informatique"
-                },
-                {
-                    "name": "Biologie, Physique, Chimie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Biologie, Physique, Chimie"
-                },
-                {
-                    "name": "Biom\u00e9canique et Activit\u00e9s Physiques et Sportives",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Biom\u00e9canique et Activit\u00e9s Physiques et Sportives"
-                },
-                {
-                    "name": "Chimie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Chimie"
-                },
-                {
-                    "name": "Chimie - Biologie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Chimie - Biologie"
-                },
-                {
-                    "name": "Chimie - Physique,Chimie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Chimie - Physique,Chimie"
-                },
-                {
-                    "name": "Chimie et Sciences de la vie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Chimie et Sciences de la vie"
-                },
-                {
-                    "name": "Economie & Gestion",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Economie & Gestion"
-                },
-                {
-                    "name": "Economie et Gestion",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Economie et Gestion"
-                },
-                {
-                    "name": "Enseignement \u00e0 distance",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Enseignement \u00e0 distance"
-                },
-                {
-                    "name": "Gestion appliqu\u00e9e aux SHS",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Gestion appliqu\u00e9e aux SHS"
-                },
-                {
-                    "name": "G\u00e9ographie, Am\u00e9nagement et Environnement",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "G\u00e9ographie, Am\u00e9nagement et Environnement"
-                },
-                {
-                    "name": "G\u00e9osciences & Environnement - Chimie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "G\u00e9osciences & Environnement - Chimie"
-                },
-                {
-                    "name": "Histoire Philosophie Lettres",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Histoire Philosophie Lettres"
-                },
-                {
-                    "name": "Humanit\u00e9s",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Humanit\u00e9s"
-                },
-                {
-                    "name": "Lettres: Sciences du langage et humanit\u00e9s",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Lettres: Sciences du langage et humanit\u00e9s"
-                },
-                {
-                    "name": "Math-Physique",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Math-Physique"
-                },
-                {
-                    "name": "Math\u00e9matiques Informatique (MI)",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Math\u00e9matiques Informatique (MI)"
-                },
-                {
-                    "name": "Math\u00e9matiques Physique Chimie (MPC)",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Math\u00e9matiques Physique Chimie (MPC)"
-                },
-                {
-                    "name": "M\u00e9tiers du soin et du social",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "M\u00e9tiers du soin et du social"
-                },
-                {
-                    "name": "PORTAIL ADMINISTRATION ECONOMIQUE ET SOCIALE-ECONOMIE ET GESTION-GESTION",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "PORTAIL ADMINISTRATION ECONOMIQUE ET SOCIALE-ECONOMIE ET GESTION-GESTION"
-                },
-                {
-                    "name": "Parcours Sciences du soin",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Parcours Sciences du soin"
-                },
-                {
-                    "name": "Parcours Sciences infirmi\u00e8res",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Parcours Sciences infirmi\u00e8res"
-                },
-                {
-                    "name": "Physique",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Physique"
-                },
-                {
-                    "name": "Physique - G\u00e9nie civil",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Physique - G\u00e9nie civil"
-                },
-                {
-                    "name": "Physique Sciences pour l'Ing\u00e9nieur",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Physique Sciences pour l'Ing\u00e9nieur"
-                },
-                {
-                    "name": "Physique-Chimie",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Physique-Chimie"
-                },
-                {
-                    "name": "Pluridisciplinaire",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Pluridisciplinaire"
-                },
-                {
-                    "name": "Portail ISI - Informatique et Sciences pour l'ing\u00e9nieur en Electronique, Signal, T\u00e9l\u00e9communications, R\u00e9seaux, G\u00e9nie M\u00e9canique, Image er Son",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Portail ISI - Informatique et Sciences pour l'ing\u00e9nieur en Electronique, Signal, T\u00e9l\u00e9communications, R\u00e9seaux, G\u00e9nie M\u00e9canique, Image er Son"
-                },
-                {
-                    "name": "Portail MPMEI : Math\u00e9matiques, Physique, Math\u00e9matiques-Economie, Informatique",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Portail MPMEI : Math\u00e9matiques, Physique, Math\u00e9matiques-Economie, Informatique"
-                },
-                {
-                    "name": "Portail PASS sur le site de Boulogne-Sur-Mer",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Portail PASS sur le site de Boulogne-Sur-Mer"
-                },
-                {
-                    "name": "Portail disciplinaire PASS",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Portail disciplinaire PASS"
-                },
-                {
-                    "name": "Psychologie cognitive et Activit\u00e9s Physiques et Sportives",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Psychologie cognitive et Activit\u00e9s Physiques et Sportives"
-                },
-                {
-                    "name": "Recherche en sant\u00e9: outils m\u00e9thodologiques et enjeux pour la\u00a0soci\u00e9t\u00e9",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Recherche en sant\u00e9: outils m\u00e9thodologiques et enjeux pour la\u00a0soci\u00e9t\u00e9"
-                },
-                {
-                    "name": "R\u00e9\u00e9ducation et R\u00e9adaptation",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "R\u00e9\u00e9ducation et R\u00e9adaptation"
-                },
-                {
-                    "name": "SCIENCES",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "SCIENCES"
-                },
-                {
-                    "name": "SV et STAPS",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "SV et STAPS"
-                },
-                {
-                    "name": "Sant\u00e9 des populations",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sant\u00e9 des populations"
-                },
-                {
-                    "name": "Sciences",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences"
-                },
-                {
-                    "name": "Sciences Humaines et Sociales",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences Humaines et Sociales"
-                },
-                {
-                    "name": "Sciences de donn\u00e9es en sant\u00e9",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences de donn\u00e9es en sant\u00e9"
-                },
-                {
-                    "name": "Sciences du Vivant et Environnement  propos\u00e9e par l'Universit\u00e9 Claude Bernard Lyon 1 (site de Lyon)",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences du Vivant et Environnement  propos\u00e9e par l'Universit\u00e9 Claude Bernard Lyon 1 (site de Lyon)"
-                },
-                {
-                    "name": "Sciences du Vivant et Environnement propos\u00e9e par l'Universit\u00e9 Claude Bernard Lyon 1 (site de Bourg-en-Bresse)",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences du Vivant et Environnement propos\u00e9e par l'Universit\u00e9 Claude Bernard Lyon 1 (site de Bourg-en-Bresse)"
-                },
-                {
-                    "name": "Sciences et Techniques",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences et Techniques"
-                },
-                {
-                    "name": "Sciences fondamentales (Maths, Physique, Informatique pour la Chimie et la Biologie)",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences fondamentales (Maths, Physique, Informatique pour la Chimie et la Biologie)"
-                },
-                {
-                    "name": "Sciences humaines et sociales",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences humaines et sociales"
-                },
-                {
-                    "name": "Sciences psychologiques",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences psychologiques"
-                },
-                {
-                    "name": "Sciences: \"Biologie, Chimie, Physique\"",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sciences: \"Biologie, Chimie, Physique\""
-                },
-                {
-                    "name": "Sport sant\u00e9",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "Sport sant\u00e9"
-                },
-                {
-                    "name": "dispens\u00e9e sur le site de Bobigny",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "dispens\u00e9e sur le site de Bobigny"
-                },
-                {
-                    "name": "propos\u00e9e par l'Institut Catholique de Lyon",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "propos\u00e9e par l'Institut Catholique de Lyon"
-                },
-                {
-                    "name": "propos\u00e9e par l'Universit\u00e9 Lyon 2",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "propos\u00e9e par l'Universit\u00e9 Lyon 2"
-                },
-                {
-                    "name": "propos\u00e9e par l'Universit\u00e9 Lyon 3",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "propos\u00e9e par l'Universit\u00e9 Lyon 3"
-                }
-            ]
-        },
-        {
-            "name": "tri",
-            "facets": [
-                {
-                    "name": "1_universit\u00e9s",
-                    "count": 272,
-                    "state": "displayed",
-                    "path": "1_universit\u00e9s"
-                }
-            ]
-        },
-        {
-            "name": "cod_aff_form",
-            "facets": [
-                {
-                    "name": "26626",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26626"
-                },
-                {
-                    "name": "26630",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26630"
-                },
-                {
-                    "name": "26631",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26631"
-                },
-                {
-                    "name": "26632",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26632"
-                },
-                {
-                    "name": "26633",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26633"
-                },
-                {
-                    "name": "26634",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26634"
-                },
-                {
-                    "name": "26635",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26635"
-                },
-                {
-                    "name": "26636",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26636"
-                },
-                {
-                    "name": "26642",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26642"
-                },
-                {
-                    "name": "26823",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26823"
-                },
-                {
-                    "name": "26825",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26825"
-                },
-                {
-                    "name": "26826",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26826"
-                },
-                {
-                    "name": "26828",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26828"
-                },
-                {
-                    "name": "26829",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26829"
-                },
-                {
-                    "name": "26830",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26830"
-                },
-                {
-                    "name": "26832",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26832"
-                },
-                {
-                    "name": "26833",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26833"
-                },
-                {
-                    "name": "26835",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26835"
-                },
-                {
-                    "name": "26838",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26838"
-                },
-                {
-                    "name": "26839",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26839"
-                },
-                {
-                    "name": "26840",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26840"
-                },
-                {
-                    "name": "26841",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26841"
-                },
-                {
-                    "name": "26844",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26844"
-                },
-                {
-                    "name": "26857",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26857"
-                },
-                {
-                    "name": "26972",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26972"
-                },
-                {
-                    "name": "26974",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26974"
-                },
-                {
-                    "name": "26975",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "26975"
-                },
-                {
-                    "name": "27163",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27163"
-                },
-                {
-                    "name": "27198",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27198"
-                },
-                {
-                    "name": "27201",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27201"
-                },
-                {
-                    "name": "27202",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27202"
-                },
-                {
-                    "name": "27351",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27351"
-                },
-                {
-                    "name": "27352",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27352"
-                },
-                {
-                    "name": "27353",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27353"
-                },
-                {
-                    "name": "27354",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27354"
-                },
-                {
-                    "name": "27355",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27355"
-                },
-                {
-                    "name": "27361",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27361"
-                },
-                {
-                    "name": "27362",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27362"
-                },
-                {
-                    "name": "27363",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27363"
-                },
-                {
-                    "name": "27367",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27367"
-                },
-                {
-                    "name": "27423",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27423"
-                },
-                {
-                    "name": "27425",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27425"
-                },
-                {
-                    "name": "27426",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27426"
-                },
-                {
-                    "name": "27427",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27427"
-                },
-                {
-                    "name": "27428",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27428"
-                },
-                {
-                    "name": "27429",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27429"
-                },
-                {
-                    "name": "27430",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27430"
-                },
-                {
-                    "name": "27502",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27502"
-                },
-                {
-                    "name": "27504",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27504"
-                },
-                {
-                    "name": "27548",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27548"
-                },
-                {
-                    "name": "27562",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27562"
-                },
-                {
-                    "name": "27564",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27564"
-                },
-                {
-                    "name": "27565",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27565"
-                },
-                {
-                    "name": "27566",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27566"
-                },
-                {
-                    "name": "27567",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27567"
-                },
-                {
-                    "name": "27568",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27568"
-                },
-                {
-                    "name": "27570",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27570"
-                },
-                {
-                    "name": "27573",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27573"
-                },
-                {
-                    "name": "27584",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27584"
-                },
-                {
-                    "name": "27586",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27586"
-                },
-                {
-                    "name": "27663",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27663"
-                },
-                {
-                    "name": "27664",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27664"
-                },
-                {
-                    "name": "27668",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27668"
-                },
-                {
-                    "name": "27669",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27669"
-                },
-                {
-                    "name": "27672",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27672"
-                },
-                {
-                    "name": "27675",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27675"
-                },
-                {
-                    "name": "27676",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27676"
-                },
-                {
-                    "name": "27677",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27677"
-                },
-                {
-                    "name": "27679",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27679"
-                },
-                {
-                    "name": "27682",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27682"
-                },
-                {
-                    "name": "27685",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27685"
-                },
-                {
-                    "name": "27816",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27816"
-                },
-                {
-                    "name": "27817",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27817"
-                },
-                {
-                    "name": "27843",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27843"
-                },
-                {
-                    "name": "27847",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27847"
-                },
-                {
-                    "name": "27853",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27853"
-                },
-                {
-                    "name": "27856",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27856"
-                },
-                {
-                    "name": "27884",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27884"
-                },
-                {
-                    "name": "27885",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27885"
-                },
-                {
-                    "name": "27886",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27886"
-                },
-                {
-                    "name": "27912",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27912"
-                },
-                {
-                    "name": "27913",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27913"
-                },
-                {
-                    "name": "27914",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27914"
-                },
-                {
-                    "name": "27915",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27915"
-                },
-                {
-                    "name": "27950",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27950"
-                },
-                {
-                    "name": "27952",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27952"
-                },
-                {
-                    "name": "27968",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27968"
-                },
-                {
-                    "name": "27972",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27972"
-                },
-                {
-                    "name": "27974",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27974"
-                },
-                {
-                    "name": "27984",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27984"
-                },
-                {
-                    "name": "27986",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27986"
-                },
-                {
-                    "name": "27991",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27991"
-                },
-                {
-                    "name": "27992",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27992"
-                },
-                {
-                    "name": "27993",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27993"
-                },
-                {
-                    "name": "27994",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27994"
-                },
-                {
-                    "name": "27995",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27995"
-                },
-                {
-                    "name": "27996",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27996"
-                },
-                {
-                    "name": "27997",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27997"
-                },
-                {
-                    "name": "27998",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "27998"
-                },
-                {
-                    "name": "28013",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "28013"
-                }
-            ]
-        },
-        {
-            "name": "etablissement_id_paysage",
-            "facets": [
-                {
-                    "name": "evv7S",
-                    "count": 22,
-                    "state": "displayed",
-                    "path": "evv7S"
-                },
-                {
-                    "name": "z3hdL",
-                    "count": 18,
-                    "state": "displayed",
-                    "path": "z3hdL"
-                },
-                {
-                    "name": "06SE7",
-                    "count": 17,
-                    "state": "displayed",
-                    "path": "06SE7"
-                },
-                {
-                    "name": "9wAap",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "9wAap"
-                },
-                {
-                    "name": "Lr94O",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "Lr94O"
-                },
-                {
-                    "name": "m7K6T",
-                    "count": 16,
-                    "state": "displayed",
-                    "path": "m7K6T"
-                },
-                {
-                    "name": "U8a0v",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "U8a0v"
-                },
-                {
-                    "name": "etBz7",
-                    "count": 13,
-                    "state": "displayed",
-                    "path": "etBz7"
-                },
-                {
-                    "name": "qUCQp",
-                    "count": 12,
-                    "state": "displayed",
-                    "path": "qUCQp"
-                },
-                {
-                    "name": "cqyN7",
+                    "name": "BUT - Service",
                     "count": 11,
-                    "state": "displayed",
-                    "path": "cqyN7"
-                },
+                    "state": "refined",
+                    "path": "BUT - Service"
+                }
+            ]
+        },
+        {
+            "name": "fili",
+            "facets": [
                 {
-                    "name": "nkbwh",
+                    "name": "BUT",
                     "count": 11,
-                    "state": "displayed",
-                    "path": "nkbwh"
-                },
-                {
-                    "name": "5cZyU",
-                    "count": 10,
-                    "state": "displayed",
-                    "path": "5cZyU"
-                },
-                {
-                    "name": "K4lR3",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "K4lR3"
-                },
-                {
-                    "name": "tIJ02",
-                    "count": 9,
-                    "state": "displayed",
-                    "path": "tIJ02"
-                },
-                {
-                    "name": "7Mpgt",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "7Mpgt"
-                },
-                {
-                    "name": "90I54",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "90I54"
-                },
-                {
-                    "name": "cEt92",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "cEt92"
-                },
-                {
-                    "name": "cqkij",
-                    "count": 8,
-                    "state": "displayed",
-                    "path": "cqkij"
-                },
-                {
-                    "name": "xJdyB",
-                    "count": 7,
-                    "state": "displayed",
-                    "path": "xJdyB"
-                },
-                {
-                    "name": "G2qA7",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "G2qA7"
-                },
-                {
-                    "name": "V13Pk",
-                    "count": 6,
-                    "state": "displayed",
-                    "path": "V13Pk"
-                },
-                {
-                    "name": "8j5s2",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "8j5s2"
-                },
-                {
-                    "name": "G4572",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "G4572"
-                },
-                {
-                    "name": "Y7ch7",
-                    "count": 5,
-                    "state": "displayed",
-                    "path": "Y7ch7"
-                },
-                {
-                    "name": "bxPQe",
-                    "count": 2,
-                    "state": "displayed",
-                    "path": "bxPQe"
-                },
-                {
-                    "name": "IXHyv",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "IXHyv"
-                },
-                {
-                    "name": "NLCOF",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "NLCOF"
-                },
-                {
-                    "name": "hy4EW",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "hy4EW"
-                },
-                {
-                    "name": "t6Cq5",
-                    "count": 1,
-                    "state": "displayed",
-                    "path": "t6Cq5"
+                    "state": "refined",
+                    "path": "BUT"
                 }
             ]
         }

@@ -1,15 +1,13 @@
 <school>
     <div if={props.shouldShowInfos} class="box p-2 m-2" disabled="true">
-        <iframe if={false} width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
-        src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" 
-        style="border-radius: 5px;"></iframe>
-        <div class="block control has-icons-left is-inline-block is-pulled-right">
+        <div id="map" width="100%" style="border-radius: 5px"></div>
+        <div class="mt-2 mb-2 control has-icons-left is-inline-block is-pulled-right">
             <input class="input" onkeyup={filterSearch} type="search" placeholder="Établissement">
             <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
             </span>
         </div>
-		<table class="table is-fullwidth is-hoverable">
+		<table class="table is-fullwidth is-hoverable is-narrow">
 			<thead>
 				<tr>
 					<th each={sortField in sortFields}>
@@ -37,7 +35,7 @@
         const SORT_TABLE = [
             {name: "Nom", id: "g_ea_lib_vx"},
             {name: "Ville", id: "ville_etab"},
-            {name: "Département", id: "dep"},
+            {name: "Dept.", id: "dep"},
             {name: "Moyenne", id: "moyenne"},
             {name: "Sélectivité", id: "taux_acces_ens"}
         ]
@@ -100,6 +98,44 @@
                     state.schoolList = [...props.schoolList]
                     state.filteredSchoolList = [...state.schoolList]
                     if (this.$("input")) this.$("input").value = ""
+                }
+            },
+
+            onUpdated(props, state) {
+                if (!state.map && props.shouldShowInfos) {
+
+                    state.map = L.map("map").setView([47, 2.5], 5)
+                    state.markers = L.markerClusterGroup()
+                    
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(state.map);
+                } else (state.map) {
+                    state.markers.clearLayers()
+                    for (let school of state.filteredSchoolList) {
+                        let fields = school.fields
+                        let pos = fields.g_olocalisation_des_formations
+
+                        let popupHTML = document.createElement("div")
+                        
+                        let title = document.createElement("span")
+                        title.textContent = fields.g_ea_lib_vx
+                        title.class = "is-primary"                  
+
+                        let linkToForma = document.createElement("a")
+                        linkToForma.onclick = () => props.popup(school)
+                        linkToForma.textContent = "Voir les infos de l'établissement"
+                        
+                        popupHTML.appendChild(title)
+                        popupHTML.appendChild(document.createElement("br"))
+                        popupHTML.appendChild(linkToForma)
+
+                        let marker = L.marker(pos)
+                        marker.bindPopup(popupHTML)
+                        state.markers.addLayer(marker)
+                    }
+                    state.map.addLayer(state.markers)
                 }
             },
 
