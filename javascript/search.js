@@ -144,9 +144,9 @@ var search = {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr18="expr18" class="input" type="input"/><button expr19="expr19" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr20="expr20" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr18',
-    selector: '[expr18]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr14="expr14" class="input" type="input"/><button expr15="expr15" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr16="expr16" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr14',
+    selector: '[expr14]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -157,8 +157,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr19',
-    selector: '[expr19]',
+    redundantAttribute: 'expr15',
+    selector: '[expr15]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -172,9 +172,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr21="expr21" class="button is-fullwidth p-2" style="white-space: unset"><div style="display: flex; width: 100%"><span class="mt-auto mb-auto" style="font-size: 0.75em; text-align: left;   "><strong expr22="expr22"> </strong></span><div style="margin-left: auto;"></div><span expr23="expr23" class="tag is-primary mt-auto mb-auto"> </span></div></button>', [{
-      redundantAttribute: 'expr21',
-      selector: '[expr21]',
+    template: template('<button expr17="expr17" class="button is-fullwidth p-2" style="white-space: unset"><div style="display: flex; width: 100%"><span class="mt-auto mb-auto" style="font-size: 0.75em; text-align: left;   "><strong expr18="expr18"> </strong></span><div style="margin-left: auto;"></div><span expr19="expr19" class="tag is-primary mt-auto mb-auto"> </span></div></button>', [{
+      redundantAttribute: 'expr17',
+      selector: '[expr17]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -185,24 +185,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr22',
-      selector: '[expr22]',
+      redundantAttribute: 'expr18',
+      selector: '[expr18]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr23',
-      selector: '[expr23]',
+      redundantAttribute: 'expr19',
+      selector: '[expr19]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr20',
-    selector: '[expr20]',
+    redundantAttribute: 'expr16',
+    selector: '[expr16]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items

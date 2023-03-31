@@ -10,14 +10,14 @@ var schoolInfo = {
       this.update();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr24="expr24" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #000000DD;"></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr23="expr23" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #000000DD;"></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.state.enabled,
-    redundantAttribute: 'expr24',
-    selector: '[expr24]',
-    template: template('<div style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; background: #FFFFFF"><button expr25="expr25" class="delete is-medium">X</button><p><h2></h2></p><line-graph expr26="expr26" style="height: 90px; margin: 10px;"></line-graph></div>', [{
-      redundantAttribute: 'expr25',
-      selector: '[expr25]',
+    redundantAttribute: 'expr23',
+    selector: '[expr23]',
+    template: template('<div style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; background: #FFFFFF"><button expr24="expr24" class="delete is-medium">X</button><p><h2></h2></p><line-graph expr25="expr25" style="height: 90px; margin: 10px;"></line-graph></div>', [{
+      redundantAttribute: 'expr24',
+      selector: '[expr24]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onclick',
@@ -29,8 +29,8 @@ var schoolInfo = {
       evaluate: _scope => 'line-graph',
       slots: [],
       attributes: [],
-      redundantAttribute: 'expr26',
-      selector: '[expr26]'
+      redundantAttribute: 'expr25',
+      selector: '[expr25]'
     }])
   }]),
   name: 'school-info'
