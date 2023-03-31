@@ -109,7 +109,7 @@ var mainController = {
       });
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2" style="display: flex"><img class="m-auto" src="./resources/logo-parcoursup.svg"/></div><search expr40="expr40"></search><button expr41="expr41" class="button is-danger ml-2 is-outlined">Vider le cache</button></div><div class="column pl-0"><fili-info expr42="expr42"></fili-info><school expr43="expr43"></school></div></div><school-info expr44="expr44"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2" style="display: flex"><img class="m-auto" src="./resources/logo-parcoursup.svg"/></div><search expr27="expr27"></search><button expr28="expr28" class="button is-danger ml-2 is-outlined">Vider le cache</button></div><div class="column pl-0"><fili-info expr29="expr29"></fili-info><school expr30="expr30"></school></div></div><school-info expr31="expr31"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
@@ -119,11 +119,11 @@ var mainController = {
       name: 'updateCourse',
       evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr40',
-    selector: '[expr40]'
+    redundantAttribute: 'expr27',
+    selector: '[expr27]'
   }, {
-    redundantAttribute: 'expr41',
-    selector: '[expr41]',
+    redundantAttribute: 'expr28',
+    selector: '[expr28]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onclick',
@@ -147,8 +147,8 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr42',
-    selector: '[expr42]'
+    redundantAttribute: 'expr29',
+    selector: '[expr29]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -175,8 +175,8 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr43',
-    selector: '[expr43]'
+    redundantAttribute: 'expr30',
+    selector: '[expr30]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -195,8 +195,8 @@ var mainController = {
       name: 'school',
       evaluate: _scope => _scope.state.school
     }],
-    redundantAttribute: 'expr44',
-    selector: '[expr44]'
+    redundantAttribute: 'expr31',
+    selector: '[expr31]'
   }]),
   name: 'main-controller'
 };

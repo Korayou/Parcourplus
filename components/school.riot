@@ -56,6 +56,7 @@
                     finalArray = this.state.schoolList
                 }
 
+                this.updateMap()
                 this.update({
                     filteredSchoolList: finalArray
                 })
@@ -93,28 +94,10 @@
                 this.update()
             },
 
-            onBeforeUpdate(props, state) {
-                if (props.schoolListUpdating) {
-                    state.schoolList = [...props.schoolList]
-                    state.filteredSchoolList = [...state.schoolList]
-                    if (this.$("input")) this.$("input").value = ""
-                }
-            },
-
-            onUpdated(props, state) {
-                if (!state.map && props.shouldShowInfos) {
-
-                    state.map = L.map("map").setView([47, 2.5], 5)
-                    state.markers = L.markerClusterGroup()
-                    
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 19,
-                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                    }).addTo(state.map)
-
-                } else if (props.shouldShowInfos) {
-                    state.markers.clearLayers()
-                    for (let school of state.filteredSchoolList) {
+            updateMap() {
+                if (this.state.map && this.props.shouldShowInfos) {
+                    this.state.markers.clearLayers()
+                    for (let school of this.state.filteredSchoolList) {
                         let fields = school.fields
                         let pos = fields.g_olocalisation_des_formations
 
@@ -134,9 +117,31 @@
 
                         let marker = L.marker(pos)
                         marker.bindPopup(popupHTML)
-                        state.markers.addLayer(marker)
+                        this.state.markers.addLayer(marker)
                     }
-                    state.map.addLayer(state.markers)
+                    this.state.map.addLayer(this.state.markers)
+                }
+            },
+
+            onBeforeUpdate(props, state) {
+                if (props.schoolListUpdating) {
+                    state.schoolList = [...props.schoolList]
+                    state.filteredSchoolList = [...state.schoolList]
+                    if (this.$("input")) this.$("input").value = ""
+                    this.updateMap()
+                }
+            },
+
+            onUpdated(props, state) {
+                if (!state.map && props.shouldShowInfos) {
+                    state.map = L.map("map").setView([47, 2.5], 5)
+                    state.markers = L.markerClusterGroup()
+                    
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    }).addTo(state.map)
+
                 }
             },
 

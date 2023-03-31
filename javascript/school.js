@@ -30,6 +30,7 @@ var school = {
       } else {
         finalArray = this.state.schoolList;
       }
+      this.updateMap();
       this.update({
         filteredSchoolList: finalArray
       });
@@ -63,24 +64,10 @@ var school = {
       }
       this.update();
     },
-    onBeforeUpdate(props, state) {
-      if (props.schoolListUpdating) {
-        state.schoolList = [...props.schoolList];
-        state.filteredSchoolList = [...state.schoolList];
-        if (this.$("input")) this.$("input").value = "";
-      }
-    },
-    onUpdated(props, state) {
-      if (!state.map && props.shouldShowInfos) {
-        state.map = L.map("map").setView([47, 2.5], 5);
-        state.markers = L.markerClusterGroup();
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(state.map);
-      } else if (props.shouldShowInfos) {
-        state.markers.clearLayers();
-        for (let school of state.filteredSchoolList) {
+    updateMap() {
+      if (this.state.map && this.props.shouldShowInfos) {
+        this.state.markers.clearLayers();
+        for (let school of this.state.filteredSchoolList) {
           let fields = school.fields;
           let pos = fields.g_olocalisation_des_formations;
           let popupHTML = document.createElement("div");
@@ -95,9 +82,27 @@ var school = {
           popupHTML.appendChild(linkToForma);
           let marker = L.marker(pos);
           marker.bindPopup(popupHTML);
-          state.markers.addLayer(marker);
+          this.state.markers.addLayer(marker);
         }
-        state.map.addLayer(state.markers);
+        this.state.map.addLayer(this.state.markers);
+      }
+    },
+    onBeforeUpdate(props, state) {
+      if (props.schoolListUpdating) {
+        state.schoolList = [...props.schoolList];
+        state.filteredSchoolList = [...state.schoolList];
+        if (this.$("input")) this.$("input").value = "";
+        this.updateMap();
+      }
+    },
+    onUpdated(props, state) {
+      if (!state.map && props.shouldShowInfos) {
+        state.map = L.map("map").setView([47, 2.5], 5);
+        state.markers = L.markerClusterGroup();
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(state.map);
       }
     },
     onBeforeMount(props, state) {
@@ -109,14 +114,14 @@ var school = {
     },
     sortFields: SORT_TABLE
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr51="expr51" class="box p-2 m-2" disabled></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr41="expr41" class="box p-2 m-2" disabled></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.shouldShowInfos,
-    redundantAttribute: 'expr51',
-    selector: '[expr51]',
-    template: template('<div id="map" width="100%" style="border-radius: 5px"></div><div class="mt-2 mb-2 control has-icons-left is-inline-block is-pulled-right"><input expr52="expr52" class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable is-narrow"><thead><tr><th expr53="expr53"></th></tr></thead><tbody><tr expr55="expr55"></tr></tbody></table>', [{
-      redundantAttribute: 'expr52',
-      selector: '[expr52]',
+    redundantAttribute: 'expr41',
+    selector: '[expr41]',
+    template: template('<div id="map" width="100%" style="border-radius: 5px"></div><div class="mt-2 mb-2 control has-icons-left is-inline-block is-pulled-right"><input expr42="expr42" class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable is-narrow"><thead><tr><th expr43="expr43"></th></tr></thead><tbody><tr expr45="expr45"></tr></tbody></table>', [{
+      redundantAttribute: 'expr42',
+      selector: '[expr42]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onkeyup',
@@ -126,15 +131,15 @@ var school = {
       type: bindingTypes.EACH,
       getKey: null,
       condition: null,
-      template: template(' <a expr54="expr54"><span class="icon"><i class="fas fa-sort"></i></span></a>', [{
+      template: template(' <a expr44="expr44"><span class="icon"><i class="fas fa-sort"></i></span></a>', [{
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => [_scope.sortField.name].join('')
         }]
       }, {
-        redundantAttribute: 'expr54',
-        selector: '[expr54]',
+        redundantAttribute: 'expr44',
+        selector: '[expr44]',
         expressions: [{
           type: expressionTypes.ATTRIBUTE,
           name: 'id',
@@ -145,8 +150,8 @@ var school = {
           evaluate: _scope => () => _scope.sortList(_scope.sortField.id, true)
         }]
       }]),
-      redundantAttribute: 'expr53',
-      selector: '[expr53]',
+      redundantAttribute: 'expr43',
+      selector: '[expr43]',
       itemName: 'sortField',
       indexName: null,
       evaluate: _scope => _scope.sortFields
@@ -154,9 +159,9 @@ var school = {
       type: bindingTypes.EACH,
       getKey: null,
       condition: null,
-      template: template('<td><a expr56="expr56"> </a></td><td expr57="expr57"> </td><td expr58="expr58"> </td><td expr59="expr59"> </td><td><title-progress expr60="expr60" max="100" style="margin: auto"></title-progress></td>', [{
-        redundantAttribute: 'expr56',
-        selector: '[expr56]',
+      template: template('<td><a expr46="expr46"> </a></td><td expr47="expr47"> </td><td expr48="expr48"> </td><td expr49="expr49"> </td><td><title-progress expr50="expr50" max="100" style="margin: auto"></title-progress></td>', [{
+        redundantAttribute: 'expr46',
+        selector: '[expr46]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
@@ -167,24 +172,24 @@ var school = {
           evaluate: _scope => () => _scope.props.popup(_scope.school)
         }]
       }, {
-        redundantAttribute: 'expr57',
-        selector: '[expr57]',
+        redundantAttribute: 'expr47',
+        selector: '[expr47]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.school.fields.ville_etab
         }]
       }, {
-        redundantAttribute: 'expr58',
-        selector: '[expr58]',
+        redundantAttribute: 'expr48',
+        selector: '[expr48]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.school.fields.dep
         }]
       }, {
-        redundantAttribute: 'expr59',
-        selector: '[expr59]',
+        redundantAttribute: 'expr49',
+        selector: '[expr49]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
@@ -200,11 +205,11 @@ var school = {
           name: 'value',
           evaluate: _scope => _scope.school.fields.taux_acces_ens
         }],
-        redundantAttribute: 'expr60',
-        selector: '[expr60]'
+        redundantAttribute: 'expr50',
+        selector: '[expr50]'
       }]),
-      redundantAttribute: 'expr55',
-      selector: '[expr55]',
+      redundantAttribute: 'expr45',
+      selector: '[expr45]',
       itemName: 'school',
       indexName: null,
       evaluate: _scope => _scope.state.filteredSchoolList
