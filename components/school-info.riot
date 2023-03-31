@@ -6,9 +6,6 @@
                 <p>
                     <h1 class="title is-4 m-2" style="color: #485FC7;">{props.school.fields.g_ea_lib_vx}</h1>
                 </p>
-                <p>
-                    <h2></h2>
-                </p>
                 <div class="columns m-2">
                     <div class="column">
                         <p>Ville : {props.school.fields.ville_etab}</p>
@@ -17,9 +14,15 @@
                         <p>{props.school.fields.contrat_etab}</p>
                         <p>Capacité : {props.school.fields.capa_fin}</p>
                         <p>Nombre de voeux : {props.school.fields.voe_tot}</p>
-                        <p>Rang dernier admis : </p>
+                        <p>Rang dernier appelé : </p>
+                        <ul>
+                            <li if={props.school.fields.lib_grp1}>{props.school.fields.lib_grp1} : {props.school.fields.ran_grp1}</li>
+                            <li if={props.school.fields.lib_grp2}>{props.school.fields.lib_grp2} : {props.school.fields.ran_grp2}</li>
+                            <li if={props.school.fields.lib_grp3}>{props.school.fields.lib_grp3} : {props.school.fields.ran_grp3}</li>
+                        </ul>
+                        <p>Admis hors académie : {100-props.school.fields.pct_aca_orig}%</p>
                     </div>
-                    <div class="column is-one-fifth">
+                    <div class="column">
                         <p>Vitesse de remplissage :</p>
                     </div>
                 </div>
@@ -67,17 +70,17 @@
                     {
                         name: "Général",
                         short: "Gen.",
-                        value: school.part_acces_gen
+                        value: Math.round(school.part_acces_gen)
                     },
                     {
                         name: "Technologique",
                         short: "Tech.",
-                        value: school.part_acces_tec
+                        value: Math.round(school.part_acces_tec)
                     },
                     {
                         name: "Professionnel",
                         short: "Pro.",
-                        value: school.part_acces_pro
+                        value: Math.round(school.part_acces_pro)
                     },
                     {
                         name: "Autre",
@@ -90,27 +93,27 @@
                     {
                         name: "Sans Mention",
                         short: "SM",
-                        value: school.pct_sansmention
+                        value: Math.round(school.pct_sansmention)
                     },
                     {
                         name: "Assez Bien",
                         short: "AB",
-                        value: school.pct_ab
+                        value: Math.round(school.pct_ab)
                     },
                     {
                         name: "Bien",
                         short: "B",
-                        value: school.pct_b
+                        value: Math.round(school.pct_b)
                     },
                     {
                         name: "Très Bien",
                         short: "TB",
-                        value: school.pct_tb
+                        value: Math.round(school.pct_tb)
                     },
                     {
                         name: "Très Bien + Félicitations",
                         short: "TBF",
-                        value: school.pct_tbf
+                        value: Math.round(school.pct_tbf)
                     },
                     {
                         name: "Non Spécifié",
@@ -118,7 +121,6 @@
                         value: 100 - (school.pct_sansmention + school.pct_ab + school.pct_b + school.pct_tb + school.pct_tbf)
                     }
                 ]
-
             }
         }
     </script>

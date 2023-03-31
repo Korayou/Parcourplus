@@ -59,33 +59,10 @@
             onMounted(props, state) {
                 this.update({
                     course: null,
-<<<<<<< HEAD
-                    sortBy: null,
-                    schoolList: null,
-                    sortFields: SORT_TABLE,
-                    filteredSchoolList: null,
-					shouldShowInfos: false,
                     school: null,
-                    popupEnabled: false
-                })
-            },
-            filterSearch() {
-                let input = this.$("input")
-                if (!input) return
-
-                let finalArray = []
-                
-                //On évite de trier avant d'avoir plus de 1 lettres.
-                if (input.value.length > 1) { 
-                    finalArray = this.state.schoolList.filter((item) => {
-                        return item.name.toLowerCase().includes(input.value.toLowerCase())
-                    })
-                } else {
-                    finalArray = this.state.schoolList
-                }
-                
-                this.update({
-                    filteredSchoolList: finalArray
+                    schoolList: null,
+                    popupEnabled: false,
+					shouldShowInfos: false
                 })
             },
             popup(school){
@@ -100,11 +77,6 @@
                     popupEnabled: false
                 })
                 console.log("closed!")
-=======
-                    schoolList: [],
-					shouldShowInfos: false
-                })
->>>>>>> 6ed22586179f7de1d23fd1ebd68d111298170226
             }
         }
     </script>
