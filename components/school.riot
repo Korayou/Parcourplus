@@ -3,9 +3,8 @@
         <iframe if={false} width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
         src="https://www.openstreetmap.org/export/embed.html?bbox=-14.655761718750002%2C40.56389453066509%2C13.601074218750002%2C51.754240074033525&amp;layer=mapnik" 
         style="border-radius: 5px;"></iframe>
-        <br>
         <div class="block control has-icons-left is-inline-block is-pulled-right">
-            <input class="input" onkeyup={props.filterSearch} type="search" placeholder="Établissement">
+            <input class="input" onkeyup={filterSearch} type="search" placeholder="Établissement">
             <span class="icon is-small is-left">
                 <i class="fas fa-search"></i>
             </span>
@@ -13,16 +12,16 @@
 		<table class="table is-fullwidth is-hoverable">
 			<thead>
 				<tr>
-					<th each={sortField in props.sortFields}>
+					<th each={sortField in sortFields}>
                         {sortField.name}
-                        <a id={sortField.id} onclick={() => props.sortList(sortField.id)}>
+                        <a id={sortField.id} onclick={() => sortList(sortField.id, true)}>
                             <span class="icon"><i class="fas fa-sort"></i></span>
                         </a>
                     </th>
 				</tr>
 			</thead>
             <tbody>
-                <tr each={school in props.schoolList}>
+                <tr each={school in state.filteredSchoolList}>
                     <td>{school.fields.g_ea_lib_vx}</td>
                     <td>{school.fields.ville_etab}</td>
                     <td>{school.fields.dep}</td>
@@ -32,4 +31,87 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+
+        const SORT_TABLE = [
+            {name: "Nom", id: "g_ea_lib_vx"},
+            {name: "Ville", id: "ville_etab"},
+            {name: "Département", id: "dep"},
+            {name: "Moyenne", id: "moyenne"},
+            {name: "Sélectivité", id: "taux_acces_ens"}
+        ]
+
+        export default {
+            filterSearch() {
+                let input = this.$("input")
+                if (!input) return
+
+                let finalArray = []
+                
+                //On évite de trier avant d'avoir plus de 1 lettres.
+                if (input.value.length > 1) { 
+                    finalArray = this.state.schoolList.filter((item) => {
+                        return item.fields.g_ea_lib_vx.toLowerCase().includes(input.value.toLowerCase())
+                    })
+                } else {
+                    finalArray = this.state.schoolList
+                }
+
+                this.update({
+                    filteredSchoolList: finalArray
+                })
+            },
+
+            sortList(sortBy, shouldUpdate) {
+                //Si la liste est déjà triée par la bonne catégorie, on l'inverse
+                if (sortBy == this.state.sortBy) {
+                    this.state.filteredSchoolList.reverse()
+                }
+                
+                //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
+                else { 
+                    this.state.sortBy = sortBy
+
+                    switch (sortBy) {
+                        case SORT_TABLE[3].id:
+                        case SORT_TABLE[4].id: {
+                            this.state.filteredSchoolList.sort((a, b) => {
+                                if (a.fields[sortBy] > b.fields[sortBy]) return 1
+                                else return -1
+                            })
+                            break
+                        }
+
+                        default: {
+                            this.state.filteredSchoolList.sort((a, b) => {
+                                return (a.fields[sortBy]).localeCompare(b.fields[sortBy])
+                            })
+                            break
+                        }
+                    }
+                }
+
+                this.update()
+            },
+
+            onBeforeUpdate(props, state) {
+                if (props.schoolListUpdating) {
+                    state.schoolList = [...props.schoolList]
+                    state.filteredSchoolList = [...state.schoolList]
+                    if (this.$("input")) this.$("input").value = ""
+                }
+            },
+
+            onBeforeMount(props, state) {
+                this.state = {
+                    sortBy: null,
+                    schoolList: [],
+                    filteredSchoolList: []
+                }
+            },
+
+            sortFields: SORT_TABLE
+        }
+    </script>
 </school>

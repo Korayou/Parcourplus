@@ -9,7 +9,7 @@
 
 		<div class="column">
 			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
-			<school sortList={sortList} schoolList={state.filteredSchoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
+			<school schoolList={state.schoolList} schoolListUpdating={state.schoolListUpdating} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
@@ -19,45 +19,16 @@
 
         import PAPI from '../javascript/parcoursup-link.js'
 
-        const SORT_TABLE = [
-            {name: "Nom", id: "g_ea_lib_vx"},
-            {name: "Ville", id: "ville_etab"},
-            {name: "Département", id: "dep"},
-            {name: "Moyenne", id: "moyenne"},
-            {name: "Sélectivité", id: "taux_acces_ens"}
-        ]
-
         export default {
-            sortList(sortBy) {
-                //Si la liste est déjà triée par la bonne catégorie, on l'inverse
-                if (sortBy == this.state.sortBy) {
-                    this.state.filteredSchoolList.reverse()
-                } 
-                //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
-                else { 
-                    this.state.sortBy = sortBy
+            updateCourse(course){
+                this.updateList(course)
 
-                    switch (sortBy) {
-                        case SORT_TABLE[3].id:
-                        case SORT_TABLE[4].id: {
-                            this.state.filteredSchoolList.sort((a, b) => {
-                                if (a.fields[sortBy] > b.fields[sortBy]) return 1
-                                else return -1
-                            })
-                            break
-                        }
-
-                        default: {
-                            this.state.filteredSchoolList.sort((a, b) => {
-                                return (a.fields[sortBy]).localeCompare(b.fields[sortBy])
-                            })
-                            break
-                        }
-                    }
-                }
-
-                this.update()
+                this.update({
+                    course: course,
+					shouldShowInfos: course != null,
+                })
             },
+
             updateList(course) {
                 course = course || this.state.course
                 PAPI.fetchEtablissement(course.fili, course.sousfili, course.soussousfili).then((response) => {
@@ -72,51 +43,24 @@
                         // On prend la moyenne des moyennes comprises dans la mention
                         // Exemple : Assez bien est entre 12 et 14 donc 13.
                         etablissement.fields.moyenne = ((pct_TBF*19)+(pct_TB*17)+(pct_B*15)+(pct_AB*13)+(pct_sansmention*11))/100
-                    }) 
+                    })
+                    
+                    this.update({
+                        schoolListUpdating: true,
+                        schoolList: response
+                    })
 
                     this.update({
-                        schoolList: response
-                    })    
-                    this.filterSearch()              
-                })
-            },
-            updateCourse(course){
-                this.updateList(course)
-
-                this.update({
-                    course: course,
-                    sortFields: SORT_TABLE,
-					shouldShowInfos: course != null,
+                        schoolListUpdating: false
+                    })
                 })
             },
 
             onMounted(props, state) {
                 this.update({
                     course: null,
-                    sortBy: null,
-                    schoolList: null,
-                    sortFields: SORT_TABLE,
-                    filteredSchoolList: null,
+                    schoolList: [],
 					shouldShowInfos: false
-                })
-            },
-            filterSearch() {
-                let input = this.$("input")
-                if (!input) return
-
-                let finalArray = []
-                
-                //On évite de trier avant d'avoir plus de 1 lettres.
-                if (input.value.length > 1) { 
-                    finalArray = this.state.schoolList.filter((item) => {
-                        return item.name.toLowerCase().includes(input.value.toLowerCase())
-                    })
-                } else {
-                    finalArray = this.state.schoolList
-                }
-                
-                this.update({
-                    filteredSchoolList: finalArray
                 })
             }
         }

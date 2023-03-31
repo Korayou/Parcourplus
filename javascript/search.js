@@ -17,7 +17,9 @@ class PAPI {
   }
   static async fetchFiliere(filiere) {
     if (localStorage.getItem("fili." + filiere)) return JSON.parse(localStorage.getItem("fili." + filiere));
-    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["facet_groups"][0]["facets"];
     localStorage.setItem("fili." + filiere, JSON.stringify(response));
@@ -25,7 +27,9 @@ class PAPI {
   }
   static async fetchSpecialites(filiere, specialite) {
     if (localStorage.getItem(`spe.${filiere}.${specialite}`)) return JSON.parse(localStorage.getItem(`spe.${filiere}.${specialite}`));
-    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["facet_groups"][0]["facets"];
     localStorage.setItem(`spe.${filiere}.${specialite}`, JSON.stringify(response));
@@ -33,7 +37,9 @@ class PAPI {
   }
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
     if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`));
-    let request = await fetch(`${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["records"];
     localStorage.setItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`, JSON.stringify(response));
@@ -144,9 +150,9 @@ var search = {
       this.updateList();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr14="expr14" class="input" type="input"/><button expr15="expr15" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr16="expr16" class="m-1"></li></ul></div></div>', [{
-    redundantAttribute: 'expr14',
-    selector: '[expr14]',
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="box p-1 m-2"><div class="columns m-1"><input expr32="expr32" class="input" type="input"/><button expr33="expr33" class="button ml-1">&lt;</button></div><div id="list-formations"><ul><li expr34="expr34" class="m-1"></li></ul></div></div>', [{
+    redundantAttribute: 'expr32',
+    selector: '[expr32]',
     expressions: [{
       type: expressionTypes.EVENT,
       name: 'onkeyup',
@@ -157,8 +163,8 @@ var search = {
       evaluate: _scope => _scope.state.placeholder
     }]
   }, {
-    redundantAttribute: 'expr15',
-    selector: '[expr15]',
+    redundantAttribute: 'expr33',
+    selector: '[expr33]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'disabled',
@@ -172,9 +178,9 @@ var search = {
     type: bindingTypes.EACH,
     getKey: null,
     condition: null,
-    template: template('<button expr17="expr17" class="button is-fullwidth p-2" style="white-space: unset"><div style="display: flex; width: 100%"><span class="mt-auto mb-auto" style="font-size: 0.75em; text-align: left;   "><strong expr18="expr18"> </strong></span><div style="margin-left: auto;"></div><span expr19="expr19" class="tag is-primary mt-auto mb-auto"> </span></div></button>', [{
-      redundantAttribute: 'expr17',
-      selector: '[expr17]',
+    template: template('<button expr35="expr35" class="button is-fullwidth p-2" style="white-space: unset"><div style="display: flex; width: 100%"><span class="mt-auto mb-auto" style="font-size: 0.75em; text-align: left;   "><strong expr36="expr36"> </strong></span><div style="margin-left: auto;"></div><span expr37="expr37" class="tag is-primary mt-auto mb-auto"> </span></div></button>', [{
+      redundantAttribute: 'expr35',
+      selector: '[expr35]',
       expressions: [{
         type: expressionTypes.ATTRIBUTE,
         name: 'disabled',
@@ -185,24 +191,24 @@ var search = {
         evaluate: _scope => () => _scope.cruiseForward(_scope.item.name)
       }]
     }, {
-      redundantAttribute: 'expr18',
-      selector: '[expr18]',
+      redundantAttribute: 'expr36',
+      selector: '[expr36]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.name
       }]
     }, {
-      redundantAttribute: 'expr19',
-      selector: '[expr19]',
+      redundantAttribute: 'expr37',
+      selector: '[expr37]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.item.count
       }]
     }]),
-    redundantAttribute: 'expr16',
-    selector: '[expr16]',
+    redundantAttribute: 'expr34',
+    selector: '[expr34]',
     itemName: 'item',
     indexName: null,
     evaluate: _scope => _scope.state.items
