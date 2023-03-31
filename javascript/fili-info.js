@@ -14,7 +14,6 @@ var filiInfo = {
       state.capacity = Math.floor(avgCap);
       state.selectivity = Math.floor(avgSlc);
       let pctFemmes = Math.round(list.reduce((s, e) => s + (e.fields.pct_f || 0), 0) / list.filter(e => e.fields.pct_f).length);
-      console.log(pctFemmes);
       state.genreStats = [{
         name: "Hommes",
         short: "H",
@@ -76,54 +75,54 @@ var filiInfo = {
       }];
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr26="expr26" class="box p-1 m-2"></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr653="expr653" class="box p-1 m-2"></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.shouldShowInfos,
-    redundantAttribute: 'expr26',
-    selector: '[expr26]',
-    template: template('<h1 class="title is-4 m-2"><span expr27="expr27" style="color: #485FC7;"> </span>  /  \n            <span expr28="expr28" style="color: #485FC7;"> </span>  /  \n            <span expr29="expr29" style="color: #485FC7;"> </span></h1><div class="box mt-2" style="background-color: #EAEAEA; margin: auto; width: 60%;"><p>Moyenne des admis<span expr30="expr30" class="is-pulled-right"> </span></p><p>Nombre de formations<span expr31="expr31" class="is-pulled-right"> </span></p><p>Capacité<span expr32="expr32" class="is-pulled-right"> </span></p><title-progress expr33="expr33" max="100"></title-progress></div><div class="m-4"><line-graph expr34="expr34" title="Répartition par genre" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr35="expr35" title="Répartition par bac" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr36="expr36" title="Répartition par mention au bac" style="height: 6rem;"></line-graph></div>', [{
-      redundantAttribute: 'expr27',
-      selector: '[expr27]',
+    redundantAttribute: 'expr653',
+    selector: '[expr653]',
+    template: template('<h1 class="title is-4 m-2"><span expr654="expr654" style="color: #485FC7;"> </span>  /  \n            <span expr655="expr655" style="color: #485FC7;"> </span>  /  \n            <span expr656="expr656" style="color: #485FC7;"> </span></h1><div class="box mt-2" style="background-color: #EAEAEA; margin: auto; width: 60%;"><p>Moyenne des admis<span expr657="expr657" class="is-pulled-right"> </span></p><p>Nombre de formations<span expr658="expr658" class="is-pulled-right"> </span></p><p>Capacité<span expr659="expr659" class="is-pulled-right"> </span></p><title-progress expr660="expr660" max="100"></title-progress></div><div class="m-4"><line-graph expr661="expr661" title="Répartition par genre" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr662="expr662" title="Répartition par bac" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr663="expr663" title="Répartition par mention au bac" style="height: 6rem;"></line-graph></div>', [{
+      redundantAttribute: 'expr654',
+      selector: '[expr654]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.props.course.fili
       }]
     }, {
-      redundantAttribute: 'expr28',
-      selector: '[expr28]',
+      redundantAttribute: 'expr655',
+      selector: '[expr655]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.props.course.sousfili
       }]
     }, {
-      redundantAttribute: 'expr29',
-      selector: '[expr29]',
+      redundantAttribute: 'expr656',
+      selector: '[expr656]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.props.course.soussousfili
       }]
     }, {
-      redundantAttribute: 'expr30',
-      selector: '[expr30]',
+      redundantAttribute: 'expr657',
+      selector: '[expr657]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.state.average
       }]
     }, {
-      redundantAttribute: 'expr31',
-      selector: '[expr31]',
+      redundantAttribute: 'expr658',
+      selector: '[expr658]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.state.courseNumber
       }]
     }, {
-      redundantAttribute: 'expr32',
-      selector: '[expr32]',
+      redundantAttribute: 'expr659',
+      selector: '[expr659]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
@@ -143,8 +142,8 @@ var filiInfo = {
         name: 'value',
         evaluate: _scope => _scope.state.selectivity
       }],
-      redundantAttribute: 'expr33',
-      selector: '[expr33]'
+      redundantAttribute: 'expr660',
+      selector: '[expr660]'
     }, {
       type: bindingTypes.TAG,
       getComponent: getComponent,
@@ -155,8 +154,8 @@ var filiInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.genreStats
       }],
-      redundantAttribute: 'expr34',
-      selector: '[expr34]'
+      redundantAttribute: 'expr661',
+      selector: '[expr661]'
     }, {
       type: bindingTypes.TAG,
       getComponent: getComponent,
@@ -167,8 +166,8 @@ var filiInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.bacStats
       }],
-      redundantAttribute: 'expr35',
-      selector: '[expr35]'
+      redundantAttribute: 'expr662',
+      selector: '[expr662]'
     }, {
       type: bindingTypes.TAG,
       getComponent: getComponent,
@@ -179,8 +178,8 @@ var filiInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.mentionStats
       }],
-      redundantAttribute: 'expr36',
-      selector: '[expr36]'
+      redundantAttribute: 'expr663',
+      selector: '[expr663]'
     }])
   }]),
   name: 'fili-info'

@@ -17,7 +17,9 @@ class PAPI {
   }
   static async fetchFiliere(filiere) {
     if (localStorage.getItem("fili." + filiere)) return JSON.parse(localStorage.getItem("fili." + filiere));
-    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["facet_groups"][0]["facets"];
     localStorage.setItem("fili." + filiere, JSON.stringify(response));
@@ -25,7 +27,9 @@ class PAPI {
   }
   static async fetchSpecialites(filiere, specialite) {
     if (localStorage.getItem(`spe.${filiere}.${specialite}`)) return JSON.parse(localStorage.getItem(`spe.${filiere}.${specialite}`));
-    let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["facet_groups"][0]["facets"];
     localStorage.setItem(`spe.${filiere}.${specialite}`, JSON.stringify(response));
@@ -33,7 +37,9 @@ class PAPI {
   }
   static async fetchEtablissement(filiere, sousfiliere, soussousfiliere) {
     if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`));
-    let request = await fetch(`${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`);
+    let url = `${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`;
+    url = url.replace("+", "%2B");
+    let request = await fetch(url);
     let result = await request.json();
     let response = result["records"];
     localStorage.setItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`, JSON.stringify(response));
@@ -41,52 +47,15 @@ class PAPI {
   }
 }
 
-const SORT_TABLE = [{
-  name: "Nom",
-  id: "g_ea_lib_vx"
-}, {
-  name: "Ville",
-  id: "ville_etab"
-}, {
-  name: "Département",
-  id: "dep"
-}, {
-  name: "Moyenne",
-  id: "moyenne"
-}, {
-  name: "Sélectivité",
-  id: "taux_acces_ens"
-}];
 var mainController = {
   css: null,
   exports: {
-    sortList(sortBy) {
-      //Si la liste est déjà triée par la bonne catégorie, on l'inverse
-      if (sortBy == this.state.sortBy) {
-        this.state.filteredSchoolList.reverse();
-      }
-      //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
-      else {
-        this.state.sortBy = sortBy;
-        switch (sortBy) {
-          case SORT_TABLE[3].id:
-          case SORT_TABLE[4].id:
-            {
-              this.state.filteredSchoolList.sort((a, b) => {
-                if (a.fields[sortBy] > b.fields[sortBy]) return 1;else return -1;
-              });
-              break;
-            }
-          default:
-            {
-              this.state.filteredSchoolList.sort((a, b) => {
-                return a.fields[sortBy].localeCompare(b.fields[sortBy]);
-              });
-              break;
-            }
-        }
-      }
-      this.update();
+    updateCourse(course) {
+      this.updateList(course);
+      this.update({
+        course: course,
+        shouldShowInfos: course != null
+      });
     },
     updateList(course) {
       course = course || this.state.course;
@@ -104,48 +73,23 @@ var mainController = {
           etablissement.fields.moyenne = (pct_TBF * 19 + pct_TB * 17 + pct_B * 15 + pct_AB * 13 + pct_sansmention * 11) / 100;
         });
         this.update({
+          schoolListUpdating: true,
           schoolList: response
         });
-        this.filterSearch();
-      });
-    },
-    updateCourse(course) {
-      this.updateList(course);
-      this.update({
-        course: course,
-        sortFields: SORT_TABLE,
-        shouldShowInfos: course != null
+        this.update({
+          schoolListUpdating: false
+        });
       });
     },
     onMounted(props, state) {
       this.update({
         course: null,
-        sortBy: null,
-        schoolList: null,
-        sortFields: SORT_TABLE,
-        filteredSchoolList: null,
+        schoolList: [],
         shouldShowInfos: false
-      });
-    },
-    filterSearch() {
-      let input = this.$("input");
-      if (!input) return;
-      let finalArray = [];
-
-      //On évite de trier avant d'avoir plus de 1 lettres.
-      if (input.value.length > 1) {
-        finalArray = this.state.schoolList.filter(item => {
-          return item.name.toLowerCase().includes(input.value.toLowerCase());
-        });
-      } else {
-        finalArray = this.state.schoolList;
-      }
-      this.update({
-        filteredSchoolList: finalArray
       });
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="./resources/logo-parcoursup.svg"/></div><search expr71="expr71"></search></div><div class="column"><fili-info expr72="expr72"></fili-info><school expr73="expr73"></school></div></div><school-info expr74="expr74"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2" style="display: flex"><img class="m-auto" src="./resources/logo-parcoursup.svg"/></div><search expr643="expr643"></search></div><div class="column"><fili-info expr644="expr644"></fili-info><school expr645="expr645"></school></div></div><school-info expr646="expr646"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
@@ -155,8 +99,8 @@ var mainController = {
       name: 'updateCourse',
       evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr71',
-    selector: '[expr71]'
+    redundantAttribute: 'expr643',
+    selector: '[expr643]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -175,8 +119,8 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr72',
-    selector: '[expr72]'
+    redundantAttribute: 'expr644',
+    selector: '[expr644]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -184,16 +128,12 @@ var mainController = {
     slots: [],
     attributes: [{
       type: expressionTypes.ATTRIBUTE,
-      name: 'sortList',
-      evaluate: _scope => _scope.sortList
-    }, {
-      type: expressionTypes.ATTRIBUTE,
       name: 'schoolList',
-      evaluate: _scope => _scope.state.filteredSchoolList
+      evaluate: _scope => _scope.state.schoolList
     }, {
       type: expressionTypes.ATTRIBUTE,
-      name: 'sortFields',
-      evaluate: _scope => _scope.state.sortFields
+      name: 'schoolListUpdating',
+      evaluate: _scope => _scope.state.schoolListUpdating
     }, {
       type: expressionTypes.ATTRIBUTE,
       name: 'course',
@@ -203,16 +143,16 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr73',
-    selector: '[expr73]'
+    redundantAttribute: 'expr645',
+    selector: '[expr645]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr74',
-    selector: '[expr74]'
+    redundantAttribute: 'expr646',
+    selector: '[expr646]'
   }]),
   name: 'main-controller'
 };

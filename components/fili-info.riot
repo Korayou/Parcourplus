@@ -51,7 +51,6 @@
                 state.selectivity = Math.floor(avgSlc)
 
                 let pctFemmes = Math.round(list.reduce((s, e) => s + (e.fields.pct_f || 0), 0) / list.filter((e) => e.fields.pct_f).length)
-                console.log(pctFemmes)
                 state.genreStats = [
                     {
                         name: "Hommes",
