@@ -128,7 +128,7 @@ var mainController = {
       });
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/></div><search expr0="expr0"></search></div><div class="column"><fili-info expr1="expr1"></fili-info><school expr2="expr2"></school></div></div><school-info expr3="expr3"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/></div><search expr11="expr11"></search></div><div class="column"><fili-info expr12="expr12"></fili-info><school expr13="expr13"></school></div></div><school-info expr14="expr14"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
@@ -138,8 +138,8 @@ var mainController = {
       name: 'updateCourse',
       evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr0',
-    selector: '[expr0]'
+    redundantAttribute: 'expr11',
+    selector: '[expr11]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -158,8 +158,8 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr1',
-    selector: '[expr1]'
+    redundantAttribute: 'expr12',
+    selector: '[expr12]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -186,16 +186,16 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr2',
-    selector: '[expr2]'
+    redundantAttribute: 'expr13',
+    selector: '[expr13]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr3',
-    selector: '[expr3]'
+    redundantAttribute: 'expr14',
+    selector: '[expr14]'
   }]),
   name: 'main-controller'
 };

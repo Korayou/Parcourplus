@@ -7,10 +7,12 @@
 		<div id="list-formations">
             <ul>
 	            <li class="m-1" each={item in this.state.items}>
-		            <button class="button is-fullwidth p-2" disabled={state.updating} onclick={()=>cruiseForward(item.name)}>
-                        <span style="font-size: .75em; max-size: 90%"><strong>{item.name}</strong></span>
-                        <div  style="margin-left: auto;"></div>
-                        <span class="tag is-primary">{item.count}</span>
+		            <button class="button is-fullwidth p-2" style="white-space: unset" disabled={state.updating} onclick={()=>cruiseForward(item.name)}>
+                        <div style="display: flex; width: 100%">
+                            <span class="mt-auto mb-auto" style="font-size: 0.75em; text-align: left;   "><strong>{item.name}</strong></span>
+                            <div  style="margin-left: auto;"></div>
+                            <span class="tag is-primary mt-auto mb-auto">{item.count}</span>
+                        </div>
                     </button>
 	            </li>
             </ul>

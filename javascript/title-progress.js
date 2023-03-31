@@ -25,11 +25,11 @@ var titleProgress = {
       state.class = this.computeClasses();
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div style="display: flex;"><span expr493="expr493"></span><span expr494="expr494" class="ml-1"> </span><progress expr495="expr495" style="box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);"></progress></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div style="display: flex;"><span expr15="expr15"></span><span expr16="expr16" class="ml-1"> </span><progress expr17="expr17" style="box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);"></progress></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.title,
-    redundantAttribute: 'expr493',
-    selector: '[expr493]',
+    redundantAttribute: 'expr15',
+    selector: '[expr15]',
     template: template(' ', [{
       expressions: [{
         type: expressionTypes.TEXT,
@@ -38,16 +38,16 @@ var titleProgress = {
       }]
     }])
   }, {
-    redundantAttribute: 'expr494',
-    selector: '[expr494]',
+    redundantAttribute: 'expr16',
+    selector: '[expr16]',
     expressions: [{
       type: expressionTypes.TEXT,
       childNodeIndex: 0,
       evaluate: _scope => _scope.calcPct()
     }]
   }, {
-    redundantAttribute: 'expr495',
-    selector: '[expr495]',
+    redundantAttribute: 'expr17',
+    selector: '[expr17]',
     expressions: [{
       type: expressionTypes.ATTRIBUTE,
       name: 'value',
