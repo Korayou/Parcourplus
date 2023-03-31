@@ -3,3 +3,9 @@ body, html {
     min-height: 100vh;
     padding-bottom: 0px;
 }
+
+#map {
+    height: 350px;
+    width: 100%;
+    border-radius: 5px;
+}

@@ -5,9 +5,10 @@
                 <img class="m-auto" src="./resources/logo-parcoursup.svg"/>
             </div>
 			<search updateCourse={updateCourse}></search>
+            <button class="button is-danger ml-2 is-outlined" onclick={clearCache}>Vider le cache</button>
 		</div>
 
-		<div class="column">
+		<div class="column pl-0">
 			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
 			<school popup={popup} schoolList={state.schoolList} schoolListUpdating={state.schoolListUpdating} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
@@ -25,7 +26,7 @@
 
                 this.update({
                     course: course,
-					shouldShowInfos: course != null,
+					shouldShowInfos: course != null
                 })
             },
 
@@ -59,34 +60,18 @@
             onMounted(props, state) {
                 this.update({
                     course: null,
-<<<<<<< HEAD
-                    sortBy: null,
-                    schoolList: null,
-                    sortFields: SORT_TABLE,
-                    filteredSchoolList: null,
-					shouldShowInfos: false,
-                    school: null,
-                    popupEnabled: false
+                    schoolList: [],
+					shouldShowInfos: false
                 })
             },
-            filterSearch() {
-                let input = this.$("input")
-                if (!input) return
 
-                let finalArray = []
+            clearCache(e) {
+                localStorage.clear()
+                e.target.textContent = "Cache vidé !"
                 
-                //On évite de trier avant d'avoir plus de 1 lettres.
-                if (input.value.length > 1) { 
-                    finalArray = this.state.schoolList.filter((item) => {
-                        return item.name.toLowerCase().includes(input.value.toLowerCase())
-                    })
-                } else {
-                    finalArray = this.state.schoolList
-                }
-                
-                this.update({
-                    filteredSchoolList: finalArray
-                })
+                setTimeout(() => {
+                    e.target.textContent = "Vider le cache"
+                }, 3000)
             },
             popup(school){
                 this.update({
@@ -100,11 +85,6 @@
                     popupEnabled: false
                 })
                 console.log("closed!")
-=======
-                    schoolList: [],
-					shouldShowInfos: false
-                })
->>>>>>> 6ed22586179f7de1d23fd1ebd68d111298170226
             }
         }
     </script>

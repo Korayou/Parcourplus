@@ -23,6 +23,7 @@
     </div>
 
     <script>
+
         export default {
             onBeforeMount(props, state) {
                 state = {
@@ -36,22 +37,20 @@
                 }
             },
 
-            onBeforeUpdate(props, state) {
-                if (!props.schoolList || !props.schoolList.length) return
-
-                let list = props.schoolList
+            updateFiliStats() {
+                let list = this.props.schoolList
 
                 let avg = list.reduce((s, e) => s + e.fields.moyenne, 0) / list.length
                 let avgCap = list.reduce((s, e) => s + e.fields.capa_fin, 0) / list.length
                 let avgSlc = list.reduce((s, e) => s + (e.fields.taux_acces_ens || 0), 0) / list.filter((e) => e.fields.taux_acces_ens).length
 
-                state.courseNumber = list.length
-                state.average = Math.round(avg * 100) / 100
-                state.capacity = Math.floor(avgCap)
-                state.selectivity = Math.floor(avgSlc)
+                this.state.courseNumber = list.length
+                this.state.average = Math.round(avg * 100) / 100
+                this.state.capacity = Math.floor(avgCap)
+                this.state.selectivity = Math.floor(avgSlc)
 
                 let pctFemmes = Math.round(list.reduce((s, e) => s + (e.fields.pct_f || 0), 0) / list.filter((e) => e.fields.pct_f).length)
-                state.genreStats = [
+                this.state.genreStats = [
                     {
                         name: "Hommes",
                         short: "H",
@@ -68,7 +67,7 @@
                 let pctBT = Math.round(list.reduce((s, e) => s + (e.fields.part_acces_tec || 0), 0) / list.filter((e) => e.fields.part_acces_tec).length)
                 let pctBP = Math.round(list.reduce((s, e) => s + (e.fields.part_acces_pro || 0), 0) / list.filter((e) => e.fields.part_acces_pro).length)
 
-                state.bacStats = [
+                this.state.bacStats = [
                     {
                         name: "Général",
                         short: "Gen.",
@@ -97,7 +96,7 @@
                 let pctTB  = Math.round(list.reduce((s, e) => s + e.fields.pct_tb, 0) / list.length)
                 let pctTBF = Math.round(list.reduce((s, e) => s + e.fields.pct_tbf, 0) / list.length)
 
-                state.mentionStats = [
+                this.state.mentionStats = [
                     {
                         name: "Sans Mention",
                         short: "SM",
@@ -129,6 +128,11 @@
                         value: 100 - (pctSM + pctAB + pctB + pctTB + pctTBF)
                     }
                 ]
+            },
+
+            onBeforeUpdate(props, state) {
+                if (!props.schoolList || !props.schoolList.length) return
+                this.updateFiliStats()
             }
         }
     </script>

@@ -87,9 +87,29 @@ var mainController = {
         schoolList: [],
         shouldShowInfos: false
       });
+    },
+    clearCache(e) {
+      localStorage.clear();
+      e.target.textContent = "Cache vidé !";
+      setTimeout(() => {
+        e.target.textContent = "Vider le cache";
+      }, 3000);
+    },
+    popup(school) {
+      this.update({
+        school: school,
+        popupEnabled: true
+      });
+      console.log("popup!");
+    },
+    closePopup() {
+      this.update({
+        popupEnabled: false
+      });
+      console.log("closed!");
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2" style="display: flex"><img class="m-auto" src="./resources/logo-parcoursup.svg"/></div><search expr643="expr643"></search></div><div class="column"><fili-info expr644="expr644"></fili-info><school expr645="expr645"></school></div></div><school-info expr646="expr646"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2" style="display: flex"><img class="m-auto" src="./resources/logo-parcoursup.svg"/></div><search expr167="expr167"></search><button expr168="expr168" class="button is-danger ml-2 is-outlined">Vider le cache</button></div><div class="column pl-0"><fili-info expr169="expr169"></fili-info><school expr170="expr170"></school></div></div><school-info expr171="expr171"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
@@ -99,8 +119,16 @@ var mainController = {
       name: 'updateCourse',
       evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr643',
-    selector: '[expr643]'
+    redundantAttribute: 'expr167',
+    selector: '[expr167]'
+  }, {
+    redundantAttribute: 'expr168',
+    selector: '[expr168]',
+    expressions: [{
+      type: expressionTypes.EVENT,
+      name: 'onclick',
+      evaluate: _scope => _scope.clearCache
+    }]
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -119,14 +147,18 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr644',
-    selector: '[expr644]'
+    redundantAttribute: 'expr169',
+    selector: '[expr169]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school',
     slots: [],
     attributes: [{
+      type: expressionTypes.ATTRIBUTE,
+      name: 'popup',
+      evaluate: _scope => _scope.popup
+    }, {
       type: expressionTypes.ATTRIBUTE,
       name: 'schoolList',
       evaluate: _scope => _scope.state.schoolList
@@ -143,16 +175,28 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr645',
-    selector: '[expr645]'
+    redundantAttribute: 'expr170',
+    selector: '[expr170]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
-    attributes: [],
-    redundantAttribute: 'expr646',
-    selector: '[expr646]'
+    attributes: [{
+      type: expressionTypes.ATTRIBUTE,
+      name: 'closeWindow',
+      evaluate: _scope => _scope.closePopup
+    }, {
+      type: expressionTypes.ATTRIBUTE,
+      name: 'popupEnabled',
+      evaluate: _scope => _scope.state.popupEnabled
+    }, {
+      type: expressionTypes.ATTRIBUTE,
+      name: 'school',
+      evaluate: _scope => _scope.state.school
+    }],
+    redundantAttribute: 'expr171',
+    selector: '[expr171]'
   }]),
   name: 'main-controller'
 };
