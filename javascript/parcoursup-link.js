@@ -12,7 +12,7 @@ class PAPI {
     static async fetchFilieres() {
 
         if (localStorage.getItem("filis")) return JSON.parse(localStorage.getItem("filis"))
-
+        
         let request  = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fili`)
         let result   = await request.json()
         let response = result["facet_groups"][0]["facets"]
@@ -26,7 +26,10 @@ class PAPI {
 
         if (localStorage.getItem("fili." + filiere)) return JSON.parse(localStorage.getItem("fili." + filiere))
 
-        let request  = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`)
+        let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=form_lib_voe_acc&refine.fili=${filiere}`
+        url = url.replace("+", "%2B")
+
+        let request  = await fetch(url)
         let result   = await request.json()
         let response = result["facet_groups"][0]["facets"]
 
@@ -39,7 +42,10 @@ class PAPI {
 
         if (localStorage.getItem(`spe.${filiere}.${specialite}`)) return JSON.parse(localStorage.getItem(`spe.${filiere}.${specialite}`))
 
-        let request = await fetch(`${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`)
+        let url = `${PAPI.searchURL}&rows=0&sort=tri&facet=fil_lib_voe_acc&refine.form_lib_voe_acc=${specialite}&refine.fili=${filiere}`
+        url = url.replace("+", "%2B")
+
+        let request = await fetch(url)
         let result  = await request.json()
         let response = result["facet_groups"][0]["facets"]
 
@@ -52,7 +58,10 @@ class PAPI {
 
         if (localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`)) return JSON.parse(localStorage.getItem(`eta.${filiere}.${sousfiliere}.${soussousfiliere}`))
 
-        let request = await fetch(`${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`)
+        let url = `${PAPI.searchURL}&rows=10000&refine.fil_lib_voe_acc=${soussousfiliere}&refine.form_lib_voe_acc=${sousfiliere}&refine.fili=${filiere}`
+        url = url.replace("+", "%2B")
+
+        let request = await fetch(url)
         let result  = await request.json()
         let response = result["records"]
 
