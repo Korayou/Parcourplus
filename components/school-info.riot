@@ -1,24 +1,124 @@
 <school-info>
-    <div if={state.enabled} style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #000000DD;">
-        <div style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; background: #FFFFFF">
-            <button class="delete is-medium" onclick={closeWindow}>X</button>
-            <p>
-                <h2></h2>
-            </p>
-            <line-graph style="height: 90px; margin: 10px;"></line-graph>
+    <div if={props.popupEnabled} class="modal is-active">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box p-2">
+                <p>
+                    <h1 class="title is-4 m-2" style="color: #485FC7;">{props.school.fields.g_ea_lib_vx}</h1>
+                </p>
+                <p>
+                    <h2></h2>
+                </p>
+                <div class="columns m-2">
+                    <div class="column">
+                        <p>Ville : {props.school.fields.ville_etab}</p>
+                        <p>Département : {props.school.fields.dep} {props.school.fields.dep_lib}</p>
+                        <p>Académie : {props.school.fields.acad_mies}</p>
+                        <p>{props.school.fields.contrat_etab}</p>
+                        <p>Capacité : {props.school.fields.capa_fin}</p>
+                        <p>Nombre de voeux : {props.school.fields.voe_tot}</p>
+                        <p>Rang dernier admis : </p>
+                    </div>
+                    <div class="column is-one-fifth">
+                        <p>Vitesse de remplissage :</p>
+                    </div>
+                </div>
+                <div class="m-4">
+                    <line-graph title="Répartition par genre" data={state.genreStats} style="height: 6rem;"></line-graph>
+                </div>
+                <div class="m-4">
+                    <line-graph title="Répartition par bac" data={state.bacStats} style="height: 6rem;"></line-graph>
+                </div>
+                <div class="m-4">
+                    <line-graph title="Répartition par mention au bac" data={state.mentionStats} style="height: 6rem;"></line-graph>
+                </div>
+            </div>
         </div>
+        <button class="modal-close is-medium" onclick={props.closeWindow}></button>
     </div>
 
     <script>
         export default {
-            onMounted() {
-                this.state.enabled = false
-                this.update()
+            onBeforeMount(props, state) {
+                this.state={
+                    bacStats: [],
+                    genreStats: [],
+                    mentionStats: []
+                }
             },
+            onBeforeUpdate(props, state) {
+                if (!this.props.school) return
+                let school=this.props.school.fields
 
-            closeWindow() {
-                this.state.enabled = false
-                this.update()
+                state.genreStats = [
+                    {
+                        name: "Hommes",
+                        short: "H",
+                        value: (100 - school.pct_f)
+                    },
+                    {
+                        name: "Femmes",
+                        short: "F",
+                        value: school.pct_f
+                    },
+                ]
+
+                state.bacStats = [
+                    {
+                        name: "Général",
+                        short: "Gen.",
+                        value: school.part_acces_gen
+                    },
+                    {
+                        name: "Technologique",
+                        short: "Tech.",
+                        value: school.part_acces_tec
+                    },
+                    {
+                        name: "Professionnel",
+                        short: "Pro.",
+                        value: school.part_acces_pro
+                    },
+                    {
+                        name: "Autre",
+                        short: "Au.",
+                        value: 100 - (school.part_acces_gen + school.part_acces_tec + school.part_acces_pro)
+                    }
+                ]
+
+                state.mentionStats = [
+                    {
+                        name: "Sans Mention",
+                        short: "SM",
+                        value: school.pct_sansmention
+                    },
+                    {
+                        name: "Assez Bien",
+                        short: "AB",
+                        value: school.pct_ab
+                    },
+                    {
+                        name: "Bien",
+                        short: "B",
+                        value: school.pct_b
+                    },
+                    {
+                        name: "Très Bien",
+                        short: "TB",
+                        value: school.pct_tb
+                    },
+                    {
+                        name: "Très Bien + Félicitations",
+                        short: "TBF",
+                        value: school.pct_tbf
+                    },
+                    {
+                        name: "Non Spécifié",
+                        short: "NS",
+                        value: 100 - (school.pct_sansmention + school.pct_ab + school.pct_b + school.pct_tb + school.pct_tbf)
+                    }
+                ]
+
             }
         }
     </script>

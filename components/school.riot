@@ -23,7 +23,7 @@
 			</thead>
             <tbody>
                 <tr each={school in props.schoolList}>
-                    <td>{school.fields.g_ea_lib_vx}</td>
+                    <td><a onclick={() => props.popup(school)}>{school.fields.g_ea_lib_vx}</a></td>
                     <td>{school.fields.ville_etab}</td>
                     <td>{school.fields.dep}</td>
                     <td>{school.fields.moyenne}</td>

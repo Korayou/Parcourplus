@@ -9,11 +9,11 @@
 
 		<div class="column">
 			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
-			<school sortList={sortList} schoolList={state.filteredSchoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
+			<school popup={popup} sortList={sortList} schoolList={state.filteredSchoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
-	<school-info></school-info>
+	<school-info closeWindow={closePopup} popupEnabled={state.popupEnabled} school={state.school}></school-info>
 
     <script>
 
@@ -97,7 +97,9 @@
                     schoolList: null,
                     sortFields: SORT_TABLE,
                     filteredSchoolList: null,
-					shouldShowInfos: false
+					shouldShowInfos: false,
+                    school: null,
+                    popupEnabled: false
                 })
             },
             filterSearch() {
@@ -118,6 +120,19 @@
                 this.update({
                     filteredSchoolList: finalArray
                 })
+            },
+            popup(school){
+                this.update({
+                    school: school,
+                    popupEnabled: true
+                })
+                console.log("popup!")
+            },
+            closePopup(){
+                this.update({
+                    popupEnabled: false
+                })
+                console.log("closed!")
             }
         }
     </script>
