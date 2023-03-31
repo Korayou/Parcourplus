@@ -64,62 +64,62 @@ var schoolInfo = {
       }];
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr2149="expr2149" style="z-index: 10000" class="modal is-active"></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr77="expr77" style="z-index: 10000" class="modal is-active"></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.popupEnabled,
-    redundantAttribute: 'expr2149',
-    selector: '[expr2149]',
-    template: template('<div class="modal-background"></div><div class="modal-content"><div class="box p-2"><p><h1 expr2150="expr2150" class="title is-4 m-2" style="color: #485FC7;"> </h1></p><div class="columns m-2"><div class="column"><p expr2151="expr2151"> </p><p expr2152="expr2152"> </p><p expr2153="expr2153"> </p><p expr2154="expr2154"> </p><p expr2155="expr2155"> </p><p expr2156="expr2156"> </p><p>Rang dernier appelé : </p><ul><li expr2157="expr2157"></li><li expr2158="expr2158"></li><li expr2159="expr2159"></li></ul><p expr2160="expr2160"> </p></div><div class="column"><p>Vitesse de remplissage :</p></div></div><div class="m-4"><line-graph expr2161="expr2161" title="Répartition par genre" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr2162="expr2162" title="Répartition par bac" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr2163="expr2163" title="Répartition par mention au bac" style="height: 6rem;"></line-graph></div></div></div><button expr2164="expr2164" class="modal-close is-medium"></button>', [{
-      redundantAttribute: 'expr2150',
-      selector: '[expr2150]',
+    redundantAttribute: 'expr77',
+    selector: '[expr77]',
+    template: template('<div class="modal-background"></div><div class="modal-content"><div class="box p-2"><p><h1 expr78="expr78" class="title is-4 m-2" style="color: #485FC7;"> </h1></p><div class="columns m-2"><div class="column"><p expr79="expr79"> </p><p expr80="expr80"> </p><p expr81="expr81"> </p><p expr82="expr82"> </p><p expr83="expr83"> </p><p expr84="expr84"> </p><p>Rang dernier appelé : </p><ul><li expr85="expr85"></li><li expr86="expr86"></li><li expr87="expr87"></li></ul><p expr88="expr88"> </p></div></div><div class="m-4"><line-graph expr89="expr89" title="Répartition par genre" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr90="expr90" title="Répartition par bac" style="height: 6rem;"></line-graph></div><div class="m-4"><line-graph expr91="expr91" title="Répartition par mention au bac" style="height: 6rem;"></line-graph></div></div></div><button expr92="expr92" class="modal-close is-medium"></button>', [{
+      redundantAttribute: 'expr78',
+      selector: '[expr78]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.props.school.fields.g_ea_lib_vx
       }]
     }, {
-      redundantAttribute: 'expr2151',
-      selector: '[expr2151]',
+      redundantAttribute: 'expr79',
+      selector: '[expr79]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => ['Ville : ', _scope.props.school.fields.ville_etab].join('')
       }]
     }, {
-      redundantAttribute: 'expr2152',
-      selector: '[expr2152]',
+      redundantAttribute: 'expr80',
+      selector: '[expr80]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => ['Département : ', _scope.props.school.fields.dep, ' ', _scope.props.school.fields.dep_lib].join('')
       }]
     }, {
-      redundantAttribute: 'expr2153',
-      selector: '[expr2153]',
+      redundantAttribute: 'expr81',
+      selector: '[expr81]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => ['Académie : ', _scope.props.school.fields.acad_mies].join('')
       }]
     }, {
-      redundantAttribute: 'expr2154',
-      selector: '[expr2154]',
+      redundantAttribute: 'expr82',
+      selector: '[expr82]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => _scope.props.school.fields.contrat_etab
       }]
     }, {
-      redundantAttribute: 'expr2155',
-      selector: '[expr2155]',
+      redundantAttribute: 'expr83',
+      selector: '[expr83]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
         evaluate: _scope => ['Capacité : ', _scope.props.school.fields.capa_fin].join('')
       }]
     }, {
-      redundantAttribute: 'expr2156',
-      selector: '[expr2156]',
+      redundantAttribute: 'expr84',
+      selector: '[expr84]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
@@ -128,8 +128,8 @@ var schoolInfo = {
     }, {
       type: bindingTypes.IF,
       evaluate: _scope => _scope.props.school.fields.lib_grp1,
-      redundantAttribute: 'expr2157',
-      selector: '[expr2157]',
+      redundantAttribute: 'expr85',
+      selector: '[expr85]',
       template: template(' ', [{
         expressions: [{
           type: expressionTypes.TEXT,
@@ -140,8 +140,8 @@ var schoolInfo = {
     }, {
       type: bindingTypes.IF,
       evaluate: _scope => _scope.props.school.fields.lib_grp2,
-      redundantAttribute: 'expr2158',
-      selector: '[expr2158]',
+      redundantAttribute: 'expr86',
+      selector: '[expr86]',
       template: template(' ', [{
         expressions: [{
           type: expressionTypes.TEXT,
@@ -152,8 +152,8 @@ var schoolInfo = {
     }, {
       type: bindingTypes.IF,
       evaluate: _scope => _scope.props.school.fields.lib_grp3,
-      redundantAttribute: 'expr2159',
-      selector: '[expr2159]',
+      redundantAttribute: 'expr87',
+      selector: '[expr87]',
       template: template(' ', [{
         expressions: [{
           type: expressionTypes.TEXT,
@@ -162,8 +162,8 @@ var schoolInfo = {
         }]
       }])
     }, {
-      redundantAttribute: 'expr2160',
-      selector: '[expr2160]',
+      redundantAttribute: 'expr88',
+      selector: '[expr88]',
       expressions: [{
         type: expressionTypes.TEXT,
         childNodeIndex: 0,
@@ -179,8 +179,8 @@ var schoolInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.genreStats
       }],
-      redundantAttribute: 'expr2161',
-      selector: '[expr2161]'
+      redundantAttribute: 'expr89',
+      selector: '[expr89]'
     }, {
       type: bindingTypes.TAG,
       getComponent: getComponent,
@@ -191,8 +191,8 @@ var schoolInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.bacStats
       }],
-      redundantAttribute: 'expr2162',
-      selector: '[expr2162]'
+      redundantAttribute: 'expr90',
+      selector: '[expr90]'
     }, {
       type: bindingTypes.TAG,
       getComponent: getComponent,
@@ -203,11 +203,11 @@ var schoolInfo = {
         name: 'data',
         evaluate: _scope => _scope.state.mentionStats
       }],
-      redundantAttribute: 'expr2163',
-      selector: '[expr2163]'
+      redundantAttribute: 'expr91',
+      selector: '[expr91]'
     }, {
-      redundantAttribute: 'expr2164',
-      selector: '[expr2164]',
+      redundantAttribute: 'expr92',
+      selector: '[expr92]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onclick',

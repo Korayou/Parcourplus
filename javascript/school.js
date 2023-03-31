@@ -69,7 +69,16 @@ var school = {
         state.filteredSchoolList = [...state.schoolList];
         if (this.$("input")) this.$("input").value = "";
       }
-      if (state.map) {
+    },
+    onUpdated(props, state) {
+      if (!state.map && props.shouldShowInfos) {
+        state.map = L.map("map").setView([47, 2.5], 5);
+        state.markers = L.markerClusterGroup();
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(state.map);
+      } else if (props.shouldShowInfos) {
         state.markers.clearLayers();
         for (let school of state.filteredSchoolList) {
           let fields = school.fields;
@@ -78,7 +87,6 @@ var school = {
           let title = document.createElement("span");
           title.textContent = fields.g_ea_lib_vx;
           title.class = "is-primary";
-          console.log(props);
           let linkToForma = document.createElement("a");
           linkToForma.onclick = () => props.popup(school);
           linkToForma.textContent = "Voir les infos de l'établissement";
@@ -92,16 +100,6 @@ var school = {
         state.map.addLayer(state.markers);
       }
     },
-    onUpdated(props, state) {
-      if (!state.map && props.shouldShowInfos) {
-        state.map = L.map("map").setView([47, 2.5], 5);
-        state.markers = L.markerClusterGroup();
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(state.map);
-      }
-    },
     onBeforeMount(props, state) {
       this.state = {
         sortBy: null,
@@ -111,14 +109,14 @@ var school = {
     },
     sortFields: SORT_TABLE
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr157="expr157" class="box p-2 m-2" disabled></div>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div expr51="expr51" class="box p-2 m-2" disabled></div>', [{
     type: bindingTypes.IF,
     evaluate: _scope => _scope.props.shouldShowInfos,
-    redundantAttribute: 'expr157',
-    selector: '[expr157]',
-    template: template('<div id="map" width="100%" style="border-radius: 5px"></div><div class="mt-2 mb-2 control has-icons-left is-inline-block is-pulled-right"><input expr158="expr158" class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable is-narrow"><thead><tr><th expr159="expr159"></th></tr></thead><tbody><tr expr161="expr161"></tr></tbody></table>', [{
-      redundantAttribute: 'expr158',
-      selector: '[expr158]',
+    redundantAttribute: 'expr51',
+    selector: '[expr51]',
+    template: template('<div id="map" width="100%" style="border-radius: 5px"></div><div class="mt-2 mb-2 control has-icons-left is-inline-block is-pulled-right"><input expr52="expr52" class="input" type="search" placeholder="Établissement"/><span class="icon is-small is-left"><i class="fas fa-search"></i></span></div><table class="table is-fullwidth is-hoverable is-narrow"><thead><tr><th expr53="expr53"></th></tr></thead><tbody><tr expr55="expr55"></tr></tbody></table>', [{
+      redundantAttribute: 'expr52',
+      selector: '[expr52]',
       expressions: [{
         type: expressionTypes.EVENT,
         name: 'onkeyup',
@@ -128,15 +126,15 @@ var school = {
       type: bindingTypes.EACH,
       getKey: null,
       condition: null,
-      template: template(' <a expr160="expr160"><span class="icon"><i class="fas fa-sort"></i></span></a>', [{
+      template: template(' <a expr54="expr54"><span class="icon"><i class="fas fa-sort"></i></span></a>', [{
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => [_scope.sortField.name].join('')
         }]
       }, {
-        redundantAttribute: 'expr160',
-        selector: '[expr160]',
+        redundantAttribute: 'expr54',
+        selector: '[expr54]',
         expressions: [{
           type: expressionTypes.ATTRIBUTE,
           name: 'id',
@@ -147,8 +145,8 @@ var school = {
           evaluate: _scope => () => _scope.sortList(_scope.sortField.id, true)
         }]
       }]),
-      redundantAttribute: 'expr159',
-      selector: '[expr159]',
+      redundantAttribute: 'expr53',
+      selector: '[expr53]',
       itemName: 'sortField',
       indexName: null,
       evaluate: _scope => _scope.sortFields
@@ -156,9 +154,9 @@ var school = {
       type: bindingTypes.EACH,
       getKey: null,
       condition: null,
-      template: template('<td><a expr162="expr162"> </a></td><td expr163="expr163"> </td><td expr164="expr164"> </td><td expr165="expr165"> </td><td><title-progress expr166="expr166" max="100" style="margin: auto"></title-progress></td>', [{
-        redundantAttribute: 'expr162',
-        selector: '[expr162]',
+      template: template('<td><a expr56="expr56"> </a></td><td expr57="expr57"> </td><td expr58="expr58"> </td><td expr59="expr59"> </td><td><title-progress expr60="expr60" max="100" style="margin: auto"></title-progress></td>', [{
+        redundantAttribute: 'expr56',
+        selector: '[expr56]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
@@ -169,24 +167,24 @@ var school = {
           evaluate: _scope => () => _scope.props.popup(_scope.school)
         }]
       }, {
-        redundantAttribute: 'expr163',
-        selector: '[expr163]',
+        redundantAttribute: 'expr57',
+        selector: '[expr57]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.school.fields.ville_etab
         }]
       }, {
-        redundantAttribute: 'expr164',
-        selector: '[expr164]',
+        redundantAttribute: 'expr58',
+        selector: '[expr58]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
           evaluate: _scope => _scope.school.fields.dep
         }]
       }, {
-        redundantAttribute: 'expr165',
-        selector: '[expr165]',
+        redundantAttribute: 'expr59',
+        selector: '[expr59]',
         expressions: [{
           type: expressionTypes.TEXT,
           childNodeIndex: 0,
@@ -202,11 +200,11 @@ var school = {
           name: 'value',
           evaluate: _scope => _scope.school.fields.taux_acces_ens
         }],
-        redundantAttribute: 'expr166',
-        selector: '[expr166]'
+        redundantAttribute: 'expr60',
+        selector: '[expr60]'
       }]),
-      redundantAttribute: 'expr161',
-      selector: '[expr161]',
+      redundantAttribute: 'expr55',
+      selector: '[expr55]',
       itemName: 'school',
       indexName: null,
       evaluate: _scope => _scope.state.filteredSchoolList

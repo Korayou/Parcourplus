@@ -110,8 +110,9 @@
                     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
                         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                    }).addTo(state.map);
-                } else (state.map) {
+                    }).addTo(state.map)
+
+                } else if (props.shouldShowInfos) {
                     state.markers.clearLayers()
                     for (let school of state.filteredSchoolList) {
                         let fields = school.fields
