@@ -2,14 +2,14 @@
     <div class="columns">
 		<div class="column is-one-third">
             <div class="box p-3 m-2">
-                <img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/>
+                <img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="./resources/logo-parcoursup.svg"/>
             </div>
 			<search updateCourse={updateCourse}></search>
 		</div>
 
 		<div class="column">
 			<fili-info schoolList={state.schoolList} course={state.course} shouldShowInfos={state.shouldShowInfos}></fili-info>
-			<school sortList={sortList} schoolList={state.schoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
+			<school sortList={sortList} schoolList={state.filteredSchoolList} sortFields={state.sortFields} course={state.course} shouldShowInfos={state.shouldShowInfos}></school>
 		</div>
 	</div>
 
@@ -31,7 +31,7 @@
             sortList(sortBy) {
                 //Si la liste est déjà triée par la bonne catégorie, on l'inverse
                 if (sortBy == this.state.sortBy) {
-                    this.state.schoolList.reverse()
+                    this.state.filteredSchoolList.reverse()
                 } 
                 //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
                 else { 
@@ -40,7 +40,7 @@
                     switch (sortBy) {
                         case SORT_TABLE[3].id:
                         case SORT_TABLE[4].id: {
-                            this.state.schoolList.sort((a, b) => {
+                            this.state.filteredSchoolList.sort((a, b) => {
                                 if (a.fields[sortBy] > b.fields[sortBy]) return 1
                                 else return -1
                             })
@@ -48,7 +48,7 @@
                         }
 
                         default: {
-                            this.state.schoolList.sort((a, b) => {
+                            this.state.filteredSchoolList.sort((a, b) => {
                                 return (a.fields[sortBy]).localeCompare(b.fields[sortBy])
                             })
                             break
@@ -56,9 +56,7 @@
                     }
                 }
 
-                this.update({
-                    schoolList: this.state.schoolList
-                })
+                this.update()
             },
             updateList(course) {
                 course = course || this.state.course
@@ -78,7 +76,8 @@
 
                     this.update({
                         schoolList: response
-                    })                  
+                    })    
+                    this.filterSearch()              
                 })
             },
             updateCourse(course){
@@ -97,7 +96,27 @@
                     sortBy: null,
                     schoolList: null,
                     sortFields: SORT_TABLE,
+                    filteredSchoolList: null,
 					shouldShowInfos: false
+                })
+            },
+            filterSearch() {
+                let input = this.$("input")
+                if (!input) return
+
+                let finalArray = []
+                
+                //On évite de trier avant d'avoir plus de 1 lettres.
+                if (input.value.length > 1) { 
+                    finalArray = this.state.schoolList.filter((item) => {
+                        return item.name.toLowerCase().includes(input.value.toLowerCase())
+                    })
+                } else {
+                    finalArray = this.state.schoolList
+                }
+                
+                this.update({
+                    filteredSchoolList: finalArray
                 })
             }
         }

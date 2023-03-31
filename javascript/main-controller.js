@@ -63,7 +63,7 @@ var mainController = {
     sortList(sortBy) {
       //Si la liste est déjà triée par la bonne catégorie, on l'inverse
       if (sortBy == this.state.sortBy) {
-        this.state.schoolList.reverse();
+        this.state.filteredSchoolList.reverse();
       }
       //Sinon on l'ordonne par la nouvelle catégorie (ascendant par défaut)
       else {
@@ -72,23 +72,21 @@ var mainController = {
           case SORT_TABLE[3].id:
           case SORT_TABLE[4].id:
             {
-              this.state.schoolList.sort((a, b) => {
+              this.state.filteredSchoolList.sort((a, b) => {
                 if (a.fields[sortBy] > b.fields[sortBy]) return 1;else return -1;
               });
               break;
             }
           default:
             {
-              this.state.schoolList.sort((a, b) => {
+              this.state.filteredSchoolList.sort((a, b) => {
                 return a.fields[sortBy].localeCompare(b.fields[sortBy]);
               });
               break;
             }
         }
       }
-      this.update({
-        schoolList: this.state.schoolList
-      });
+      this.update();
     },
     updateList(course) {
       course = course || this.state.course;
@@ -108,6 +106,7 @@ var mainController = {
         this.update({
           schoolList: response
         });
+        this.filterSearch();
       });
     },
     updateCourse(course) {
@@ -124,11 +123,29 @@ var mainController = {
         sortBy: null,
         schoolList: null,
         sortFields: SORT_TABLE,
+        filteredSchoolList: null,
         shouldShowInfos: false
+      });
+    },
+    filterSearch() {
+      let input = this.$("input");
+      if (!input) return;
+      let finalArray = [];
+
+      //On évite de trier avant d'avoir plus de 1 lettres.
+      if (input.value.length > 1) {
+        finalArray = this.state.schoolList.filter(item => {
+          return item.name.toLowerCase().includes(input.value.toLowerCase());
+        });
+      } else {
+        finalArray = this.state.schoolList;
+      }
+      this.update({
+        filteredSchoolList: finalArray
       });
     }
   },
-  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="../resources/logo-parcoursup.svg"/></div><search expr11="expr11"></search></div><div class="column"><fili-info expr12="expr12"></fili-info><school expr13="expr13"></school></div></div><school-info expr14="expr14"></school-info>', [{
+  template: (template, expressionTypes, bindingTypes, getComponent) => template('<div class="columns"><div class="column is-one-third"><div class="box p-3 m-2"><img class="mt-1 ml-5 mr-auto" style="margin: auto;" src="./resources/logo-parcoursup.svg"/></div><search expr71="expr71"></search></div><div class="column"><fili-info expr72="expr72"></fili-info><school expr73="expr73"></school></div></div><school-info expr74="expr74"></school-info>', [{
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'search',
@@ -138,8 +155,8 @@ var mainController = {
       name: 'updateCourse',
       evaluate: _scope => _scope.updateCourse
     }],
-    redundantAttribute: 'expr11',
-    selector: '[expr11]'
+    redundantAttribute: 'expr71',
+    selector: '[expr71]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -158,8 +175,8 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr12',
-    selector: '[expr12]'
+    redundantAttribute: 'expr72',
+    selector: '[expr72]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
@@ -172,7 +189,7 @@ var mainController = {
     }, {
       type: expressionTypes.ATTRIBUTE,
       name: 'schoolList',
-      evaluate: _scope => _scope.state.schoolList
+      evaluate: _scope => _scope.state.filteredSchoolList
     }, {
       type: expressionTypes.ATTRIBUTE,
       name: 'sortFields',
@@ -186,16 +203,16 @@ var mainController = {
       name: 'shouldShowInfos',
       evaluate: _scope => _scope.state.shouldShowInfos
     }],
-    redundantAttribute: 'expr13',
-    selector: '[expr13]'
+    redundantAttribute: 'expr73',
+    selector: '[expr73]'
   }, {
     type: bindingTypes.TAG,
     getComponent: getComponent,
     evaluate: _scope => 'school-info',
     slots: [],
     attributes: [],
-    redundantAttribute: 'expr14',
-    selector: '[expr14]'
+    redundantAttribute: 'expr74',
+    selector: '[expr74]'
   }]),
   name: 'main-controller'
 };
